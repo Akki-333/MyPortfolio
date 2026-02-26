@@ -16,7 +16,7 @@ export default function About() {
               A self-starter with a focus on reliability and results, capable of turning complex challenges into actionable solutions that support organizational goals. Recently completed B.E in Computer Science and Engineering with a strong foundation in data analytics and software development.
             </p>
             <p className="text-muted-foreground leading-relaxed" data-testid="text-about-description-2">
-              I bring expertise in troubleshooting, data analysis, and system development, with hands-on experience in Python, SQL, and Power BI. My passion lies in leveraging technology to solve real-world problems and create meaningful impact.
+              I bring expertise in troubleshootingAAAAAAAAAAA, data analysis, and system development, with hands-on experience in Python, SQL, and Power BI. My passion lies in leveraging technology to solve real-world problems and create meaningful impact.
             </p>
             
             <div className="grid sm:grid-cols-2 gap-4 mt-8">
