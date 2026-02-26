@@ -36,7 +36,7 @@ export default function Contact() {
     },
     onSuccess: () => {
       toast({
-        title: "Message sent successfully! aeoioafdasfsa",
+        title: "Message sent successfully!",
         description: "Thank you for reaching out. I'll get back to you soon.",
       });
       form.reset();
