@@ -14,7 +14,7 @@ export default function Projects() {
       category: "Python",
       duration: "2 months",
       teamSize: "Self",
-      image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=300",
+      image: "https://images.unsplash.com/photo-1516961642265-531546e84af2?auto=format&fit=crop&w=800&q=80",
       description: "Managed large-scale COCO image datasets and performed structured annotation analysis using Python.",
       fullDescription: "Developed Python scripts to visualize and interpret image-caption mappings to enhance data handling. Focused on managing large-scale COCO image datasets and performing structured annotation analysis for deep learning models.",
       features: [
@@ -42,7 +42,7 @@ export default function Projects() {
       category: "Python",
       duration: "2 months",
       teamSize: "Self",
-      image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=800&h=300&q=80",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
       description: "Conducted end-to-end analysis and forecasting of historical stock price data using Python.",
       fullDescription: "Executed cleaning, trend analysis, and model evaluation using MAE, RMSE, MAPE, and R2 metrics. Created visualizations and reports to communicate technical insights effectively for financial data.",
       features: [
@@ -70,7 +70,7 @@ export default function Projects() {
       category: "Deep Learning",
       duration: "4 months",
       teamSize: "4 members",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=300&q=80",
+      image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&w=800&q=80",
       description: "Integrated backend systems to extract and process bibliographic data from scanned academic documents.",
       fullDescription: "This project involved creating a comprehensive system that uses cutting-edge deep learning techniques to automatically extract bibliographic information from scanned academic documents. The system combines computer vision and natural language processing.",
       features: [
@@ -98,7 +98,7 @@ export default function Projects() {
       category: "Web Development",
       duration: "3 months",
       teamSize: "5 members",
-      image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=300",
+      image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80",
       description: "A comprehensive web-based platform for managing restaurant reservations and dining experiences.",
       fullDescription: "A comprehensive restaurant management solution that streamlines the entire dining experience from reservation to seating. Features intelligent table allocation and real-time availability tracking to ensure smooth dining operations.",
       features: [
