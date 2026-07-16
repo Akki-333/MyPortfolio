@@ -42,7 +42,7 @@ export default function Projects() {
       category: "Python",
       duration: "2 months",
       teamSize: "Self",
-      image: "/stock-market.svg",
+      image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=800&h=300&q=80",
       description: "Conducted end-to-end analysis and forecasting of historical stock price data using Python.",
       fullDescription: "Executed cleaning, trend analysis, and model evaluation using MAE, RMSE, MAPE, and R2 metrics. Created visualizations and reports to communicate technical insights effectively for financial data.",
       features: [
@@ -70,7 +70,7 @@ export default function Projects() {
       category: "Deep Learning",
       duration: "4 months",
       teamSize: "4 members",
-      image: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=300",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=300&q=80",
       description: "Integrated backend systems to extract and process bibliographic data from scanned academic documents.",
       fullDescription: "This project involved creating a comprehensive system that uses cutting-edge deep learning techniques to automatically extract bibliographic information from scanned academic documents. The system combines computer vision and natural language processing.",
       features: [
