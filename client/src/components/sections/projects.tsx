@@ -32,7 +32,9 @@ export default function Projects() {
         "Streamlined data preprocessing workflow",
         "Improved annotation consistency",
         "Enhanced dataset visualization capabilities"
-      ]
+      ],
+      demoUrl: "https://colab.research.google.com/drive/1ANhwksa7q8_-Nf-rhX6V6DuEBqD22LSg#scrollTo=SOIAN03MtjE5",
+      githubUrl: null
     },
     {
       title: "Stock Market Time Series Analysis & Forecasting",
@@ -40,7 +42,6 @@ export default function Projects() {
       category: "Python",
       duration: "2 months",
       teamSize: "Self",
-      // Use a local SVG asset to avoid remote hotlinking issues in deploys
       image: "/stock-market.svg",
       description: "Conducted end-to-end analysis and forecasting of historical stock price data using Python.",
       fullDescription: "Executed cleaning, trend analysis, and model evaluation using MAE, RMSE, MAPE, and R2 metrics. Created visualizations and reports to communicate technical insights effectively for financial data.",
@@ -59,7 +60,9 @@ export default function Projects() {
         "Accurate stock trend predictions",
         "Comprehensive visualization reports",
         "Deep understanding of forecasting metrics"
-      ]
+      ],
+      demoUrl: "https://colab.research.google.com/drive/1EgYtgzCwlo96-IqoegKlFfIBC6pwYN3n",
+      githubUrl: null
     },
     {
       title: "Deep Learning for Bibliographic Data Extraction",
@@ -85,17 +88,19 @@ export default function Projects() {
         "95% accuracy in extraction",
         "80% reduction in manual effort",
         "Successful academic deployment"
-      ]
+      ],
+      demoUrl: null,
+      githubUrl: "https://github.com/Akki-333/Bibliography_extraction"
     },
     {
-      title: "Restaurant Management System",
+      title: "Stay and Dine",
       type: "Team Project",
       category: "Web Development",
       duration: "3 months",
       teamSize: "5 members",
       image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=300",
-      description: "Designed a web-based system to manage table reservations and real-time seating availability.",
-      fullDescription: "A comprehensive restaurant management solution that streamlines the entire dining experience from reservation to seating. Features intelligent table allocation and real-time availability tracking.",
+      description: "A comprehensive web-based platform for managing restaurant reservations and dining experiences.",
+      fullDescription: "A comprehensive restaurant management solution that streamlines the entire dining experience from reservation to seating. Features intelligent table allocation and real-time availability tracking to ensure smooth dining operations.",
       features: [
         "Dynamic table assignment",
         "Real-time status tracking",
@@ -111,7 +116,9 @@ export default function Projects() {
         "40% reduction in wait times",
         "25% better table utilization",
         "Streamlined staff coordination"
-      ]
+      ],
+      demoUrl: null,
+      githubUrl: "https://github.com/Akki-333/Stay_and_Dine"
     }
   ];
 
@@ -197,9 +204,13 @@ export default function Projects() {
                     <ExternalLink className="w-4 h-4 mr-2" />
                     View Details
                   </Button>
-                  <Button variant="outline" size="icon" className="border-primary/20 hover:bg-primary/10" data-testid={`project-github-${index}`}>
-                    <Github className="w-4 h-4" />
-                  </Button>
+                  {project.githubUrl && (
+                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                      <Button variant="outline" size="icon" className="border-primary/20 hover:bg-primary/10" data-testid={`project-github-${index}`}>
+                        <Github className="w-4 h-4" />
+                      </Button>
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
@@ -287,14 +298,22 @@ export default function Projects() {
                   </div>
 
                   <div className="flex gap-3 pt-4">
-                    <Button className="flex-1 bg-primary hover:bg-primary/90">
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      Live Demo
-                    </Button>
-                    <Button variant="outline" className="border-primary/20 hover:bg-primary/10">
-                      <Github className="w-4 h-4 mr-2" />
-                      Source Code
-                    </Button>
+                    {projects[selectedProject].demoUrl && (
+                      <a href={projects[selectedProject].demoUrl} target="_blank" rel="noopener noreferrer" className="flex-1">
+                        <Button className="w-full bg-primary hover:bg-primary/90">
+                          <ExternalLink className="w-4 h-4 mr-2" />
+                          Live Demo
+                        </Button>
+                      </a>
+                    )}
+                    {projects[selectedProject].githubUrl && (
+                      <a href={projects[selectedProject].githubUrl} target="_blank" rel="noopener noreferrer" className={projects[selectedProject].demoUrl ? "" : "flex-1"}>
+                        <Button variant="outline" className={`border-primary/20 hover:bg-primary/10 ${projects[selectedProject].demoUrl ? "" : "w-full"}`}>
+                          <Github className="w-4 h-4 mr-2" />
+                          Source Code
+                        </Button>
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>

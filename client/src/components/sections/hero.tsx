@@ -78,10 +78,10 @@ export default function Hero() {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
-              href="/resume.pdf" 
+              href="/Akshay_DS_Updated.pdf" 
               className="cta-primary magnetic-hover inline-flex items-center justify-center"
               data-testid="button-view-work"
-              download
+              download="Akshay_DS_Updated.pdf"
             >
               <ExternalLink className="w-4 h-4 mr-2" />
               Download Resume

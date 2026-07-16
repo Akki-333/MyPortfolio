@@ -51,6 +51,13 @@ export default function Navbar() {
                 Projects
               </button>
               <button 
+                onClick={() => handleNavClick("experience")}
+                className="text-foreground hover:text-primary transition-colors"
+                data-testid="link-experience-nav"
+              >
+                Experience
+              </button>
+              <button 
                 onClick={() => handleNavClick("education")}
                 className="text-foreground hover:text-primary transition-colors"
                 data-testid="link-education-nav"
@@ -109,6 +116,13 @@ export default function Navbar() {
                 data-testid="link-projects-mobile"
               >
                 Projects
+              </button>
+              <button 
+                onClick={() => handleNavClick("experience")}
+                className="block w-full text-left py-2 text-foreground hover:text-primary transition-colors"
+                data-testid="link-experience-mobile"
+              >
+                Experience
               </button>
               <button 
                 onClick={() => handleNavClick("education")}

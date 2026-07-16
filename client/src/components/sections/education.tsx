@@ -30,14 +30,19 @@ export default function Education() {
 
   const certifications = [
     {
-      title: "The Data Analyst Course: Complete Data Analyst Bootcamp",
-      provider: "Udemy",
-      status: "In Progress"
+      title: "AI & Data Science Using Python (Grade: A)",
+      provider: "CDAC",
+      status: "Completed"
     },
     {
-      title: "Data Analytics Corporate Training Program",
-      provider: "TECHTIP-24",
-      status: "In Progress"
+      title: "Complete Data Analyst Bootcamp",
+      provider: "Udemy",
+      status: "Completed"
+    },
+    {
+      title: "Data Analytics using AI",
+      provider: "E&ICT Academy, IIT Kanpur",
+      status: "Completed"
     }
   ];
 
@@ -117,7 +122,7 @@ export default function Education() {
                   <CardContent className="p-6">
                     <div className="flex items-center gap-3 mb-4">
                       <Tag className="w-6 h-6 text-primary" />
-                      <Badge variant="outline" className="bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200">
+                      <Badge variant="outline" className={cert.status === 'Completed' ? "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200" : "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200"}>
                         {cert.status}
                       </Badge>
                     </div>
