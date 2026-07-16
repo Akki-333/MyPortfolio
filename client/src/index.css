@@ -876,6 +876,12 @@
     }
   }
   
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+  
   .project-popup-overlay {
     position: fixed;
     top: 0;

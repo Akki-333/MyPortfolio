@@ -248,17 +248,17 @@ export default function Projects() {
                   />
                   
                   <div className="grid grid-cols-3 gap-4 mb-6">
-                    <div className="text-center p-4 glass-morphism rounded-lg">
+                    <div className="text-center p-4 bg-secondary rounded-lg">
                       <Calendar className="w-6 h-6 text-primary mx-auto mb-2" />
                       <p className="text-sm text-muted-foreground">Duration</p>
                       <p className="font-semibold text-foreground">{projects[selectedProject].duration}</p>
                     </div>
-                    <div className="text-center p-4 glass-morphism rounded-lg">
+                    <div className="text-center p-4 bg-secondary rounded-lg">
                       <Users className="w-6 h-6 text-primary mx-auto mb-2" />
                       <p className="text-sm text-muted-foreground">Team</p>
                       <p className="font-semibold text-foreground">{projects[selectedProject].teamSize}</p>
                     </div>
-                    <div className="text-center p-4 glass-morphism rounded-lg">
+                    <div className="text-center p-4 bg-secondary rounded-lg">
                       <Target className="w-6 h-6 text-primary mx-auto mb-2" />
                       <p className="text-sm text-muted-foreground">Type</p>
                       <p className="font-semibold text-foreground">{projects[selectedProject].type}</p>
