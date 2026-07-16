@@ -223,14 +223,14 @@ export default function Projects() {
           <div className="project-popup-overlay" onClick={() => setSelectedProject(null)}>
             <div className="project-popup p-8 m-4" onClick={(e) => e.stopPropagation()}>
               <div className="flex justify-between items-start mb-6">
-                <h2 className="text-2xl font-bold text-foreground">{projects[selectedProject].title}</h2>
+                <h2 className="text-3xl font-extrabold text-white tracking-tight bg-clip-text">{projects[selectedProject].title}</h2>
                 <Button
                   variant="ghost"
                   size="icon"
                   onClick={() => setSelectedProject(null)}
-                  className="hover:bg-primary/10"
+                  className="hover:bg-destructive/20 hover:text-destructive transition-colors rounded-full w-12 h-12 flex-shrink-0 ml-4"
                 >
-                  <X className="w-6 h-6" />
+                  <X className="w-8 h-8" />
                 </Button>
               </div>
 
