@@ -205,11 +205,15 @@ export default function Projects() {
                     View Details
                   </Button>
                   {project.githubUrl && (
-                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                      <Button variant="outline" size="icon" className="border-primary/20 hover:bg-primary/10" data-testid={`project-github-${index}`}>
-                        <Github className="w-4 h-4" />
-                      </Button>
-                    </a>
+                    <Button 
+                      variant="outline" 
+                      size="icon" 
+                      className="border-primary/20 hover:bg-primary/10" 
+                      onClick={(e) => { e.stopPropagation(); window.open(project.githubUrl!, "_blank", "noopener noreferrer"); }}
+                      data-testid={`project-github-${index}`}
+                    >
+                      <Github className="w-4 h-4" />
+                    </Button>
                   )}
                 </div>
               </div>
@@ -299,20 +303,23 @@ export default function Projects() {
 
                   <div className="flex gap-3 pt-4">
                     {projects[selectedProject].demoUrl && (
-                      <a href={projects[selectedProject].demoUrl} target="_blank" rel="noopener noreferrer" className="flex-1">
-                        <Button className="w-full bg-primary hover:bg-primary/90">
-                          <ExternalLink className="w-4 h-4 mr-2" />
-                          Live Demo
-                        </Button>
-                      </a>
+                      <Button 
+                        className="flex-1 bg-primary hover:bg-primary/90"
+                        onClick={() => window.open(projects[selectedProject].demoUrl!, "_blank", "noopener noreferrer")}
+                      >
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        Live Demo
+                      </Button>
                     )}
                     {projects[selectedProject].githubUrl && (
-                      <a href={projects[selectedProject].githubUrl} target="_blank" rel="noopener noreferrer" className={projects[selectedProject].demoUrl ? "" : "flex-1"}>
-                        <Button variant="outline" className={`border-primary/20 hover:bg-primary/10 ${projects[selectedProject].demoUrl ? "" : "w-full"}`}>
-                          <Github className="w-4 h-4 mr-2" />
-                          Source Code
-                        </Button>
-                      </a>
+                      <Button 
+                        variant="outline" 
+                        className={`border-primary/20 hover:bg-primary/10 ${projects[selectedProject].demoUrl ? "" : "flex-1"}`}
+                        onClick={() => window.open(projects[selectedProject].githubUrl!, "_blank", "noopener noreferrer")}
+                      >
+                        <Github className="w-4 h-4 mr-2" />
+                        Source Code
+                      </Button>
                     )}
                   </div>
                 </div>

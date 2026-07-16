@@ -98,7 +98,9 @@ export default function Hero() {
           {/* Social Icons */}
           <div className="social-icons">
             <a 
-              href="#" 
+              href="https://github.com/Akki-333" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="social-icon" 
               data-testid="icon-social-github"
               aria-label="GitHub Profile"
@@ -106,7 +108,9 @@ export default function Hero() {
               <Github className="w-5 h-5" />
             </a>
             <a 
-              href="#" 
+              href="https://www.linkedin.com/in/ak445" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="social-icon" 
               data-testid="icon-social-linkedin"
               aria-label="LinkedIn Profile"
@@ -114,7 +118,7 @@ export default function Hero() {
               <Linkedin className="w-5 h-5" />
             </a>
             <a 
-              href="mailto:contact@akshays.dev" 
+              href="mailto:akkies445@gmail.com" 
               className="social-icon" 
               data-testid="icon-social-email"
               aria-label="Send Email"
@@ -125,21 +129,12 @@ export default function Hero() {
         </div>
         
         {/* Floating Tech Chips - Decorative */}
-        <div className="tech-chip tech-chip-1" data-testid="chip-tech-powerbi" aria-hidden="true">Power BI</div>
+        <div className="tech-chip tech-chip-1" data-testid="chip-tech-powerbi" aria-hidden="true">Web Development</div>
         <div className="tech-chip tech-chip-2" data-testid="chip-tech-sql" aria-hidden="true">SQL</div>
         <div className="tech-chip tech-chip-3" data-testid="chip-tech-python" aria-hidden="true">Python</div>
-        <div className="tech-chip tech-chip-4" data-testid="chip-tech-github" aria-hidden="true">GitHub</div>
+        <div className="tech-chip tech-chip-4" data-testid="chip-tech-github" aria-hidden="true">Web Scraping</div>
         
-        {/* Scroll Indicator */}
-        <button 
-          className="scroll-indicator" 
-          onClick={() => scrollToSection("about")}
-          data-testid="indicator-scroll"
-          aria-label="Scroll to About section"
-        >
-          <span className="text-sm font-medium">Scroll</span>
-          <ChevronDown className="scroll-arrow" />
-        </button>
+
       </div>
     </section>
   );

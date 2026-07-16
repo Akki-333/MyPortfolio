@@ -24,6 +24,7 @@ function SkillCircle({ skill, level, percentage, icon: Icon }: SkillCircleProps)
                 circleRef.current.style.strokeDashoffset = `${offset}`;
               }
             }, 200);
+            observer.unobserve(entry.target);
           }
         });
       },

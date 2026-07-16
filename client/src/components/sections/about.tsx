@@ -13,22 +13,14 @@ export default function About() {
           <div className="space-y-6">
             <h3 className="text-2xl font-semibold text-foreground" data-testid="text-who-i-am">Who I Am</h3>
             <p className="text-muted-foreground leading-relaxed" data-testid="text-about-description-1">
-              I am a Computer Science graduate with hands-on experience across full-stack development, automation, and application security. Skilled at writing production-grade Python and SQL, debugging complex backend logic, and designing test workflows, I have a track record of working closely with engineering teams to deliver reliable, well-documented systems under deadline pressure.
+              I am a Computer Science Engineering graduate and Software Developer with hands-on experience building production-grade applications, scalable backend systems, and end-to-end data solutions. My work spans full-stack development, backend engineering, web scraping, automation, REST API integration, and performance optimization, where I've contributed to designing reliable software that solves real business problems.
             </p>
             <p className="text-muted-foreground leading-relaxed" data-testid="text-about-description-2">
-              My passion lies in leveraging data analytics and software development to solve real-world problems and create a meaningful impact.
+              At BDSR Solutions, I evolved from developing Python-based web scraping pipelines to contributing to Quantis, an enterprise performance management platform built with Flask and React. Working on a live product has strengthened my understanding of software architecture, production debugging, deployment workflows, and building scalable systems that are both efficient and maintainable.
             </p>
-            
-            <div className="grid sm:grid-cols-2 gap-4 mt-8">
-              <div className="bg-card p-4 rounded-lg border border-border" data-testid="card-current-focus">
-                <h4 className="font-semibold text-foreground mb-2">Current Focus</h4>
-                <p className="text-sm text-muted-foreground">Data Analytics & Machine Learning</p>
-              </div>
-              <div className="bg-card p-4 rounded-lg border border-border" data-testid="card-experience">
-                <h4 className="font-semibold text-foreground mb-2">Experience</h4>
-                <p className="text-sm text-muted-foreground">Academic Projects & Certifications</p>
-              </div>
-            </div>
+            <p className="text-muted-foreground leading-relaxed" data-testid="text-about-description-3">
+              I enjoy understanding how software works beneath the surface, solving complex technical challenges, and continuously learning new technologies. My goal is to build impactful products that combine thoughtful engineering, data, and user-focused design to create meaningful real-world solutions.
+            </p>
           </div>
           
           <div className="bg-card p-8 rounded-xl border border-border">
