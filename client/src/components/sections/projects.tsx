@@ -14,7 +14,7 @@ export default function Projects() {
       category: "Python",
       duration: "2 months",
       teamSize: "Self",
-      image: "https://images.unsplash.com/photo-1517331156700-3c241d2b4d83?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=800&q=80",
       description: "Managed large-scale COCO image datasets and performed structured annotation analysis using Python.",
       fullDescription: "Developed Python scripts to visualize and interpret image-caption mappings to enhance data handling. Focused on managing large-scale COCO image datasets and performing structured annotation analysis for deep learning models.",
       features: [
