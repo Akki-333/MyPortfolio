@@ -143,11 +143,8 @@ export default function Projects() {
                   data-testid={`project-image-${index}`}
                   loading="lazy"
                   onError={(e) => {
-                    // Fallback to a reliable placeholder if remote image fails
-                    // eslint-disable-next-line no-param-reassign
-                    e.currentTarget.onerror = null;
-                    // via.placeholder is reliable and fast for missing images
-                    e.currentTarget.src = 'https://via.placeholder.com/800x300?text=Image+Unavailable';
+                    // Prevent infinite loop by not replacing src with an external URL that might also fail
+                    e.currentTarget.style.display = 'none';
                   }}
                 />
               </div>
@@ -245,10 +242,8 @@ export default function Projects() {
                     className="w-full h-64 object-cover rounded-xl mb-6"
                     loading="lazy"
                     onError={(e) => {
-                      // Fallback to placeholder in popup view as well
-                      // eslint-disable-next-line no-param-reassign
-                      e.currentTarget.onerror = null;
-                      e.currentTarget.src = 'https://via.placeholder.com/800x300?text=Image+Unavailable';
+                      // Prevent infinite loop
+                      e.currentTarget.style.display = 'none';
                     }}
                   />
                   
