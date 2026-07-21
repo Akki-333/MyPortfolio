@@ -1,7 +1,7 @@
 <div align="center">
   <h1 align="center">Hi there, I'm Akshay S 👋</h1>
   <p align="center">
-    <strong>Software Developer | Data Solutions Architect | Full-Stack Engineer</strong>
+    <strong>Software Developer</strong>
   </p>
   
   <p align="center">
