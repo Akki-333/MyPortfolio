@@ -22,28 +22,28 @@ export default function Home() {
         <Contact />
       </main>
       
-      <footer className="bg-card border-t border-border py-8">
+      <footer className="bg-gradient-to-r from-sky-600 via-sky-500 to-sky-600 border-t border-sky-400 py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <p className="text-muted-foreground">&copy; 2026 Akshay S. All rights reserved.</p>
+            <p className="text-white/90">&copy; 2026 Akshay S. All rights reserved.</p>
             <div className="flex justify-center gap-6 mt-4">
               <a 
                 href="https://github.com/Akki-333" 
-                className="text-muted-foreground hover:text-primary transition-colors"
+                className="text-white/80 hover:text-white transition-colors"
                 data-testid="link-github-footer"
               >
                 <i className="fab fa-github text-xl"></i>
               </a>
               <a 
                 href="https://www.linkedin.com/in/ak445" 
-                className="text-muted-foreground hover:text-primary transition-colors"
+                className="text-white/80 hover:text-white transition-colors"
                 data-testid="link-linkedin-footer"
               >
                 <i className="fab fa-linkedin text-xl"></i>
               </a>
               <a 
                 href="mailto:akkies445@gmail.com" 
-                className="text-muted-foreground hover:text-primary transition-colors"
+                className="text-white/80 hover:text-white transition-colors"
                 data-testid="link-email-footer"
               >
                 <i className="fas fa-envelope text-xl"></i>
