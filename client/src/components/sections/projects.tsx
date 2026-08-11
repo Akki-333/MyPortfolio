@@ -94,30 +94,31 @@ export default function Projects() {
     },
     {
       title: "Stay and Dine",
-      type: "Team Project",
-      category: "Web Development",
-      duration: "3 months",
-      teamSize: "5 members",
+      type: "Individual Project",
+      category: "Full Stack",
+      duration: "2 months",
+      teamSize: "Solo Developer",
       image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80",
-      description: "A comprehensive web-based platform for managing restaurant reservations and dining experiences.",
-      fullDescription: "A comprehensive restaurant management solution that streamlines the entire dining experience from reservation to seating. Features intelligent table allocation and real-time availability tracking to ensure smooth dining operations.",
+      description: "A full-stack, enterprise-grade Reserve-and-Dine platform that modernizes the restaurant experience.",
+      fullDescription: "A full-stack, enterprise-grade Reserve-and-Dine platform that modernizes the restaurant experience. Unlike traditional booking systems, this application allows customers to secure specific tables via a custom interactive 2D floor plan while simultaneously pre-ordering their meals. It is built on a highly secure, decoupled architecture designed for seamless cloud deployment.",
       features: [
-        "Dynamic table assignment",
-        "Real-time status tracking",
-        "Responsive web interface"
+        "Interactive 2D Floor Plan: Custom graphical table selection",
+        "Pre-Arrival Dining: Integrated menu with nutritional transparency",
+        "Enterprise Security: Strict JWT auth, RBAC, and TLS 1.2",
+        "Live Admin Dashboard: Real-time WebSocket integration"
       ],
-      technologies: ["Web Development", "Database", "UI/UX"],
+      technologies: ["React/Vite", "Node.js/Express", "TiDB", "WebSockets"],
       challenges: [
-        "Concurrent reservation logic",
-        "Peak-time flow management",
-        "Mobile-first design priority"
+        "Architecting a fully decoupled cloud deployment across Vercel and Render",
+        "Engineering secure integration with a TiDB Serverless cloud database",
+        "Optimizing API routing and centralizing asset management for speed"
       ],
       outcomes: [
-        "40% reduction in wait times",
-        "25% better table utilization",
-        "Streamlined staff coordination"
+        "Achieved lightning-fast load times and zero broken deployments",
+        "Established enterprise-grade security and robust booking notifications",
+        "Modernized the restaurant experience with an innovative UX"
       ],
-      demoUrl: null,
+      demoUrl: "https://staydine-reservations.vercel.app",
       githubUrl: "https://github.com/Akki-333/Stay_and_Dine"
     }
   ];
@@ -223,12 +224,12 @@ export default function Projects() {
           <div className="project-popup-overlay" onClick={() => setSelectedProject(null)}>
             <div className="project-popup p-8 m-4" onClick={(e) => e.stopPropagation()}>
               <div className="flex justify-between items-start mb-6">
-                <h2 className="text-3xl font-extrabold text-white tracking-tight bg-clip-text">{projects[selectedProject].title}</h2>
+                <h2 className="text-3xl font-extrabold text-sky-900 tracking-tight bg-clip-text">{projects[selectedProject].title}</h2>
                 <Button
                   variant="ghost"
                   size="icon"
                   onClick={() => setSelectedProject(null)}
-                  className="hover:bg-destructive/20 hover:text-destructive transition-colors rounded-full w-12 h-12 flex-shrink-0 ml-4"
+                  className="hover:bg-destructive/10 hover:text-destructive transition-colors rounded-full w-12 h-12 flex-shrink-0 ml-4"
                 >
                   <X className="w-8 h-8" />
                 </Button>

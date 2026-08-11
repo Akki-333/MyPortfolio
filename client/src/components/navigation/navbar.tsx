@@ -13,10 +13,10 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-40 bg-gradient-to-r from-slate-900 via-blue-900 to-slate-900 shadow-lg border-b border-blue-800/30">
+      <nav className="fixed top-0 left-0 right-0 z-40 bg-white/90 backdrop-blur-md shadow-sm border-b border-sky-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <div className="font-bold text-xl text-white tracking-wide" data-testid="text-logo">
+            <div className="font-bold text-xl text-sky-900 tracking-wide" data-testid="text-logo">
               Akshay S
             </div>
             
@@ -24,49 +24,49 @@ export default function Navbar() {
             <div className="hidden md:flex space-x-8">
               <button 
                 onClick={() => handleNavClick("home")}
-                className="text-white/80 hover:text-white hover:scale-105 transition-all font-medium"
+                className="text-slate-600 hover:text-sky-600 hover:scale-105 transition-all font-medium"
                 data-testid="link-home-nav"
               >
                 Home
               </button>
               <button 
                 onClick={() => handleNavClick("about")}
-                className="text-white/80 hover:text-white hover:scale-105 transition-all font-medium"
+                className="text-slate-600 hover:text-sky-600 hover:scale-105 transition-all font-medium"
                 data-testid="link-about-nav"
               >
                 About
               </button>
               <button 
                 onClick={() => handleNavClick("skills")}
-                className="text-white/80 hover:text-white hover:scale-105 transition-all font-medium"
+                className="text-slate-600 hover:text-sky-600 hover:scale-105 transition-all font-medium"
                 data-testid="link-skills-nav"
               >
                 Skills
               </button>
               <button 
                 onClick={() => handleNavClick("projects")}
-                className="text-white/80 hover:text-white hover:scale-105 transition-all font-medium"
+                className="text-slate-600 hover:text-sky-600 hover:scale-105 transition-all font-medium"
                 data-testid="link-projects-nav"
               >
                 Projects
               </button>
               <button 
                 onClick={() => handleNavClick("experience")}
-                className="text-white/80 hover:text-white hover:scale-105 transition-all font-medium"
+                className="text-slate-600 hover:text-sky-600 hover:scale-105 transition-all font-medium"
                 data-testid="link-experience-nav"
               >
                 Experience
               </button>
               <button 
                 onClick={() => handleNavClick("education")}
-                className="text-white/80 hover:text-white hover:scale-105 transition-all font-medium"
+                className="text-slate-600 hover:text-sky-600 hover:scale-105 transition-all font-medium"
                 data-testid="link-education-nav"
               >
                 Education
               </button>
               <button 
                 onClick={() => handleNavClick("contact")}
-                className="text-white/80 hover:text-white hover:scale-105 transition-all font-medium"
+                className="text-slate-600 hover:text-sky-600 hover:scale-105 transition-all font-medium"
                 data-testid="link-contact-nav"
               >
                 Contact
@@ -80,60 +80,60 @@ export default function Navbar() {
               data-testid="button-mobile-menu"
               aria-label="Toggle mobile menu"
             >
-              <Menu className="h-6 w-6 text-white" />
+              <Menu className="h-6 w-6 text-sky-900" />
             </button>
           </div>
         </div>
         
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden bg-slate-900 border-t border-blue-800/30">
+          <div className="md:hidden bg-white border-t border-sky-100">
             <div className="px-4 py-6 space-y-4">
               <button 
                 onClick={() => handleNavClick("home")}
-                className="block w-full text-left py-2 text-white/80 hover:text-white transition-colors"
+                className="block w-full text-left py-2 text-slate-600 hover:text-sky-600 transition-colors"
                 data-testid="link-home-mobile"
               >
                 Home
               </button>
               <button 
                 onClick={() => handleNavClick("about")}
-                className="block w-full text-left py-2 text-white/80 hover:text-white transition-colors"
+                className="block w-full text-left py-2 text-slate-600 hover:text-sky-600 transition-colors"
                 data-testid="link-about-mobile"
               >
                 About
               </button>
               <button 
                 onClick={() => handleNavClick("skills")}
-                className="block w-full text-left py-2 text-white/80 hover:text-white transition-colors"
+                className="block w-full text-left py-2 text-slate-600 hover:text-sky-600 transition-colors"
                 data-testid="link-skills-mobile"
               >
                 Skills
               </button>
               <button 
                 onClick={() => handleNavClick("projects")}
-                className="block w-full text-left py-2 text-white/80 hover:text-white transition-colors"
+                className="block w-full text-left py-2 text-slate-600 hover:text-sky-600 transition-colors"
                 data-testid="link-projects-mobile"
               >
                 Projects
               </button>
               <button 
                 onClick={() => handleNavClick("experience")}
-                className="block w-full text-left py-2 text-white/80 hover:text-white transition-colors"
+                className="block w-full text-left py-2 text-slate-600 hover:text-sky-600 transition-colors"
                 data-testid="link-experience-mobile"
               >
                 Experience
               </button>
               <button 
                 onClick={() => handleNavClick("education")}
-                className="block w-full text-left py-2 text-white/80 hover:text-white transition-colors"
+                className="block w-full text-left py-2 text-slate-600 hover:text-sky-600 transition-colors"
                 data-testid="link-education-mobile"
               >
                 Education
               </button>
               <button 
                 onClick={() => handleNavClick("contact")}
-                className="block w-full text-left py-2 text-white/80 hover:text-white transition-colors"
+                className="block w-full text-left py-2 text-slate-600 hover:text-sky-600 transition-colors"
                 data-testid="link-contact-mobile"
               >
                 Contact

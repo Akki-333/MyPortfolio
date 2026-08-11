@@ -9,7 +9,7 @@ import Contact from "@/components/sections/contact";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#020617] via-[#0f172a] to-[#020617] text-foreground">
+    <div className="min-h-screen bg-gradient-to-b from-sky-50 via-white to-sky-100 text-slate-900">
       <Navbar />
       
       <main>
