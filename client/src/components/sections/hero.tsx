@@ -132,7 +132,7 @@ export default function Hero() {
         <div className="tech-chip tech-chip-1" data-testid="chip-tech-powerbi" aria-hidden="true">Web Development</div>
         <div className="tech-chip tech-chip-2" data-testid="chip-tech-sql" aria-hidden="true">SQL</div>
         <div className="tech-chip tech-chip-3" data-testid="chip-tech-python" aria-hidden="true">Python</div>
-        <div className="tech-chip tech-chip-4" data-testid="chip-tech-github" aria-hidden="true">Web Scraping</div>
+        <div className="tech-chip tech-chip-4" data-testid="chip-tech-github" aria-hidden="true">Software Development</div>
         
 
       </div>
