@@ -114,7 +114,7 @@ export default function Education() {
           {/* Certifications */}
           <div className="mt-16">
             <h3 className="text-2xl font-semibold text-foreground mb-8 text-center" data-testid="text-certifications-title">
-              Ongoing Certifications
+              Certifications
             </h3>
             <div className="grid md:grid-cols-2 gap-6">
               {certifications.map((cert, index) => (
