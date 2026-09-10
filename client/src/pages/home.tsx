@@ -1,57 +1,33 @@
-import Navbar from "@/components/navigation/navbar";
-import Hero from "@/components/sections/hero";
-import About from "@/components/sections/about";
-import Skills from "@/components/sections/skills";
-import Projects from "@/components/sections/projects";
-import Experience from "@/components/sections/experience";
-import Education from "@/components/sections/education";
-import Contact from "@/components/sections/contact";
+import { Navbar } from "@/components/navigation/Navbar";
+import { Footer } from "@/components/layout/Footer";
+import { Hero } from "@/components/sections/hero/Hero";
+import { About } from "@/components/sections/about/About";
+import { Skills } from "@/components/sections/skills/Skills";
+import { Projects } from "@/components/sections/projects/Projects";
+import { Experience } from "@/components/sections/experience/Experience";
+import { Certifications } from "@/components/sections/certifications/Certifications";
+import { Contact } from "@/components/sections/contact/Contact";
 
-export default function Home() {
+export function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-sky-50 via-white to-sky-100 text-slate-900">
+    <div className="page-canvas min-h-screen">
+      <a href="#main" className="skip-link focus-ring">
+        Skip to content
+      </a>
+
       <Navbar />
-      
-      <main>
+
+      <main id="main">
         <Hero />
         <About />
         <Skills />
         <Projects />
         <Experience />
-        <Education />
+        <Certifications />
         <Contact />
       </main>
-      
-      <footer className="bg-gradient-to-r from-sky-600 via-sky-500 to-sky-600 border-t border-sky-400 py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <p className="text-white/90">&copy; 2026 Akshay S. All rights reserved.</p>
-            <div className="flex justify-center gap-6 mt-4">
-              <a 
-                href="https://github.com/Akki-333" 
-                className="text-white/80 hover:text-white transition-colors"
-                data-testid="link-github-footer"
-              >
-                <i className="fab fa-github text-xl"></i>
-              </a>
-              <a 
-                href="https://www.linkedin.com/in/ak445" 
-                className="text-white/80 hover:text-white transition-colors"
-                data-testid="link-linkedin-footer"
-              >
-                <i className="fab fa-linkedin text-xl"></i>
-              </a>
-              <a 
-                href="mailto:akkies445@gmail.com" 
-                className="text-white/80 hover:text-white transition-colors"
-                data-testid="link-email-footer"
-              >
-                <i className="fas fa-envelope text-xl"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </footer>
+
+      <Footer />
     </div>
   );
 }
