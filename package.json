@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
     "verify": "node scripts/smoke-render.mjs",
-    "check": "npm run typecheck && npm run verify && npm run build"
+    "check": "npm run check:case && npm run typecheck && npm run verify && npm run build",
+    "check:case": "node scripts/check-import-case.mjs"
   },
   "dependencies": {
     "clsx": "^2.1.1",
