@@ -35,10 +35,13 @@ export function TerminalBadge() {
           <span className="text-cyan-300">primary_focus</span>
           <span className="text-slate-500">: [</span>
           {"\n    "}
-          <span className="text-amber-200">{'"GraphRAG"'}</span>
+          <span className="text-amber-200">{'"development"'}</span>
           <span className="text-slate-500">,</span>
           {"\n    "}
-          <span className="text-amber-200">{'"Distributed Systems"'}</span>
+          <span className="text-amber-200">{'"testing"'}</span>
+          <span className="text-slate-500">,</span>
+          {"\n    "}
+          <span className="text-amber-200">{'"debugging"'}</span>
           {"\n  "}
           <span className="text-slate-500">],</span>
           {"\n  "}

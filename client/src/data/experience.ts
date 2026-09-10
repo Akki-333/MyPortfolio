@@ -4,7 +4,8 @@ import type { ExperienceRole } from "@/types";
  * Production career history, newest first.
  *
  * Each highlight pairs a short headline with the engineering detail behind it,
- * so the timeline reads as capability rather than as a task list.
+ * so the timeline reads as capability rather than as a task list. Client names
+ * and internal identifiers are deliberately absent.
  */
 export const experience: readonly ExperienceRole[] = [
   {
@@ -14,45 +15,48 @@ export const experience: readonly ExperienceRole[] = [
     location: "India",
     current: true,
     summary:
-      "Started on Python data-acquisition pipelines and moved onto Quantis, an enterprise performance management platform, owning backend services and frontend modules across several business features.",
+      "Started on remote Python data-acquisition pipelines and moved into full-stack platform engineering across three products, owning backend services, dashboards, automated testing, security review and the crawler infrastructure that feeds them.",
     highlights: [
       {
-        headline: "Built resilient acquisition pipelines against hostile targets",
+        headline: "Built acquisition engines that survive hostile targets",
         detail:
-          "Handled URL discovery, session management, pagination, HTML parsing and data transformation for dynamic web applications, where the failure modes are rate limits, shifting markup and partial responses rather than clean errors.",
+          "High-throughput headless crawlers in Python, Playwright and asyncio, pulling structured data out of single-page applications that actively resist it. Handled cross-domain iframes, multi-location dialogs behind a \"See all\" trigger, dynamic cookie banners and chat overlays, using DOM mutation observers and network route blocking to keep pages stable long enough to read.",
       },
       {
-        headline: "Cut execution cost by redesigning connection handling",
+        headline: "Made long crawls survive their own failures",
         detail:
-          "Reworked Python connection pooling and request-processing logic so multiple companies could be processed through a single API session, materially reducing runtime and resource consumption per acquisition run.",
+          "Offset-window, modal-driven and infinite-scroll pagination behind one interface, with bounded concurrency through semaphores, batch flushing, real-time deduplication and checkpointed resume. A run that dies at hour three restarts where it stopped instead of from zero, and pages are normalised to markdown for downstream consumption.",
       },
       {
-        headline: "Moved from scripts to a live product surface",
+        headline: "Delivered full-stack features on two live platforms",
         detail:
-          "Progressed into full-stack work on Quantis, a Flask and React performance management platform, contributing backend services, frontend modules, REST integrations and dashboard features used by real operators.",
+          "On the performance management platform: Flask services on Azure Functions, ETL aggregation, agent scorecards, pay-for-performance calculation and the React dashboards that surface them to live business operators. On the knowledge platform: FastAPI services backed by a FAISS vector index and LangChain, plus process-modelling and document workflows.",
       },
       {
-        headline: "Owned backend logic behind operational dashboards",
+        headline: "Owned debugging, test automation and security review",
         detail:
-          "Designed and optimised the services supporting performance dashboards, agent scorecards, training modules, reporting workflows and real-time metric visualisation, including diagnosis of production faults across the stack.",
+          "Diagnosed cross-stack production faults and the data edge cases that caused them. Wrote integration and API regression suites, and ran application security evaluations covering endpoint authorisation, payload sanitisation and validation boundaries.",
       },
       {
-        headline: "Ran deployments on remote Linux infrastructure",
+        headline: "Ran production workloads on remote Linux servers",
         detail:
-          "Deployed and monitored scraping services on remote Linux servers over SSH, troubleshooting runtime failures and keeping scheduled production workloads healthy.",
+          "Deployed, scheduled and monitored jobs over SSH with structured CSV and file audit logs, memory-safe browser flags for containerised Chromium, and fallback handlers so a crashed run loses no collected data.",
       },
       {
-        headline: "Worked inside a review-driven team process",
+        headline: "Worked inside a review-driven delivery process",
         detail:
-          "Collaborated through Git-based version control, code review, feature delivery, testing and production releases, which is where most of the discipline in the work above actually came from.",
+          "Git-based version control, peer code review and continuous integration. Most of the discipline above came from that loop rather than from working alone.",
       },
     ],
     stack: [
       "Python",
+      "Playwright",
+      "asyncio",
       "Flask",
+      "FastAPI",
       "React",
-      "REST APIs",
       "SQL",
+      "Azure Functions",
       "Linux / SSH",
       "Git",
     ],

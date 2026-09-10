@@ -20,11 +20,11 @@ const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 /** Each check names the section it guards and a string only that section emits. */
 const CHECKS = [
   ["hero: name", /Akshay S/],
-  ["hero: hook statement", /high-integrity distributed web platforms/],
+  ["hero: hook statement", /full-stack web applications, resilient data acquisition/],
   ["hero: terminal badge", /open_for_opportunities/],
   ["a11y: skip link", /Skip to content/],
   ["a11y: main landmark", /id="main"/],
-  ["about: heading", /Engineering under constraints/],
+  ["about: heading", /Building software that holds up/],
   ["skills: proficiency legend", /Proficient/],
   ["skills: no percentage bars", /^(?!.*aria-valuenow).*$/s],
   ["projects: archivemind", /ArchiveMind-AI/],
@@ -35,6 +35,8 @@ const CHECKS = [
   ["projects: filter group", /Filter projects by category/],
   ["projects: inspector cta", /Inspect architecture/],
   ["experience: employer", /BDSR Solutions LLP/],
+  ["experience: crawler work", /Playwright and asyncio/],
+  ["about: soft-skill cards", /Steady when things break/],
   ["certifications: issuer", /(E&amp;ICT|E&ICT) Academy, IIT Kanpur/],
   ["education: institution", /Bannari Amman Institute of Technology/],
   ["contact: email", /akkies445@gmail\.com/],

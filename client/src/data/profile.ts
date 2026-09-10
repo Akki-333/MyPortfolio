@@ -3,14 +3,10 @@ import type { ContactChannel, NavItem } from "@/types";
 /** Identity and hero copy. Single source for anything naming the owner. */
 export const profile = {
   name: "Akshay S",
-  headline: "Full-Stack & Systems Engineer",
-  /** Cycled by the hero role rotator. Kept short enough to avoid reflow. */
-  roles: [
-    "Full-Stack & Systems Engineer",
-    "Applied AI & GraphRAG Specialist",
-    "Data Solutions Architect",
-  ],
-  hook: "Building high-integrity distributed web platforms, enterprise GraphRAG intelligence systems, and deterministic data extraction pipelines. Focused on clean architecture, AST-enforced boundaries, and production performance.",
+  headline: "Software Developer",
+  /** Cycled by the hero role rotator. Two entries, both plainly accurate. */
+  roles: ["Software Developer", "Full-Stack Developer"],
+  hook: "I build full-stack web applications, resilient data acquisition pipelines, and applied retrieval systems. Most of my work sits where clean architecture meets messy production reality, and has to stay correct when inputs, networks and third-party interfaces stop cooperating.",
   location: "India",
   availability: "Open to opportunities",
   resumePath: "/Akshay_DS_Updated.pdf",
@@ -64,12 +60,13 @@ export const contactChannels: readonly ContactChannel[] = [
 ];
 
 /**
- * Facts rendered in the About stat strip. Values are short by design so the
- * grid never wraps into a second line at 375px.
+ * Facts rendered in the About stat strip. Tiles are equal height and values
+ * are free to wrap, so keep these to three words or so; anything longer
+ * pushes the row taller than the paragraph it sits under.
  */
 export const aboutStats = [
-  { label: "Production role", value: "BDSR Solutions LLP" },
-  { label: "Flagship systems", value: "2 shipped" },
-  { label: "Degree", value: "B.E. CSE" },
+  { label: "Role", value: "Software Developer" },
+  { label: "Company", value: "BDSR Solutions LLP" },
+  { label: "Education", value: "B.E. CSE" },
   { label: "Languages", value: "English, Tamil" },
 ] as const;

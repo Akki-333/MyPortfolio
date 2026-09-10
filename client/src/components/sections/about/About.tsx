@@ -1,23 +1,28 @@
-import { Boxes, GitBranch, ShieldCheck } from "lucide-react";
+import { Compass, MessagesSquare, Wrench } from "lucide-react";
 import { SectionWrapper } from "@/components/layout/SectionWrapper";
 import { aboutStats } from "@/data/profile";
 import { useReveal } from "@/hooks/useReveal";
 
-const principles = [
+/**
+ * How I work, rather than what I know. The technical evidence lives in the
+ * projects and experience sections; these three are the things a teammate
+ * would notice in the first fortnight.
+ */
+const strengths = [
   {
-    Icon: Boxes,
-    title: "Boundaries before features",
-    body: "Layers are decided up front and then enforced mechanically. In PaperMint a custom AST linter fails the build when a domain module imports presentation code, because a convention nobody can check is not a boundary.",
+    Icon: Compass,
+    title: "Steady when things break",
+    body: "Production problems are usually ambiguous before they are urgent. I reproduce first, narrow the surface, then fix the cause instead of the symptom. Panic makes debugging slower, so I try not to.",
   },
   {
-    Icon: ShieldCheck,
-    title: "Fail loudly, fail early",
-    body: "Configuration is validated at startup, not at the first request that happens to need it. A service that refuses to boot on a bad config is far cheaper to debug than one that degrades silently under traffic.",
+    Icon: MessagesSquare,
+    title: "Clear over clever",
+    body: "In a review, a handover or a status update, I aim for the version someone can disagree with. Naming the tradeoff and what I am unsure about gets to a good decision faster than sounding certain.",
   },
   {
-    Icon: GitBranch,
-    title: "Tests that do not depend on the world",
-    body: "Suites run without network access, using synthetic fixtures generated in memory. That keeps them deterministic on any machine and makes a red build mean something.",
+    Icon: Wrench,
+    title: "Learns by taking things apart",
+    body: "Most of what I know came from reading how something works underneath and rebuilding it. Unfamiliar stacks and inherited codebases are the part of the job I look forward to.",
   },
 ];
 
@@ -29,36 +34,45 @@ export function About() {
     <SectionWrapper
       id="about"
       eyebrow="About"
-      title="Engineering under constraints"
-      description="Computer Science engineer working across full-stack delivery, applied AI retrieval and data extraction. The common thread is systems that stay correct when the inputs stop cooperating."
+      title="Building software that holds up"
+      description="Computer Science engineer working across full-stack web development, resilient data acquisition and applied retrieval systems. The through-line is software that stays correct when inputs, networks and third-party interfaces stop cooperating."
     >
       <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
         <div ref={proseRef} className="reveal space-y-5">
           <p className="text-base leading-relaxed text-slate-700">
-            Most of my work sits where the clean abstraction meets messy
-            reality: a scraper against a site that changes its markup, a
-            bibliography split across a page break, a booking table two people
-            are trying to claim at the same instant. Those are the cases that
-            decide whether a system holds.
+            Most of my work sits at the boundary where a clean abstraction meets
+            a system that will not cooperate. A crawler against a page that
+            rewrites its own DOM, hides listings behind a dialog and throws up a
+            consent banner mid-run. A performance dashboard where metrics, live
+            state and authorisation rules all have to agree before a number is
+            safe to show. A parsing pipeline defending its schema against text
+            that arrives broken.
           </p>
           <p className="text-base leading-relaxed text-slate-700">
             At{" "}
             <span className="font-semibold text-slate-900">
               BDSR Solutions LLP
             </span>{" "}
-            I started on Python acquisition pipelines and moved onto Quantis, a
-            Flask and React performance management platform. Redesigning
-            connection pooling so multiple companies could share a single API
-            session cut runtime and resource use materially, and taught me more
-            about production behaviour than any amount of local benchmarking.
+            I started on remote Linux data-acquisition work and moved into
+            platform engineering. That has meant Flask services and React
+            dashboards for performance management, FastAPI and vector search on
+            a knowledge platform, a layered settlement API, and the asynchronous
+            crawler infrastructure feeding all of it. Alongside the features:
+            regression suites, security review and the production debugging that
+            comes with a live product.
           </p>
           <p className="text-base leading-relaxed text-slate-700">
-            Outside that role I build retrieval and extraction systems.
-            ArchiveMind-AI composes lexical, vector and graph search into one
-            pipeline with verifiable citations. PaperMint turns hostile
-            document input into validated bibliographic records behind four
-            statically enforced layers. Both are built the same way: decide the
-            invariants first, then make the tooling defend them.
+            Outside work I build retrieval and document systems.
+            ArchiveMind-AI combines lexical, vector and graph search into one
+            pipeline where every answer carries the source that supports it.
+            PaperMint turns messy document input into validated bibliographic
+            records behind four statically enforced layers.
+          </p>
+          <p className="text-base leading-relaxed text-slate-700">
+            The approach stays the same across all of it. Decide the data
+            invariants before writing the feature, put error boundaries where
+            things actually fail, and let tests and runtime monitors prove the
+            system works rather than asserting it.
           </p>
 
           <dl
@@ -82,8 +96,8 @@ export function About() {
         </div>
 
         <ul className="space-y-4">
-          {principles.map(({ Icon, title, body }, index) => (
-            <PrincipleCard
+          {strengths.map(({ Icon, title, body }, index) => (
+            <StrengthCard
               key={title}
               Icon={Icon}
               title={title}
@@ -97,14 +111,14 @@ export function About() {
   );
 }
 
-interface PrincipleCardProps {
-  Icon: typeof Boxes;
+interface StrengthCardProps {
+  Icon: typeof Compass;
   title: string;
   body: string;
   delayMs: number;
 }
 
-function PrincipleCard({ Icon, title, body, delayMs }: PrincipleCardProps) {
+function StrengthCard({ Icon, title, body, delayMs }: StrengthCardProps) {
   const ref = useReveal<HTMLLIElement>(delayMs);
 
   return (

@@ -24,7 +24,7 @@ export const projects: readonly Project[] = [
     flagship: true,
     cover: archivemindCover,
     coverAlt:
-      "Knowledge graph nodes linked to a vector index feeding a retrieval pipeline",
+      "Document chunks feeding a vector index and a knowledge graph, converging on an answer card that carries a citation",
     summary:
       "A knowledge-graph augmented retrieval platform that unifies Pinecone semantic embeddings with Neo4j graph traversal across a five-stage pipeline, streaming answers with verifiable citations.",
     overview: [
@@ -120,7 +120,7 @@ export const projects: readonly Project[] = [
     flagship: true,
     cover: papermintCover,
     coverAlt:
-      "Layered document extraction pipeline converting scanned pages into structured citation records",
+      "A scanned page with broken hyphenated text passing through a repair stage and emerging as validated citation records",
     summary:
       "A high-throughput bibliographic extraction engine that ingests PDF, Word, PowerPoint and scanned image documents behind a four-layer architecture, with static enforcement of its own layer boundaries.",
     overview: [
@@ -215,7 +215,7 @@ export const projects: readonly Project[] = [
     flagship: false,
     cover: stayAndDineCover,
     coverAlt:
-      "Interactive restaurant floor plan with reserved and available tables beside a booking panel",
+      "A restaurant floor plan with one table selected, beside a pre-arrival order card showing live nutritional totals",
     summary:
       "A hospitality booking engine with an interactive 2D floor plan, pre-arrival menu ordering with live nutritional totals, and a decoupled two-cloud deployment backed by a distributed database.",
     overview: [
@@ -316,7 +316,7 @@ export const projects: readonly Project[] = [
     flagship: false,
     cover: equityCover,
     coverAlt:
-      "Equity price series with a rolling trend band and a forecast horizon projected beyond the last observation",
+      "Candlestick price history with a rolling trend line, a forecast cone beyond the last observation, and error metric readouts",
     summary:
       "An end-to-end econometric and deep-learning forecasting workflow that cleans noisy equity feeds, derives rolling technical indicators, and scores multi-step horizons against explicit error benchmarks.",
     overview: [
@@ -404,7 +404,7 @@ export const projects: readonly Project[] = [
     flagship: false,
     cover: captioningCover,
     coverAlt:
-      "Grid of image tiles with bounding boxes feeding tokenised caption records",
+      "Annotated image tiles with bounding boxes resolving into tokenised caption records, one flagged as unmatched",
     summary:
       "A preprocessing and captioning workflow over high-volume COCO image-text pairs, with structured annotation validation, caption tokenisation and pipeline diagnostics.",
     overview: [

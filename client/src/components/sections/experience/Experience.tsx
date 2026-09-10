@@ -10,8 +10,8 @@ export function Experience() {
     <SectionWrapper
       id="experience"
       eyebrow="Experience"
-      title="Production track record"
-      description="Where the engineering habits came from: shipping into a live product, on someone else's deadline, with real users on the other side."
+      title="From data pipelines to platform engineering"
+      description="Where the habits came from: shipping into live products, on someone else's deadline, with real operators on the other side."
       tinted
     >
       <ol className="space-y-6">
