@@ -1,0 +1,128 @@
+/**
+ * Glassmorphism surfaces and shared component utilities.
+ *
+ * `backdrop-filter` is expensive: it forces the compositor to re-sample
+ * everything behind the element on each frame it changes. It is applied to
+ * exactly two surfaces here - the navbar and the modal scrim - both of which
+ * are small, fixed-position and do not animate their blur radius. Cards use a
+ * translucent background with no blur, which reads the same over a soft canvas
+ * and costs nothing to scroll.
+ */
+
+.glass-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  box-shadow: var(--glass-shadow);
+  transition:
+    transform var(--duration) var(--ease-out),
+    box-shadow var(--duration) var(--ease-out),
+    border-color var(--duration) var(--ease-out);
+  will-change: auto;
+}
+
+.glass-card-interactive:hover {
+  transform: translate3d(0, -4px, 0);
+  box-shadow: var(--glass-shadow-hover);
+  border-color: var(--glass-border-hover);
+}
+
+.glass-card-interactive:focus-within {
+  border-color: var(--glass-border-hover);
+  box-shadow: var(--glass-shadow-hover);
+}
+
+/* The only two blurred surfaces in the application. */
+.glass-bar {
+  background: rgb(255 255 255 / 0.85);
+  backdrop-filter: blur(14px) saturate(150%);
+  -webkit-backdrop-filter: blur(14px) saturate(150%);
+}
+
+.glass-scrim {
+  background: rgb(15 23 42 / 0.32);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+/**
+ * Page canvas. Painted on a fixed pseudo-element rather than the body so the
+ * gradient and dot matrix never repaint while the document scrolls.
+ */
+.page-canvas {
+  position: relative;
+  isolation: isolate;
+}
+
+.page-canvas::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    radial-gradient(circle at 1px 1px, rgb(2 132 199 / 0.09) 1px, transparent 0),
+    linear-gradient(
+      to bottom,
+      rgb(240 249 255 / 0.7) 0%,
+      #ffffff 42%,
+      rgb(224 242 254 / 0.5) 100%
+    );
+  background-size: 26px 26px, 100% 100%;
+}
+
+/* Focus ring. One definition, used by every interactive element. */
+.focus-ring:focus-visible {
+  outline: 2px solid var(--sky-600);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* Skip link: visible only when focused. */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -100%;
+  z-index: 100;
+  padding: 0.75rem 1.25rem;
+  background: var(--accent-solid);
+  color: #ffffff;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  transition: top 200ms var(--ease-out);
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* Reveal-on-scroll. The observer adds `.is-visible`, then disconnects. */
+.reveal {
+  opacity: 0;
+  transform: translate3d(0, 14px, 0);
+}
+
+.reveal.is-visible {
+  animation: rise-in 620ms var(--ease-out) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+
+  .glass-card-interactive:hover {
+    transform: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

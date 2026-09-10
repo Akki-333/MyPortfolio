@@ -1,0 +1,64 @@
+/**
+ * Design tokens: "Sky Blue & Pure White Glass".
+ *
+ * Contrast note. Sky-600 (#0284c7) measures 4.09:1 against white, which clears
+ * WCAG AA for large text (3:1) but not for body text (4.5:1). So sky-600 is a
+ * decorative accent only - rings, borders, icon fills, display type - and
+ * sky-700 (#0369a1, 5.93:1 on white, 5.93:1 inverted) carries every small
+ * label, link and solid button. Metadata uses slate-600 (7.1:1 on the tinted
+ * canvas) rather than slate-500, which drops to 4.47:1 over sky-50.
+ */
+:root {
+  /* Brand ramp */
+  --sky-50: #f0f9ff;
+  --sky-100: #e0f2fe;
+  --sky-200: #bae6fd;
+  --sky-300: #7dd3fc;
+  --sky-400: #38bdf8;
+  --sky-500: #0ea5e9;
+  --sky-600: #0284c7;
+  --sky-700: #0369a1;
+  --sky-800: #075985;
+  --cyan-500: #06b6d4;
+
+  /* Ink ramp */
+  --slate-900: #0f172a;
+  --slate-700: #334155;
+  --slate-600: #475569;
+  --slate-500: #64748b;
+
+  /* Semantic roles */
+  --surface: #ffffff;
+  --surface-muted: var(--sky-50);
+  --ink-strong: var(--slate-900);
+  --ink-body: var(--slate-700);
+  --ink-meta: var(--slate-600);
+  --accent: var(--sky-600);
+  --accent-text: var(--sky-700);
+  --accent-solid: var(--sky-700);
+  --accent-solid-hover: var(--sky-800);
+  --hairline: var(--sky-100);
+  --hairline-strong: var(--sky-200);
+
+  /* Glass elevation */
+  --glass-bg: rgb(255 255 255 / 0.82);
+  --glass-border: var(--sky-100);
+  --glass-border-hover: var(--sky-300);
+  --glass-shadow: 0 1px 2px rgb(15 23 42 / 0.04), 0 4px 16px rgb(2 132 199 / 0.06);
+  --glass-shadow-hover: 0 2px 4px rgb(15 23 42 / 0.05), 0 12px 32px rgb(2 132 199 / 0.12);
+
+  /* Geometry & motion */
+  --radius: 0.875rem;
+  --radius-sm: 0.5rem;
+  --radius-lg: 1.25rem;
+  --nav-height: 4rem;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration: 300ms;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, "SF Mono",
+    Menlo, Consolas, "Liberation Mono", monospace;
+
+  color-scheme: light;
+}
