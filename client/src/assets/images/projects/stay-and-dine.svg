@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Interactive restaurant floor plan with reserved and available tables beside a booking panel">
+  <defs>
+    <linearGradient id="sd-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f0f9ff"/><stop offset="60%" stop-color="#ffffff"/><stop offset="100%" stop-color="#e0f2fe"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#sd-bg)"/>
+  <rect x="48" y="48" width="452" height="354" rx="18" fill="#ffffff" stroke="#bae6fd" stroke-width="2"/>
+  <g stroke="#e0f2fe" stroke-width="1.5">
+    <path d="M48 136h452M48 224h452M48 312h452M166 48v354M284 48v354M402 48v354"/>
+  </g>
+  <g>
+    <circle cx="107" cy="92" r="26" fill="#0284c7"/><circle cx="107" cy="92" r="9" fill="#ffffff" opacity="0.5"/>
+    <circle cx="225" cy="92" r="26" fill="#ffffff" stroke="#7dd3fc" stroke-width="3"/>
+    <rect x="317" y="66" width="52" height="52" rx="10" fill="#ffffff" stroke="#7dd3fc" stroke-width="3"/>
+    <rect x="435" y="66" width="52" height="52" rx="10" fill="#0ea5e9"/>
+    <circle cx="107" cy="180" r="26" fill="#ffffff" stroke="#7dd3fc" stroke-width="3"/>
+    <rect x="199" y="154" width="52" height="52" rx="10" fill="#06b6d4"/>
+    <circle cx="343" cy="180" r="26" fill="#ffffff" stroke="#7dd3fc" stroke-width="3"/>
+    <circle cx="461" cy="180" r="26" fill="#ffffff" stroke="#7dd3fc" stroke-width="3"/>
+    <rect x="81" y="242" width="52" height="52" rx="10" fill="#ffffff" stroke="#7dd3fc" stroke-width="3"/>
+    <circle cx="225" cy="268" r="26" fill="#0284c7"/><circle cx="225" cy="268" r="9" fill="#ffffff" opacity="0.5"/>
+    <circle cx="343" cy="268" r="26" fill="#ffffff" stroke="#7dd3fc" stroke-width="3"/>
+    <rect x="435" y="242" width="52" height="52" rx="10" fill="#ffffff" stroke="#7dd3fc" stroke-width="3"/>
+    <rect x="70" y="336" width="140" height="42" rx="10" fill="#e0f2fe"/>
+    <rect x="240" y="336" width="106" height="42" rx="10" fill="#e0f2fe"/>
+    <rect x="376" y="336" width="106" height="42" rx="10" fill="#e0f2fe"/>
+  </g>
+  <g>
+    <rect x="540" y="48" width="212" height="354" rx="18" fill="#ffffff" stroke="#bae6fd" stroke-width="2"/>
+    <rect x="564" y="76" width="100" height="10" rx="5" fill="#0f172a"/>
+    <rect x="564" y="98" width="150" height="8" rx="4" fill="#94a3b8"/>
+    <rect x="564" y="128" width="164" height="52" rx="10" fill="#f0f9ff" stroke="#bae6fd" stroke-width="1.5"/>
+    <circle cx="590" cy="154" r="12" fill="#0ea5e9"/>
+    <rect x="612" y="144" width="88" height="8" rx="4" fill="#334155"/><rect x="612" y="159" width="54" height="7" rx="3.5" fill="#94a3b8"/>
+    <rect x="564" y="192" width="164" height="52" rx="10" fill="#f0f9ff" stroke="#bae6fd" stroke-width="1.5"/>
+    <circle cx="590" cy="218" r="12" fill="#06b6d4"/>
+    <rect x="612" y="208" width="70" height="8" rx="4" fill="#334155"/><rect x="612" y="223" width="88" height="7" rx="3.5" fill="#94a3b8"/>
+    <rect x="564" y="256" width="164" height="52" rx="10" fill="#f0f9ff" stroke="#bae6fd" stroke-width="1.5"/>
+    <circle cx="590" cy="282" r="12" fill="#0284c7"/>
+    <rect x="612" y="272" width="96" height="8" rx="4" fill="#334155"/><rect x="612" y="287" width="46" height="7" rx="3.5" fill="#94a3b8"/>
+    <rect x="564" y="330" width="164" height="44" rx="11" fill="#0284c7"/>
+    <rect x="608" y="348" width="76" height="9" rx="4.5" fill="#ffffff"/>
+  </g>
+</svg>

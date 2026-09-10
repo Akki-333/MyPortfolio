@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Equity price series with a rolling trend band and a forecast horizon projected beyond the last observation">
+  <defs>
+    <linearGradient id="eq-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f0f9ff"/><stop offset="60%" stop-color="#ffffff"/><stop offset="100%" stop-color="#e0f2fe"/>
+    </linearGradient>
+    <linearGradient id="eq-fill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0ea5e9" stop-opacity="0.28"/><stop offset="100%" stop-color="#0ea5e9" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#eq-bg)"/>
+  <g stroke="#bae6fd" stroke-width="1.25">
+    <path d="M64 86h672M64 166h672M64 246h672M64 326h672"/>
+  </g>
+  <path d="M64 380 L64 60" stroke="#94a3b8" stroke-width="2"/>
+  <path d="M64 380 L736 380" stroke="#94a3b8" stroke-width="2"/>
+  <path d="M64 318 L128 296 L192 322 L256 256 L320 274 L384 208 L448 232 L512 168 L512 380 L64 380 Z" fill="url(#eq-fill)"/>
+  <path d="M64 318 L128 296 L192 322 L256 256 L320 274 L384 208 L448 232 L512 168" fill="none" stroke="#0284c7" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M512 168 L576 186 L640 140 L704 156" fill="none" stroke="#06b6d4" stroke-width="4" stroke-dasharray="10 9" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M512 168 L576 152 L640 100 L704 108 L704 204 L640 180 L576 220 Z" fill="#06b6d4" opacity="0.16"/>
+  <g fill="#ffffff" stroke="#0284c7" stroke-width="3.5">
+    <circle cx="256" cy="256" r="7"/><circle cx="384" cy="208" r="7"/><circle cx="512" cy="168" r="8.5"/>
+  </g>
+  <path d="M512 60 L512 380" stroke="#0f172a" stroke-width="1.75" stroke-dasharray="5 6" opacity="0.45"/>
+  <g>
+    <rect x="86" y="76" width="146" height="30" rx="8" fill="#ffffff" stroke="#bae6fd" stroke-width="1.5"/>
+    <rect x="100" y="87" width="8" height="8" rx="2" fill="#0284c7"/>
+    <rect x="116" y="87" width="46" height="8" rx="4" fill="#334155"/>
+    <rect x="174" y="87" width="44" height="8" rx="4" fill="#94a3b8"/>
+  </g>
+  <g fill="#0f172a">
+    <rect x="88" y="406" width="86" height="20" rx="10" opacity="0.08"/>
+    <rect x="196" y="406" width="112" height="20" rx="10" opacity="0.08"/>
+    <rect x="330" y="406" width="94" height="20" rx="10" opacity="0.08"/>
+  </g>
+  <g fill="#0284c7">
+    <rect x="88" y="406" width="86" height="20" rx="10" opacity="0.85"/>
+    <rect x="196" y="406" width="112" height="20" rx="10" opacity="0.55"/>
+    <rect x="330" y="406" width="94" height="20" rx="10" opacity="0.35"/>
+  </g>
+</svg>
