@@ -1,50 +1,80 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Layered document extraction pipeline converting scanned pages into structured citation records">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="A scanned page with broken hyphenated text passing through a repair stage and emerging as validated citation records">
   <defs>
     <linearGradient id="pm-bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#ecfeff"/><stop offset="50%" stop-color="#ffffff"/><stop offset="100%" stop-color="#e0f2fe"/>
+      <stop offset="0%" stop-color="#f0fdfa"/><stop offset="55%" stop-color="#ffffff"/><stop offset="100%" stop-color="#ccfbf1"/>
     </linearGradient>
   </defs>
+
   <rect width="800" height="450" fill="url(#pm-bg)"/>
-  <g stroke="#bae6fd" stroke-width="1" opacity="0.7">
-    <path d="M0 112h800M0 225h800M0 338h800"/>
+  <g stroke="#99f6e4" stroke-width="1.25" opacity="0.6">
+    <path d="M0 118h800M0 332h800"/>
   </g>
-  <g>
-    <rect x="70" y="126" width="132" height="176" rx="10" fill="#ffffff" stroke="#7dd3fc" stroke-width="2" transform="rotate(-7 136 214)"/>
-    <rect x="88" y="112" width="132" height="176" rx="10" fill="#ffffff" stroke="#38bdf8" stroke-width="2.5"/>
+
+  <!-- Scanned input: skewed, ragged lines, one broken word flagged in amber -->
+  <g transform="rotate(-5 132 225)">
+    <rect x="52" y="112" width="160" height="212" rx="10" fill="#ffffff" stroke="#5eead4" stroke-width="2"/>
+    <rect x="70" y="132" width="96" height="8" rx="4" fill="#64748b"/>
     <g fill="#cbd5e1">
-      <rect x="106" y="136" width="96" height="8" rx="4"/><rect x="106" y="154" width="78" height="8" rx="4"/>
-      <rect x="106" y="172" width="90" height="8" rx="4"/><rect x="106" y="190" width="62" height="8" rx="4"/>
-      <rect x="106" y="216" width="96" height="8" rx="4"/><rect x="106" y="234" width="70" height="8" rx="4"/>
-      <rect x="106" y="252" width="84" height="8" rx="4"/>
+      <rect x="70" y="154" width="124" height="7" rx="3.5"/>
+      <rect x="70" y="170" width="108" height="7" rx="3.5"/>
+      <rect x="70" y="202" width="118" height="7" rx="3.5"/>
+      <rect x="70" y="218" width="88" height="7" rx="3.5"/>
+      <rect x="70" y="250" width="124" height="7" rx="3.5"/>
+      <rect x="70" y="282" width="102" height="7" rx="3.5"/>
+      <rect x="70" y="298" width="70" height="7" rx="3.5"/>
     </g>
+    <!-- the hyphen break the repair stage has to undo -->
+    <rect x="66" y="182" width="86" height="14" rx="4" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+    <rect x="74" y="186" width="60" height="6" rx="3" fill="#b45309"/>
+    <rect x="140" y="186" width="7" height="3" rx="1.5" fill="#b45309"/>
+    <rect x="66" y="230" width="52" height="14" rx="4" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+    <rect x="74" y="234" width="36" height="6" rx="3" fill="#b45309"/>
   </g>
-  <g stroke="#0ea5e9" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M240 200 L308 200"/><path d="M296 190 L308 200 L296 210"/>
-    <path d="M452 200 L520 200"/><path d="M508 190 L520 200 L508 210"/>
+
+  <g stroke="#14b8a6" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M244 222 L302 222"/><path d="M291 213 L302 222 L291 231"/>
+    <path d="M470 222 L528 222"/><path d="M459 213 L470 222 L459 231"/>
   </g>
+
+  <!-- Four enforced layers -->
   <g>
-    <rect x="320" y="128" width="120" height="144" rx="14" fill="#0ea5e9"/>
-    <rect x="330" y="140" width="100" height="30" rx="7" fill="#ffffff" opacity="0.28"/>
-    <rect x="330" y="176" width="100" height="30" rx="7" fill="#ffffff" opacity="0.45"/>
-    <rect x="330" y="212" width="100" height="30" rx="7" fill="#ffffff" opacity="0.65"/>
-    <rect x="330" y="248" width="100" height="14" rx="7" fill="#ffffff" opacity="0.85"/>
+    <rect x="316" y="118" width="140" height="208" rx="14" fill="#0d9488"/>
+    <rect x="330" y="134" width="112" height="40" rx="8" fill="#ffffff" opacity="0.2"/>
+    <rect x="344" y="150" width="60" height="7" rx="3.5" fill="#ffffff" opacity="0.75"/>
+    <rect x="330" y="182" width="112" height="40" rx="8" fill="#ffffff" opacity="0.34"/>
+    <rect x="344" y="198" width="76" height="7" rx="3.5" fill="#ffffff" opacity="0.8"/>
+    <rect x="330" y="230" width="112" height="40" rx="8" fill="#ffffff" opacity="0.5"/>
+    <rect x="344" y="246" width="52" height="7" rx="3.5" fill="#ffffff" opacity="0.9"/>
+    <rect x="330" y="278" width="112" height="34" rx="8" fill="#ffffff" opacity="0.7"/>
+    <rect x="344" y="291" width="68" height="7" rx="3.5" fill="#0f766e"/>
   </g>
+
+  <!-- Validated records -->
   <g>
-    <rect x="532" y="104" width="196" height="60" rx="11" fill="#ffffff" stroke="#bae6fd" stroke-width="2"/>
-    <rect x="548" y="122" width="10" height="10" rx="3" fill="#06b6d4"/>
-    <rect x="568" y="122" width="106" height="8" rx="4" fill="#334155"/>
-    <rect x="568" y="140" width="72" height="7" rx="3.5" fill="#94a3b8"/>
-    <rect x="532" y="176" width="196" height="60" rx="11" fill="#ffffff" stroke="#bae6fd" stroke-width="2"/>
-    <rect x="548" y="194" width="10" height="10" rx="3" fill="#06b6d4"/>
-    <rect x="568" y="194" width="122" height="8" rx="4" fill="#334155"/>
-    <rect x="568" y="212" width="60" height="7" rx="3.5" fill="#94a3b8"/>
-    <rect x="532" y="248" width="196" height="60" rx="11" fill="#ffffff" stroke="#bae6fd" stroke-width="2"/>
-    <rect x="548" y="266" width="10" height="10" rx="3" fill="#06b6d4"/>
-    <rect x="568" y="266" width="92" height="8" rx="4" fill="#334155"/>
-    <rect x="568" y="284" width="86" height="7" rx="3.5" fill="#94a3b8"/>
+    <rect x="540" y="112" width="216" height="62" rx="12" fill="#ffffff" stroke="#5eead4" stroke-width="2"/>
+    <circle cx="566" cy="143" r="11" fill="#ccfbf1"/>
+    <path d="M561 143 l4 4 l7 -8" stroke="#0d9488" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="588" y="131" width="118" height="8" rx="4" fill="#334155"/>
+    <rect x="588" y="148" width="74" height="7" rx="3.5" fill="#94a3b8"/>
+
+    <rect x="540" y="188" width="216" height="62" rx="12" fill="#ffffff" stroke="#5eead4" stroke-width="2"/>
+    <circle cx="566" cy="219" r="11" fill="#ccfbf1"/>
+    <path d="M561 219 l4 4 l7 -8" stroke="#0d9488" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="588" y="207" width="136" height="8" rx="4" fill="#334155"/>
+    <rect x="588" y="224" width="60" height="7" rx="3.5" fill="#94a3b8"/>
+
+    <rect x="540" y="264" width="216" height="62" rx="12" fill="#ffffff" stroke="#5eead4" stroke-width="2"/>
+    <circle cx="566" cy="295" r="11" fill="#ccfbf1"/>
+    <path d="M561 295 l4 4 l7 -8" stroke="#0d9488" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="588" y="283" width="104" height="8" rx="4" fill="#334155"/>
+    <rect x="588" y="300" width="92" height="7" rx="3.5" fill="#94a3b8"/>
   </g>
-  <g fill="#0284c7">
-    <rect x="88" y="342" width="90" height="24" rx="12"/><rect x="192" y="342" width="118" height="24" rx="12" opacity="0.6"/>
-    <rect x="324" y="342" width="104" height="24" rx="12" opacity="0.4"/><rect x="442" y="342" width="76" height="24" rx="12" opacity="0.25"/>
+
+  <!-- Format lanes the engine accepts -->
+  <g>
+    <rect x="60" y="360" width="72" height="26" rx="13" fill="#0d9488"/>
+    <rect x="142" y="360" width="86" height="26" rx="13" fill="#14b8a6"/>
+    <rect x="238" y="360" width="80" height="26" rx="13" fill="#5eead4"/>
+    <rect x="328" y="360" width="98" height="26" rx="13" fill="#99f6e4"/>
   </g>
 </svg>

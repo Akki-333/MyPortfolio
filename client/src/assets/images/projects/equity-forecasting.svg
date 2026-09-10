@@ -1,40 +1,65 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Equity price series with a rolling trend band and a forecast horizon projected beyond the last observation">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Candlestick price history with a rolling trend line, a forecast cone beyond the last observation, and error metric readouts">
   <defs>
     <linearGradient id="eq-bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#f0f9ff"/><stop offset="60%" stop-color="#ffffff"/><stop offset="100%" stop-color="#e0f2fe"/>
+      <stop offset="0%" stop-color="#f8fafc"/><stop offset="55%" stop-color="#ffffff"/><stop offset="100%" stop-color="#ecfdf5"/>
     </linearGradient>
-    <linearGradient id="eq-fill" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#0ea5e9" stop-opacity="0.28"/><stop offset="100%" stop-color="#0ea5e9" stop-opacity="0"/>
+    <linearGradient id="eq-cone" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#059669" stop-opacity="0.26"/><stop offset="100%" stop-color="#059669" stop-opacity="0.04"/>
     </linearGradient>
   </defs>
+
   <rect width="800" height="450" fill="url(#eq-bg)"/>
-  <g stroke="#bae6fd" stroke-width="1.25">
-    <path d="M64 86h672M64 166h672M64 246h672M64 326h672"/>
+
+  <!-- plot frame -->
+  <g stroke="#e2e8f0" stroke-width="1.25">
+    <path d="M72 108h664M72 176h664M72 244h664M72 312h664"/>
   </g>
-  <path d="M64 380 L64 60" stroke="#94a3b8" stroke-width="2"/>
-  <path d="M64 380 L736 380" stroke="#94a3b8" stroke-width="2"/>
-  <path d="M64 318 L128 296 L192 322 L256 256 L320 274 L384 208 L448 232 L512 168 L512 380 L64 380 Z" fill="url(#eq-fill)"/>
-  <path d="M64 318 L128 296 L192 322 L256 256 L320 274 L384 208 L448 232 L512 168" fill="none" stroke="#0284c7" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M512 168 L576 186 L640 140 L704 156" fill="none" stroke="#06b6d4" stroke-width="4" stroke-dasharray="10 9" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M512 168 L576 152 L640 100 L704 108 L704 204 L640 180 L576 220 Z" fill="#06b6d4" opacity="0.16"/>
-  <g fill="#ffffff" stroke="#0284c7" stroke-width="3.5">
-    <circle cx="256" cy="256" r="7"/><circle cx="384" cy="208" r="7"/><circle cx="512" cy="168" r="8.5"/>
+  <path d="M72 60 L72 356" stroke="#94a3b8" stroke-width="2"/>
+  <path d="M72 356 L736 356" stroke="#94a3b8" stroke-width="2"/>
+
+  <!-- candlesticks: green up, rose down -->
+  <g stroke-width="2.5" stroke-linecap="round">
+    <g stroke="#059669" fill="#059669">
+      <path d="M104 300 L104 250"/><rect x="97" y="262" width="15" height="30" rx="2.5" stroke="none"/>
+      <path d="M164 288 L164 226"/><rect x="157" y="238" width="15" height="38" rx="2.5" stroke="none"/>
+      <path d="M284 262 L284 194"/><rect x="277" y="206" width="15" height="44" rx="2.5" stroke="none"/>
+      <path d="M404 224 L404 158"/><rect x="397" y="170" width="15" height="42" rx="2.5" stroke="none"/>
+      <path d="M464 208 L464 140"/><rect x="457" y="152" width="15" height="44" rx="2.5" stroke="none"/>
+    </g>
+    <g stroke="#e11d48" fill="#ffffff">
+      <path d="M224 292 L224 232"/><rect x="217" y="244" width="15" height="36" rx="2.5"/>
+      <path d="M344 250 L344 184"/><rect x="337" y="196" width="15" height="40" rx="2.5"/>
+    </g>
   </g>
-  <path d="M512 60 L512 380" stroke="#0f172a" stroke-width="1.75" stroke-dasharray="5 6" opacity="0.45"/>
+
+  <!-- rolling trend line over the history -->
+  <path d="M104 278 L164 258 L224 264 L284 228 L344 218 L404 190 L464 172"
+        fill="none" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.42"/>
+
+  <!-- forecast horizon -->
+  <path d="M492 172 L560 150 L628 116 L700 122 L700 214 L628 196 L560 200 Z" fill="url(#eq-cone)"/>
+  <path d="M492 172 L560 176 L628 150 L700 166" fill="none" stroke="#059669" stroke-width="3.5"
+        stroke-dasharray="10 8" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#ffffff" stroke="#059669" stroke-width="3">
+    <circle cx="560" cy="176" r="6"/><circle cx="628" cy="150" r="6"/><circle cx="700" cy="166" r="6.5"/>
+  </g>
+
+  <path d="M492 60 L492 356" stroke="#0f172a" stroke-width="1.75" stroke-dasharray="5 6" opacity="0.4"/>
+  <rect x="452" y="66" width="80" height="22" rx="11" fill="#0f172a" opacity="0.82"/>
+  <rect x="468" y="74" width="48" height="6" rx="3" fill="#ffffff" opacity="0.9"/>
+
+  <!-- error metric readouts -->
   <g>
-    <rect x="86" y="76" width="146" height="30" rx="8" fill="#ffffff" stroke="#bae6fd" stroke-width="1.5"/>
-    <rect x="100" y="87" width="8" height="8" rx="2" fill="#0284c7"/>
-    <rect x="116" y="87" width="46" height="8" rx="4" fill="#334155"/>
-    <rect x="174" y="87" width="44" height="8" rx="4" fill="#94a3b8"/>
-  </g>
-  <g fill="#0f172a">
-    <rect x="88" y="406" width="86" height="20" rx="10" opacity="0.08"/>
-    <rect x="196" y="406" width="112" height="20" rx="10" opacity="0.08"/>
-    <rect x="330" y="406" width="94" height="20" rx="10" opacity="0.08"/>
-  </g>
-  <g fill="#0284c7">
-    <rect x="88" y="406" width="86" height="20" rx="10" opacity="0.85"/>
-    <rect x="196" y="406" width="112" height="20" rx="10" opacity="0.55"/>
-    <rect x="330" y="406" width="94" height="20" rx="10" opacity="0.35"/>
+    <rect x="72" y="382" width="150" height="36" rx="9" fill="#ffffff" stroke="#a7f3d0" stroke-width="1.75"/>
+    <rect x="88" y="396" width="34" height="8" rx="4" fill="#047857"/>
+    <rect x="132" y="396" width="70" height="8" rx="4" fill="#cbd5e1"/>
+
+    <rect x="234" y="382" width="150" height="36" rx="9" fill="#ffffff" stroke="#a7f3d0" stroke-width="1.75"/>
+    <rect x="250" y="396" width="42" height="8" rx="4" fill="#047857"/>
+    <rect x="302" y="396" width="60" height="8" rx="4" fill="#cbd5e1"/>
+
+    <rect x="396" y="382" width="150" height="36" rx="9" fill="#ffffff" stroke="#a7f3d0" stroke-width="1.75"/>
+    <rect x="412" y="396" width="30" height="8" rx="4" fill="#047857"/>
+    <rect x="452" y="396" width="76" height="8" rx="4" fill="#cbd5e1"/>
   </g>
 </svg>

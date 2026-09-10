@@ -27,7 +27,7 @@ export function ProjectCard({ project, onInspect }: ProjectCardProps) {
         The 16:9 box is declared in CSS, so the cover occupies its final size
         before the SVG paints and the grid never reflows mid-load.
       */}
-      <div className="relative aspect-video overflow-hidden border-b border-sky-100 bg-sky-50">
+      <div className="relative aspect-video overflow-hidden border-b border-sky-100 bg-white">
         <img
           src={project.cover}
           alt={project.coverAlt}
