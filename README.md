@@ -1,117 +1,141 @@
-<div align="center">
-  <h1 align="center">Hi there, I'm Akshay S 👋</h1>
-  <p align="center">
-    <strong>Software Developer</strong>
-  </p>
-  
-  <p align="center">
-    Calm and detail-oriented professional who excels under pressure and communicates with clarity and confidence. Brings strong skills in problem-solving, system design, and machine learning to create innovative solutions and efficient operations.
-  </p>
+# Akshay S — Portfolio
 
-  <p align="center">
-    <a href="https://github.com/Akki-333"><img src="https://img.shields.io/badge/GitHub-Profile-181717?style=for-the-badge&logo=github" alt="GitHub" /></a>
-    <a href="https://www.linkedin.com/in/ak445"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin" alt="LinkedIn" /></a>
-    <a href="mailto:akkies445@gmail.com"><img src="https://img.shields.io/badge/Email-Contact-EA4335?style=for-the-badge&logo=gmail" alt="Email" /></a>
-  </p>
-</div>
+Personal engineering portfolio. React 18, Vite, TypeScript and Tailwind CSS,
+deployed as a static single-page application.
+
+Live case studies for **ArchiveMind-AI** (GraphRAG document intelligence),
+**PaperMint** (multi-format citation extraction), **Stay & Dine** (full-stack
+reservation platform) and two data science builds, each opening into its
+architecture, pipeline stages, key decisions and engineering invariants.
 
 ---
 
-## 🚀 About Me
+## Stack
 
-I am a **Computer Science Engineering graduate** and Software Developer with hands-on experience building production-grade applications, scalable backend systems, and end-to-end data solutions. 
+| Layer      | Choice                                              |
+| ---------- | --------------------------------------------------- |
+| UI         | React 18, TypeScript strict, Tailwind CSS 3          |
+| Build      | Vite 5, manual vendor chunk splitting                |
+| Motion     | Framer Motion (grid layout transitions only)         |
+| Routing    | Wouter                                              |
+| Icons      | Lucide React                                        |
+| Deployment | Vercel, static output with security headers          |
 
-My work spans across full-stack development, backend engineering, web scraping, automation, REST API integration, and performance optimization. I am passionate about designing reliable, high-performance software that solves real-world business problems.
-
-Currently, at **BDSR Solutions LLP**, I've evolved by tackling complex challenges and consistently delivering efficient, data-driven solutions that elevate business operations.
-
----
-
-## 🛠️ Technical Arsenal
-
-### Languages & Frameworks
-<p>
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
-  <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
-  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
-  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js" />
-  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS" />
-  <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL" />
-</p>
-
-### Domains of Expertise
-- **Machine Learning & AI:** Deep Learning, Time Series Forecasting, Computer Vision, Image Captioning.
-- **Data Engineering:** Web Scraping, Data Extraction, Automation, Interactive Data Visualization.
-- **Architecture & Systems:** System Design, REST API Integration, Scalable Backend Systems, Performance Optimization.
+No backend. The site is content plus client-side interaction, so it ships as
+static files rather than carrying a server it does not need.
 
 ---
 
-## 🌟 Featured Projects
-
-<table bordercolor="#66b2b2">
-  <tr>
-    <td width="50%" valign="top">
-      <h3 align="center">📚 Deep Learning for Bibliographic Data Extraction</h3>
-      <br />
-      <p>A comprehensive system utilizing computer vision and NLP to automatically extract and process bibliographic information from scanned academic documents with <b>95% accuracy</b>.</p>
-      <p><strong>Stack:</strong> <code>Python</code> <code>Deep Learning</code> <code>Streamlit</code> <code>OCR</code></p>
-    </td>
-    <td width="50%" valign="top">
-      <h3 align="center">📈 Stock Market Time Series Analysis</h3>
-      <br />
-      <p>End-to-end analysis and forecasting of historical stock price data. Features intelligent cleaning, trend analysis, and model evaluation utilizing MAE, RMSE, and MAPE metrics.</p>
-      <p><strong>Stack:</strong> <code>Python</code> <code>Time Series Data</code> <code>Data Analysis</code></p>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top">
-      <h3 align="center">🖼️ Image Captioning & Data Extraction</h3>
-      <br />
-      <p>Managed large-scale COCO image datasets and performed structured annotation analysis. Developed robust Python scripts to visualize and interpret complex image-caption mappings.</p>
-      <p><strong>Stack:</strong> <code>Python</code> <code>Computer Vision</code> <code>Data Extraction</code></p>
-    </td>
-    <td width="50%" valign="top">
-      <h3 align="center">🍽️ Stay and Dine</h3>
-      <br />
-      <p>A comprehensive web-based platform streamlining restaurant reservations and dining experiences, featuring dynamic table assignment and real-time status tracking.</p>
-      <p><strong>Stack:</strong> <code>React</code> <code>Web Development</code> <code>UI/UX</code> <code>Database Design</code></p>
-    </td>
-  </tr>
-</table>
-
----
-
-## 💻 About This Portfolio Repository
-
-This repository holds the source code for my personal digital portfolio. It was meticulously designed and built natively for absolute speed and a highly premium aesthetic.
-
-- **🎨 Modern Aesthetic:** Features a custom, sleek cosmic dark gradient theme with beautiful components, typography, and interactive framer motion animations.
-- **⚡ Blazing Fast Architecture:** A pure React 18 application built natively on Vite, heavily optimized for near-instant rendering.
-- **📱 Ultra Responsive:** Designed to look flawless on every single device, from massive ultrawide monitors down to mobile screens.
-
-### Local Development
-
-Want to run this portfolio codebase locally?
+## Getting started
 
 ```bash
-# Clone the repository
-git clone https://github.com/Akki-333/PortfolioSite.git
-
-# Navigate into the directory
-cd PortfolioSite
-
-# Install dependencies
-npm install
-
-# Start the Vite development server
-npm run dev
+npm install     # install dependencies
+npm run dev     # vite dev server with HMR
+npm run check   # typecheck, render smoke test, production build
+npm run build   # production bundle into dist/
+npm run preview # serve the built bundle locally
 ```
 
 ---
 
-<div align="center">
-  <i>Let's build something amazing together! Reach out to me below.</i><br><br>
-  <a href="mailto:akkies445@gmail.com">
-    <img src="https://img.shields.io/badge/Email_Me-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
-  </a>
-</div>
+## Architecture
+
+`client/src` is organised feature-first. A section owns its components; shared
+primitives live in `common/`; content lives in `data/` and is typed by
+`types/`.
+
+```text
+client/src
+├── assets/images/projects/   # Cover diagrams, authored SVG
+├── components/
+│   ├── common/               # Button, Pill, Modal, Tabs
+│   ├── layout/               # SectionWrapper, Footer
+│   ├── navigation/           # Navbar with scroll-spy and drawer
+│   └── sections/             # hero, about, skills, projects,
+│                             # experience, certifications, contact
+├── data/                     # Typed content: single source of truth
+├── hooks/                    # useScrollSpy, useReveal, useDialog,
+│                             # useProjectFilter, useRoleRotator, useMediaQuery
+├── lib/                      # cn helper, presentation lookups
+├── styles/                   # tokens, keyframes, glass utilities
+└── types/                    # Domain models, zero `any`
+```
+
+**Content is data, not markup.** Adding a project means adding a typed record
+to `data/projects.ts`. Every field it needs is declared in `types/index.ts`, so
+an incomplete record fails `tsc` rather than rendering a blank card.
+
+---
+
+## Design system
+
+A sky-blue and white glass palette defined once in `styles/tokens.css`.
+
+Sky-600 measures **4.09:1** against white. That clears WCAG AA for large text
+but not for body copy, so it is used only as a decorative accent — rings,
+borders, icon fills — and **sky-700 (5.93:1)** carries every small label, link
+and solid button. Metadata uses slate-600 rather than slate-500, which drops to
+4.46:1 over the tinted section bands.
+
+Every colour pair in use was checked numerically. None sits below AA.
+
+---
+
+## Performance notes
+
+- **Reveal observers disconnect on first intersection.** A reveal animation can
+  only run once; leaving its observer attached wakes the main thread for the
+  rest of the session.
+- **`backdrop-filter` appears on two surfaces**, the navbar and the modal
+  scrim. Both are small, fixed and never animate their blur radius. Cards use a
+  translucent background with no blur.
+- **Animations move only `transform` and `opacity`**, so they stay on the
+  compositor and off the main thread.
+- **The page canvas is a fixed pseudo-element**, so the gradient and dot matrix
+  never repaint during scroll.
+- **Images declare intrinsic dimensions**; the hero portrait is preloaded as
+  WebP. Cumulative layout shift is zero by construction.
+- **The role rotator reserves a fixed-height box**, so the copy beneath it does
+  not jump on each swap.
+
+---
+
+## Accessibility
+
+- Skip link, one `<main>` landmark, labelled sections
+- Full keyboard support: modal focus trap, Escape to close, focus restored to
+  the trigger; tabs follow the ARIA pattern with arrow, Home and End keys
+- Filter pills expose a radio group; results announce via a live region
+- Interactive targets are at least 40px
+- `prefers-reduced-motion` disables reveals, the role rotator and layout
+  animation
+
+---
+
+## Verification
+
+```bash
+npm run check
+```
+
+Runs three gates:
+
+1. `tsc --noEmit` under `strict`, `noUncheckedIndexedAccess`, `noUnusedLocals`
+2. `scripts/smoke-render.mjs` — server-renders the page and asserts each
+   section emits the content it owns, catching render-time faults that type
+   checking cannot
+3. `vite build` — must complete with no warnings
+
+---
+
+## Deployment
+
+Vercel, from `dist/`. `vercel.json` sets a strict Content-Security-Policy
+(`script-src 'self'`, `frame-ancestors 'none'`), HSTS, `nosniff`,
+`Referrer-Policy`, a locked-down `Permissions-Policy`, and immutable caching
+for fingerprinted assets.
+
+---
+
+Built by [Akshay S](https://github.com/Akki-333) ·
+[LinkedIn](https://www.linkedin.com/in/ak445) · akkies445@gmail.com
