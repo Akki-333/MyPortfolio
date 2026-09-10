@@ -77,22 +77,31 @@
   border-radius: var(--radius-sm);
 }
 
-/* Skip link: visible only when focused. */
+/**
+ * Skip link: off-screen until focused.
+ *
+ * `position: fixed` so it is measured against the viewport. An earlier version
+ * used `position: absolute` with `top: -100%`, which resolves against the
+ * containing block's height - the whole 8000px document - and would have
+ * landed the focused link off-screen for anyone not already scrolled to the
+ * top. The offset is a transform so the reveal stays on the compositor.
+ */
 .skip-link {
-  position: absolute;
+  position: fixed;
   left: 1rem;
-  top: -100%;
+  top: 1rem;
   z-index: 100;
   padding: 0.75rem 1.25rem;
   background: var(--accent-solid);
   color: #ffffff;
   border-radius: var(--radius-sm);
   font-weight: 600;
-  transition: top 200ms var(--ease-out);
+  transform: translateY(-300%);
+  transition: transform 200ms var(--ease-out);
 }
 
 .skip-link:focus {
-  top: 1rem;
+  transform: translateY(0);
 }
 
 /* Reveal-on-scroll. The observer adds `.is-visible`, then disconnects. */

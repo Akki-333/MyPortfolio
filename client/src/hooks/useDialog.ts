@@ -64,14 +64,12 @@ export function useDialog(isOpen: boolean, onClose: () => void) {
 
     document.addEventListener("keydown", handleKeyDown);
 
-    // Move focus into the dialog after it has been committed to the DOM.
-    const frame = requestAnimationFrame(() => {
-      const dialog = dialogRef.current;
-      dialog?.querySelector<HTMLElement>(FOCUSABLE)?.focus();
-    });
+    // Effects run after commit, so the dialog is already in the DOM here.
+    // An earlier version deferred this to requestAnimationFrame, which raced
+    // React's own render scheduling and left focus outside the dialog.
+    dialogRef.current?.querySelector<HTMLElement>(FOCUSABLE)?.focus();
 
     return () => {
-      cancelAnimationFrame(frame);
       document.removeEventListener("keydown", handleKeyDown);
       document.body.style.overflow = overflow;
       document.body.style.paddingRight = paddingRight;

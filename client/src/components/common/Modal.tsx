@@ -1,4 +1,4 @@
-import { useEffect, useState, type ReactNode } from "react";
+import type { ReactNode } from "react";
 import { createPortal } from "react-dom";
 import { X } from "lucide-react";
 import { useDialog } from "@/hooks/useDialog";
@@ -30,11 +30,11 @@ export function Modal({
   className,
 }: ModalProps) {
   const dialogRef = useDialog(isOpen, onClose);
-  const [mounted, setMounted] = useState(false);
 
-  useEffect(() => setMounted(true), []);
-
-  if (!mounted || !isOpen) return null;
+  // Rendered on the first client pass rather than after a `mounted` state
+  // flip. Deferring the portal by one render left the dialog absent from the
+  // DOM when the focus effect ran, so focus never entered it.
+  if (!isOpen || typeof document === "undefined") return null;
 
   return createPortal(
     <div
