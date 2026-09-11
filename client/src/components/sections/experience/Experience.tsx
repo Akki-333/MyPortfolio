@@ -10,8 +10,8 @@ export function Experience() {
     <SectionWrapper
       id="experience"
       eyebrow="Experience"
-      title="From data pipelines to platform engineering"
-      description="Where the habits came from: shipping into live products, on someone else's deadline, with real operators on the other side."
+      title="Engineering across the stack"
+      description="From scraping complex web targets to delivering full-stack products—building systems that stay correct when inputs stop cooperating."
       tinted
     >
       <ol className="space-y-6">
