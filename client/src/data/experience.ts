@@ -15,37 +15,37 @@ export const experience: readonly ExperienceRole[] = [
     location: "India",
     current: true,
     summary:
-      "Started on remote Python data-acquisition pipelines and moved into full-stack platform engineering across three products, owning backend services, dashboards, automated testing, security review and the crawler infrastructure that feeds them.",
+      "Evolved from building remote Python data extraction pipelines into full-stack platform engineering across multiple production products. Owned end-to-end backend microservices, real-time analytics dashboards, automated test suites, security audits, and the resilient data crawler infrastructure that powers them.",
     highlights: [
       {
-        headline: "Built acquisition engines that survive hostile targets",
+        headline: "Resilient Web Data Extraction & Browser Automation",
         detail:
-          "High-throughput headless crawlers in Python, Playwright and asyncio, pulling structured data out of single-page applications that actively resist it. Handled cross-domain iframes, multi-location dialogs behind a \"See all\" trigger, dynamic cookie banners and chat overlays, using DOM mutation observers and network route blocking to keep pages stable long enough to read.",
+          "Built high-throughput headless crawlers using Python, Playwright, and asyncio to extract structured data from complex dynamic single-page applications. Handled tricky UI obstacles—including nested iframes, modal dialogs, cookie consent banners, and chat overlays—using DOM mutation observers and network request interception for maximum stability.",
       },
       {
-        headline: "Made long crawls survive their own failures",
+        headline: "Fault-Tolerant Pipelines with Checkpointing & Auto-Resume",
         detail:
-          "Offset-window, modal-driven and infinite-scroll pagination behind one interface, with bounded concurrency through semaphores, batch flushing, real-time deduplication and checkpointed resume. A run that dies at hour three restarts where it stopped instead of from zero, and pages are normalised to markdown for downstream consumption.",
+          "Engineered reliable pagination handlers for infinite scroll, offset windows, and popups with stateful checkpointing. If an extraction run is interrupted mid-process, it automatically resumes from the last saved state rather than restarting from scratch, saving compute time and guaranteeing zero data loss through real-time deduplication.",
       },
       {
-        headline: "Delivered full-stack features on two live platforms",
+        headline: "Full-Stack Development for Live Enterprise Platforms",
         detail:
-          "On the performance management platform: Flask services on Azure Functions, ETL aggregation, agent scorecards, pay-for-performance calculation and the React dashboards that surface them to live business operators. On the knowledge platform: FastAPI services backed by a FAISS vector index and LangChain, plus process-modelling and document workflows.",
+          "Shipped features across two production systems: a performance management platform (Flask services on Azure Functions, automated ETL data processing, and React dashboards used daily by operations teams) and an internal knowledge hub (FastAPI backend with LangChain and FAISS vector indexing for semantic document search).",
       },
       {
-        headline: "Owned debugging, test automation and security review",
+        headline: "Automated API Testing, Debugging & Security Review",
         detail:
-          "Diagnosed cross-stack production faults and the data edge cases that caused them. Wrote integration and API regression suites, and ran application security evaluations covering endpoint authorisation, payload sanitisation and validation boundaries.",
+          "Investigated and resolved cross-stack production issues and data edge cases. Created comprehensive API regression and integration test suites to prevent breaking changes, and conducted security reviews focusing on role-based endpoint authorization, input sanitization, and schema validation.",
       },
       {
-        headline: "Ran production workloads on remote Linux servers",
+        headline: "Linux Production Operations & Task Scheduling",
         detail:
-          "Deployed, scheduled and monitored jobs over SSH with structured CSV and file audit logs, memory-safe browser flags for containerised Chromium, and fallback handlers so a crashed run loses no collected data.",
+          "Deployed, automated, and monitored background jobs on remote Linux servers via SSH. Configured structured logging, audit trails, and memory-optimized container flags for headless Chromium to prevent memory leaks during long-running tasks.",
       },
       {
-        headline: "Worked inside a review-driven delivery process",
+        headline: "Collaborative Agile & Review-Driven Workflow",
         detail:
-          "Git-based version control, peer code review and continuous integration. Most of the discipline above came from that loop rather than from working alone.",
+          "Delivered software through Git-based workflows, strict peer code reviews, and continuous integration (CI) pipelines, ensuring high code quality, maintainability, and seamless team collaboration.",
       },
     ],
     stack: [
