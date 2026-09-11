@@ -22,39 +22,63 @@ export function Hero() {
     >
       <div className="mx-auto grid w-full max-w-content items-center gap-12 py-16 sm:py-20 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16 lg:py-24">
         <div className="animate-rise-in">
-          <p className="inline-flex items-center gap-2 rounded-full bg-white/80 px-3 py-1.5 text-xs font-semibold text-sky-800 ring-1 ring-sky-200">
-            <span className="relative flex h-2 w-2" aria-hidden="true">
-              <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 animate-[pulse-ring_2.4s_var(--ease-out)_infinite]" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
-            </span>
-            {profile.availability}
-          </p>
+          {/* Header block: on mobile, aligns the portrait to the right of the name and role */}
+          <div className="flex items-start justify-between gap-4 lg:block">
+            <div className="min-w-0 flex-1">
+              <p className="inline-flex items-center gap-2 rounded-full bg-white/80 px-3 py-1.5 text-xs font-semibold text-sky-800 ring-1 ring-sky-200">
+                <span className="relative flex h-2 w-2" aria-hidden="true">
+                  <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 animate-[pulse-ring_2.4s_var(--ease-out)_infinite]" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+                </span>
+                {profile.availability}
+              </p>
 
-          <h1
-            id="hero-heading"
-            className="mt-6 text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl"
-          >
-            {profile.name}
-          </h1>
-
-          {/*
-            Fixed min-height. The rotating strings differ in length, and
-            without a reserved box the paragraph below would jump on every
-            swap - a layout shift repeated every few seconds.
-          */}
-          <div className="mt-3 flex min-h-[2.5rem] items-center sm:min-h-[2.75rem]">
-            <p
-              aria-live="polite"
-              aria-atomic="true"
-              className="text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-sky-600 to-cyan-600 sm:text-2xl"
-            >
-              <span
-                key={roleIndex}
-                className="inline-block animate-[fade-in_400ms_var(--ease-out)]"
+              <h1
+                id="hero-heading"
+                className="mt-4 text-3xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:mt-6 lg:text-6xl"
               >
-                {currentRole}
-              </span>
-            </p>
+                {profile.name}
+              </h1>
+
+              {/*
+                Fixed min-height. The rotating strings differ in length, and
+                without a reserved box the paragraph below would jump on every
+                swap - a layout shift repeated every few seconds.
+              */}
+              <div className="mt-2 flex min-h-[2.25rem] items-center sm:min-h-[2.75rem] lg:mt-3">
+                <p
+                  aria-live="polite"
+                  aria-atomic="true"
+                  className="text-lg font-semibold text-transparent bg-clip-text bg-gradient-to-r from-sky-600 to-cyan-600 sm:text-2xl"
+                >
+                  <span
+                    key={roleIndex}
+                    className="inline-block animate-[fade-in_400ms_var(--ease-out)]"
+                  >
+                    {currentRole}
+                  </span>
+                </p>
+              </div>
+            </div>
+
+            {/* Mobile portrait: positioned directly to the right of the name at the starting */}
+            <div className="relative flex-shrink-0 self-center lg:hidden">
+              <div
+                className="absolute -inset-2 rounded-full bg-gradient-to-tr from-sky-200 via-cyan-100 to-sky-300 opacity-70 blur-lg"
+                aria-hidden="true"
+              />
+              <picture>
+                <source srcSet="/profile.webp" type="image/webp" />
+                <img
+                  src="/profile.png"
+                  alt={`Portrait of ${profile.name}`}
+                  width={112}
+                  height={112}
+                  decoding="async"
+                  className="relative h-24 w-24 rounded-full object-cover ring-4 ring-white shadow-lg sm:h-28 sm:w-28"
+                />
+              </picture>
+            </div>
           </div>
 
           <p className="mt-6 max-w-prose text-base leading-relaxed text-slate-700 sm:text-lg">
@@ -97,7 +121,8 @@ export function Hero() {
         </div>
 
         <div className="flex flex-col items-center gap-8 lg:items-end">
-          <div className="relative">
+          {/* Desktop portrait: hidden on mobile, placed here on lg+ */}
+          <div className="relative hidden lg:block">
             <div
               className="absolute -inset-3 rounded-full bg-gradient-to-tr from-sky-200 via-cyan-100 to-sky-300 opacity-70 blur-xl"
               aria-hidden="true"
