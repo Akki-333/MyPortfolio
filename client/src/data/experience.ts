@@ -15,7 +15,7 @@ export const experience: readonly ExperienceRole[] = [
     location: "India",
     current: true,
     summary:
-      "Began by building remote Python web scraping pipelines and evolved into full-stack and platform engineering across three core initiatives: TACS (ongoing autonomous web crawler), Quantis (Flask & React performance platform), and Presto_dev (query & data integration). Own end-to-end REST APIs, interactive analytics dashboards, automated test suites, application security audits, and high-throughput web extraction infrastructure.",
+      "Began by building remote Python web scraping pipelines and evolved into full-stack and platform engineering across three core initiatives: TACS (ongoing platform), Quantis (Flask & React performance platform), and Presto (query & data integration). Own end-to-end REST APIs, interactive analytics dashboards, automated test suites, application security audits, and high-throughput web extraction infrastructure.",
     highlights: [
       {
         headline: "Full-Stack Enterprise Architecture & Digital Asset Pipeline (TACS)",
