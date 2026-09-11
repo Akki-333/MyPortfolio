@@ -11,7 +11,7 @@ const sectionIds = navItems.map((item) => item.id);
 export function Navbar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const activeId = useScrollSpy(sectionIds);
+  const [activeId, setActiveId] = useScrollSpy(sectionIds);
 
   // Elevate the bar once the page leaves the top, so the hero reads flat.
   useEffect(() => {
@@ -32,15 +32,18 @@ export function Navbar() {
     return () => document.removeEventListener("keydown", onKeyDown);
   }, [drawerOpen]);
 
-  // Native anchors do the scrolling; CSS `scroll-padding-top` handles the
-  // navbar offset, so there is no scroll maths to keep in sync here.
-  const handleNavigate = useCallback((id: SectionId) => {
-    setDrawerOpen(false);
-    if (id === "home") {
-      // The hero has no offset to clear; jump cleanly to the document top.
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-  }, []);
+  // Optimistically switch the active highlight and scroll smoothly to target.
+  const handleNavigate = useCallback(
+    (id: SectionId) => {
+      setDrawerOpen(false);
+      setActiveId(id);
+      if (id === "home") {
+        // The hero has no offset to clear; jump cleanly to the document top.
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    },
+    [setActiveId],
+  );
 
   return (
     <header
@@ -75,7 +78,7 @@ export function Navbar() {
                   onClick={() => handleNavigate(item.id)}
                   aria-current={isActive ? "true" : undefined}
                   className={cn(
-                    "focus-ring relative block rounded-lg px-3 py-2 text-sm font-medium transition-colors",
+                    "focus-ring relative block rounded-lg px-3 py-2 text-sm font-medium transition-colors duration-150",
                     isActive
                       ? "text-sky-800"
                       : "text-slate-600 hover:text-slate-900",
@@ -88,8 +91,9 @@ export function Navbar() {
                       className="absolute inset-x-2 -bottom-0.5 h-0.5 rounded-full bg-sky-600"
                       transition={{
                         type: "spring",
-                        stiffness: 420,
-                        damping: 34,
+                        stiffness: 520,
+                        damping: 32,
+                        mass: 0.5,
                       }}
                       aria-hidden="true"
                     />
