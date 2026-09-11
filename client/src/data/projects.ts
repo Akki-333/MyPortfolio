@@ -20,7 +20,7 @@ export const projects: readonly Project[] = [
     subtitle: "Enterprise GraphRAG & Document Intelligence",
     category: "Applied AI & GraphRAG",
     timeline: "Production grade",
-    scope: "Solo · packaged for Hugging Face Spaces and Vercel",
+    scope: "Solo · deployed on Hugging Face Spaces and Vercel",
     flagship: true,
     cover: archivemindCover,
     coverAlt:
@@ -104,6 +104,11 @@ export const projects: readonly Project[] = [
     ],
     links: [
       {
+        kind: "demo",
+        label: "Live demo",
+        href: "https://archivemind-ai.vercel.app/",
+      },
+      {
         kind: "github",
         label: "Source",
         href: "https://github.com/Akki-333/ArchiveMind-AI",
@@ -116,7 +121,7 @@ export const projects: readonly Project[] = [
     subtitle: "Multi-Format Citation Intelligence & Extraction Engine",
     category: "Applied AI & GraphRAG",
     timeline: "Production engine",
-    scope: "Solo · distributed as a local Streamlit application",
+    scope: "Solo · deployed on Streamlit Cloud",
     flagship: true,
     cover: papermintCover,
     coverAlt:
@@ -198,6 +203,11 @@ export const projects: readonly Project[] = [
       { label: "Ruff", domain: "infra" },
     ],
     links: [
+      {
+        kind: "demo",
+        label: "Live demo",
+        href: "https://papermint-engine.streamlit.app/",
+      },
       {
         kind: "github",
         label: "Source",
