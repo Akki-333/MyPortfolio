@@ -28,7 +28,7 @@ export function Projects() {
       id="projects"
       eyebrow="Selected work"
       title="Systems, not screenshots"
-      description="Five builds, ordered by depth. Each one opens into its architecture, the decisions behind it, and the guarantees it holds."
+      description="Six builds, ordered by depth. Each one opens into its architecture, the decisions behind it, and the guarantees it holds."
       tinted
     >
       <FilterBar buckets={buckets} active={active} onChange={setActive} />

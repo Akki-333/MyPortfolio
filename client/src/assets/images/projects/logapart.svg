@@ -1,0 +1,249 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Residential society building matrix with 20 flats across 4 floors, tri-portal command consoles, and double-entry dues ledger">
+  <defs>
+    <linearGradient id="la-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f0fdf4"/><stop offset="50%" stop-color="#ffffff"/><stop offset="100%" stop-color="#e0f2fe"/>
+    </linearGradient>
+    <linearGradient id="la-primary" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#0ea5e9"/>
+    </linearGradient>
+    <linearGradient id="la-accent" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background canvas -->
+  <rect width="800" height="450" fill="url(#la-bg)"/>
+
+  <!-- Subtle dot matrix grid -->
+  <g fill="#94a3b8" opacity="0.25">
+    <circle cx="40" cy="40" r="1.5"/><circle cx="120" cy="40" r="1.5"/><circle cx="200" cy="40" r="1.5"/>
+    <circle cx="600" cy="40" r="1.5"/><circle cx="680" cy="40" r="1.5"/><circle cx="760" cy="40" r="1.5"/>
+    <circle cx="40" cy="410" r="1.5"/><circle cx="120" cy="410" r="1.5"/><circle cx="760" cy="410" r="1.5"/>
+  </g>
+
+  <!-- Left: Residential Building Matrix (4 Floors x 5 Units = 20 Homes Heatmap) -->
+  <g id="building-matrix">
+    <rect x="44" y="44" width="370" height="362" rx="16" fill="#ffffff" stroke="#bae6fd" stroke-width="2"/>
+
+    <!-- Building header bar -->
+    <rect x="64" y="64" width="140" height="12" rx="6" fill="#0f172a"/>
+    <rect x="64" y="84" width="90" height="8" rx="4" fill="#94a3b8"/>
+    
+    <!-- Legend pills -->
+    <rect x="234" y="66" width="46" height="16" rx="8" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="1"/>
+    <circle cx="242" cy="74" r="3" fill="#10b981"/>
+    <rect x="250" y="71" width="22" height="6" rx="3" fill="#065f46"/>
+
+    <rect x="286" y="66" width="54" height="16" rx="8" fill="#fff1f2" stroke="#fecdd3" stroke-width="1"/>
+    <circle cx="294" cy="74" r="3" fill="#f43f5e"/>
+    <rect x="302" y="71" width="30" height="6" rx="3" fill="#9f1239"/>
+
+    <rect x="346" y="66" width="48" height="16" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+    <circle cx="354" cy="74" r="3" fill="#94a3b8"/>
+    <rect x="362" y="71" width="24" height="6" rx="3" fill="#475569"/>
+
+    <!-- 4 Floor Dividers & 20 Unit cells -->
+    <!-- Floor 4 -->
+    <g transform="translate(64, 110)">
+      <rect x="0" y="0" width="24" height="16" rx="4" fill="#e0f2fe"/>
+      <rect x="5" y="5" width="14" height="6" rx="3" fill="#0369a1"/>
+      <!-- Units 401-405 -->
+      <rect x="38" y="-8" width="54" height="46" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
+      <rect x="46" y="2" width="20" height="6" rx="3" fill="#065f46"/><circle cx="80" cy="5" r="3" fill="#10b981"/>
+      <rect x="46" y="16" width="38" height="14" rx="4" fill="#d1fae5"/>
+
+      <rect x="100" y="-8" width="54" height="46" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
+      <rect x="108" y="2" width="20" height="6" rx="3" fill="#065f46"/><circle cx="142" cy="5" r="3" fill="#10b981"/>
+      <rect x="108" y="16" width="38" height="14" rx="4" fill="#d1fae5"/>
+
+      <rect x="162" y="-8" width="54" height="46" rx="8" fill="#fff1f2" stroke="#f43f5e" stroke-width="1.5"/>
+      <rect x="170" y="2" width="20" height="6" rx="3" fill="#9f1239"/><circle cx="204" cy="5" r="3" fill="#f43f5e"/>
+      <rect x="170" y="16" width="38" height="14" rx="4" fill="#ffe4e6"/>
+
+      <rect x="224" y="-8" width="54" height="46" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
+      <rect x="232" y="2" width="20" height="6" rx="3" fill="#065f46"/><circle cx="266" cy="5" r="3" fill="#10b981"/>
+      <rect x="232" y="16" width="38" height="14" rx="4" fill="#d1fae5"/>
+
+      <rect x="286" y="-8" width="54" height="46" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
+      <rect x="294" y="2" width="20" height="6" rx="3" fill="#065f46"/><circle cx="328" cy="5" r="3" fill="#10b981"/>
+      <rect x="294" y="16" width="38" height="14" rx="4" fill="#d1fae5"/>
+    </g>
+
+    <!-- Floor 3 -->
+    <g transform="translate(64, 175)">
+      <rect x="0" y="0" width="24" height="16" rx="4" fill="#e0f2fe"/>
+      <rect x="5" y="5" width="14" height="6" rx="3" fill="#0369a1"/>
+      <!-- Units 301-305 -->
+      <rect x="38" y="-8" width="54" height="46" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
+      <rect x="46" y="2" width="20" height="6" rx="3" fill="#065f46"/><circle cx="80" cy="5" r="3" fill="#10b981"/>
+      <rect x="46" y="16" width="38" height="14" rx="4" fill="#d1fae5"/>
+
+      <rect x="100" y="-8" width="54" height="46" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
+      <rect x="108" y="2" width="20" height="6" rx="3" fill="#065f46"/><circle cx="142" cy="5" r="3" fill="#10b981"/>
+      <rect x="108" y="16" width="38" height="14" rx="4" fill="#d1fae5"/>
+
+      <rect x="162" y="-8" width="54" height="46" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
+      <rect x="170" y="2" width="20" height="6" rx="3" fill="#065f46"/><circle cx="204" cy="5" r="3" fill="#10b981"/>
+      <rect x="170" y="16" width="38" height="14" rx="4" fill="#d1fae5"/>
+
+      <rect x="224" y="-8" width="54" height="46" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+      <rect x="232" y="2" width="20" height="6" rx="3" fill="#64748b"/><circle cx="266" cy="5" r="3" fill="#94a3b8"/>
+      <rect x="232" y="16" width="38" height="14" rx="4" fill="#f1f5f9"/>
+
+      <rect x="286" y="-8" width="54" height="46" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
+      <rect x="294" y="2" width="20" height="6" rx="3" fill="#065f46"/><circle cx="328" cy="5" r="3" fill="#10b981"/>
+      <rect x="294" y="16" width="38" height="14" rx="4" fill="#d1fae5"/>
+    </g>
+
+    <!-- Floor 2 -->
+    <g transform="translate(64, 240)">
+      <rect x="0" y="0" width="24" height="16" rx="4" fill="#e0f2fe"/>
+      <rect x="5" y="5" width="14" height="6" rx="3" fill="#0369a1"/>
+      <!-- Units 201-205 -->
+      <rect x="38" y="-8" width="54" height="46" rx="8" fill="#fff1f2" stroke="#f43f5e" stroke-width="1.5"/>
+      <rect x="46" y="2" width="20" height="6" rx="3" fill="#9f1239"/><circle cx="80" cy="5" r="3" fill="#f43f5e"/>
+      <rect x="46" y="16" width="38" height="14" rx="4" fill="#ffe4e6"/>
+
+      <rect x="100" y="-8" width="54" height="46" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
+      <rect x="108" y="2" width="20" height="6" rx="3" fill="#065f46"/><circle cx="142" cy="5" r="3" fill="#10b981"/>
+      <rect x="108" y="16" width="38" height="14" rx="4" fill="#d1fae5"/>
+
+      <rect x="162" y="-8" width="54" height="46" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
+      <rect x="170" y="2" width="20" height="6" rx="3" fill="#065f46"/><circle cx="204" cy="5" r="3" fill="#10b981"/>
+      <rect x="170" y="16" width="38" height="14" rx="4" fill="#d1fae5"/>
+
+      <rect x="224" y="-8" width="54" height="46" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
+      <rect x="232" y="2" width="20" height="6" rx="3" fill="#065f46"/><circle cx="266" cy="5" r="3" fill="#10b981"/>
+      <rect x="232" y="16" width="38" height="14" rx="4" fill="#d1fae5"/>
+
+      <rect x="286" y="-8" width="54" height="46" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
+      <rect x="294" y="2" width="20" height="6" rx="3" fill="#065f46"/><circle cx="328" cy="5" r="3" fill="#10b981"/>
+      <rect x="294" y="16" width="38" height="14" rx="4" fill="#d1fae5"/>
+    </g>
+
+    <!-- Floor 1 -->
+    <g transform="translate(64, 305)">
+      <rect x="0" y="0" width="24" height="16" rx="4" fill="#e0f2fe"/>
+      <rect x="5" y="5" width="14" height="6" rx="3" fill="#0369a1"/>
+      <!-- Units 101-105 -->
+      <rect x="38" y="-8" width="54" height="46" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
+      <rect x="46" y="2" width="20" height="6" rx="3" fill="#065f46"/><circle cx="80" cy="5" r="3" fill="#10b981"/>
+      <rect x="46" y="16" width="38" height="14" rx="4" fill="#d1fae5"/>
+
+      <rect x="100" y="-8" width="54" height="46" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
+      <rect x="108" y="2" width="20" height="6" rx="3" fill="#065f46"/><circle cx="142" cy="5" r="3" fill="#10b981"/>
+      <rect x="108" y="16" width="38" height="14" rx="4" fill="#d1fae5"/>
+
+      <rect x="162" y="-8" width="54" height="46" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
+      <rect x="170" y="2" width="20" height="6" rx="3" fill="#065f46"/><circle cx="204" cy="5" r="3" fill="#10b981"/>
+      <rect x="170" y="16" width="38" height="14" rx="4" fill="#d1fae5"/>
+
+      <rect x="224" y="-8" width="54" height="46" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
+      <rect x="232" y="2" width="20" height="6" rx="3" fill="#065f46"/><circle cx="266" cy="5" r="3" fill="#10b981"/>
+      <rect x="232" y="16" width="38" height="14" rx="4" fill="#d1fae5"/>
+
+      <rect x="286" y="-8" width="54" height="46" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
+      <rect x="294" y="2" width="20" height="6" rx="3" fill="#065f46"/><circle cx="328" cy="5" r="3" fill="#10b981"/>
+      <rect x="294" y="16" width="38" height="14" rx="4" fill="#d1fae5"/>
+    </g>
+
+    <!-- Bottom summary status -->
+    <rect x="64" y="366" width="330" height="24" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+    <circle cx="76" cy="378" r="4" fill="#0284c7"/>
+    <rect x="86" y="374" width="110" height="8" rx="4" fill="#334155"/>
+    <rect x="320" y="373" width="60" height="10" rx="5" fill="#0284c7"/>
+  </g>
+
+  <!-- Connectors from matrix to consoles -->
+  <g stroke="#38bdf8" stroke-width="2" fill="none" stroke-dasharray="4 4">
+    <path d="M414 130 L458 114"/>
+    <path d="M414 225 L458 225"/>
+    <path d="M414 330 L458 338"/>
+  </g>
+
+  <!-- Right: 3 Unified Portals Stack -->
+  <!-- 1. Admin Command Console (Top) -->
+  <g id="admin-portal" transform="translate(460, 44)">
+    <rect width="296" height="108" rx="14" fill="#ffffff" stroke="#bae6fd" stroke-width="2"/>
+    <rect x="18" y="16" width="8" height="8" rx="4" fill="#0284c7"/>
+    <rect x="32" y="15" width="110" height="10" rx="5" fill="#0f172a"/>
+    <rect x="210" y="13" width="70" height="16" rx="8" fill="#e0f2fe"/>
+    <rect x="220" y="18" width="50" height="6" rx="3" fill="#0369a1"/>
+
+    <g transform="translate(18, 38)">
+      <!-- KPI stats row -->
+      <rect x="0" y="0" width="80" height="54" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+      <rect x="10" y="10" width="40" height="6" rx="3" fill="#64748b"/>
+      <rect x="10" y="24" width="56" height="12" rx="4" fill="#0284c7"/>
+      <rect x="10" y="42" width="30" height="4" rx="2" fill="#10b981"/>
+
+      <rect x="88" y="0" width="80" height="54" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+      <rect x="98" y="10" width="44" height="6" rx="3" fill="#64748b"/>
+      <rect x="98" y="24" width="50" height="12" rx="4" fill="#059669"/>
+      <rect x="98" y="42" width="38" height="4" rx="2" fill="#0ea5e9"/>
+
+      <!-- NOC Clearance Seal Status -->
+      <rect x="176" y="0" width="84" height="54" rx="8" fill="#f0fdf4" stroke="#a7f3d0" stroke-width="1.5"/>
+      <circle cx="218" cy="18" r="10" fill="#10b981"/>
+      <path d="M214 18 l3 3 l6 -7" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="186" y="36" width="64" height="8" rx="4" fill="#065f46"/>
+    </g>
+  </g>
+
+  <!-- 2. Security Gate Desk (Middle - Tablet Layout) -->
+  <g id="gate-portal" transform="translate(460, 170)">
+    <rect width="296" height="110" rx="14" fill="#0f172a" stroke="#334155" stroke-width="2"/>
+    <rect x="18" y="16" width="8" height="8" rx="4" fill="#10b981"/>
+    <rect x="32" y="15" width="130" height="10" rx="5" fill="#f8fafc"/>
+    <rect x="220" y="13" width="60" height="16" rx="8" fill="#1e293b"/>
+    <rect x="232" y="18" width="36" height="6" rx="3" fill="#38bdf8"/>
+
+    <!-- High-contrast fast check-in row -->
+    <g transform="translate(18, 38)">
+      <!-- Active 6-char pass box -->
+      <rect x="0" y="0" width="124" height="56" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+      <rect x="10" y="10" width="68" height="6" rx="3" fill="#94a3b8"/>
+      <!-- 6-character pass representation -->
+      <g transform="translate(10, 24)">
+        <rect x="0" y="0" width="14" height="18" rx="3" fill="#0284c7"/>
+        <rect x="18" y="0" width="14" height="18" rx="3" fill="#0284c7"/>
+        <rect x="36" y="0" width="14" height="18" rx="3" fill="#0284c7"/>
+        <rect x="54" y="0" width="14" height="18" rx="3" fill="#0284c7"/>
+        <rect x="72" y="0" width="14" height="18" rx="3" fill="#0284c7"/>
+        <rect x="90" y="0" width="14" height="18" rx="3" fill="#0284c7"/>
+      </g>
+      <rect x="10" y="47" width="50" height="4" rx="2" fill="#38bdf8"/>
+
+      <!-- One-tap check out affordance -->
+      <rect x="134" y="0" width="126" height="56" rx="8" fill="#10b981"/>
+      <circle cx="152" cy="28" r="10" fill="#ffffff" opacity="0.25"/>
+      <path d="M148 28 l3 3 l6 -6" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <rect x="168" y="20" width="76" height="8" rx="4" fill="#ffffff"/>
+      <rect x="168" y="32" width="54" height="6" rx="3" fill="#d1fae5"/>
+    </g>
+  </g>
+
+  <!-- 3. Resident Portal (Bottom) -->
+  <g id="resident-portal" transform="translate(460, 298)">
+    <rect width="296" height="108" rx="14" fill="#ffffff" stroke="#bae6fd" stroke-width="2"/>
+    <rect x="18" y="16" width="8" height="8" rx="4" fill="#059669"/>
+    <rect x="32" y="15" width="116" height="10" rx="5" fill="#0f172a"/>
+    <rect x="206" y="13" width="74" height="16" rx="8" fill="#ecfdf5"/>
+    <rect x="216" y="18" width="54" height="6" rx="3" fill="#059669"/>
+
+    <g transform="translate(18, 38)">
+      <!-- Dues breakdown card -->
+      <rect x="0" y="0" width="168" height="54" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+      <rect x="10" y="10" width="78" height="6" rx="3" fill="#64748b"/>
+      <rect x="10" y="22" width="110" height="6" rx="3" fill="#94a3b8"/>
+      <rect x="10" y="36" width="60" height="8" rx="4" fill="#0f172a"/>
+
+      <!-- Receipt & declare payment buttons -->
+      <rect x="178" y="0" width="82" height="24" rx="6" fill="#e0f2fe" stroke="#7dd3fc" stroke-width="1"/>
+      <rect x="188" y="9" width="62" height="6" rx="3" fill="#0369a1"/>
+
+      <rect x="178" y="30" width="82" height="24" rx="6" fill="#0284c7"/>
+      <rect x="188" y="39" width="62" height="6" rx="3" fill="#ffffff"/>
+    </g>
+  </g>
+</svg>

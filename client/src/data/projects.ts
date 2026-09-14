@@ -3,6 +3,7 @@ import type { Project } from "@/types";
 import archivemindCover from "@/assets/images/projects/archivemind.svg";
 import papermintCover from "@/assets/images/projects/papermint.svg";
 import stayAndDineCover from "@/assets/images/projects/stay-and-dine.svg";
+import logapartCover from "@/assets/images/projects/logapart.svg";
 import equityCover from "@/assets/images/projects/equity-forecasting.svg";
 import captioningCover from "@/assets/images/projects/image-captioning.svg";
 
@@ -313,6 +314,106 @@ export const projects: readonly Project[] = [
         kind: "github",
         label: "Source",
         href: "https://github.com/Akki-333/Stay_and_Dine",
+      },
+    ],
+  },
+  {
+    slug: "logapart",
+    title: "LogApart",
+    subtitle: "Residential Society Operations & Multi-Portal ERP",
+    category: "Full-Stack Platforms",
+    timeline: "Production platform",
+    scope: "Solo · deployed on Vercel and MySQL",
+    flagship: false,
+    cover: logapartCover,
+    coverAlt:
+      "Residential society building matrix with 20 flats across 4 floors, tri-portal command consoles, and double-entry dues ledger",
+    summary:
+      "A multi-tenant housing society management platform serving 20 homes across four floors, unifying an admin command center, a tablet-first security gate desk, and a resident self-service portal over an Express 5 and MySQL architecture.",
+    overview: [
+      "Residential housing societies in India run on fragmented paper visitor registers, unstructured WhatsApp complaints, and unverified bank transfers. LogApart replaces this patchwork with three role-tailored interfaces backed by a single Express 5 REST API and MySQL persistence.",
+      "Financial correctness is non-negotiable in community management. The billing engine automates monthly maintenance generation, common-area electricity and water apportionment, late fee penalties, and double-entry cash-basis society ledgers. Move-out clearance certificates (NOC) are mechanically gated on real-time dues reconciliation.",
+      "The security gate desk provides a high-contrast, touch-first tablet interface for physical entry management, featuring one-tap visitor checkout, 6-character pre-approved pass redemption, domestic helper check-in, and tamper-proof shift handover logging.",
+    ],
+    pipeline: [
+      {
+        step: 1,
+        name: "Role-gated authentication",
+        detail:
+          "JWT issuance with strict RBAC enforcing distinct access boundaries for society administrators, security guards, and resident households.",
+      },
+      {
+        step: 2,
+        name: "Gate desk ingestion & validation",
+        detail:
+          "Tablet-first gate terminal verifies 6-character alphanumeric guest passes and logs visitor departure with single-tap workflows.",
+      },
+      {
+        step: 3,
+        name: "Automated dues apportionment",
+        detail:
+          "Recurring billing engine computes monthly maintenance, shared electricity/water shares, and late fees across all 20 units.",
+      },
+      {
+        step: 4,
+        name: "Double-entry cash accounting",
+        detail:
+          "Resident payment declarations and vendor expense entries reconcile into cash-basis monthly statements with isolated corpus funds.",
+      },
+      {
+        step: 5,
+        name: "Audit trail & NOC clearance",
+        detail:
+          "Every destructive and financial transaction is immutably logged; departure clearance certificates are mechanically blocked if arrears remain.",
+      },
+    ],
+    innovations: [
+      "Three role-tailored interfaces over one unified API: an analytical desktop admin dashboard, a high-contrast touch-first security tablet interface, and a mobile-friendly resident portal.",
+      "Mechanically gated NOC issuance: resident departure certificates cannot be generated until the double-entry dues ledger evaluates to zero balance.",
+      "Granular maintenance ticketing with SLA timers that distinguish unit-specific defects from common-area infrastructure (e.g. lift, generator) failures.",
+      "Deterministic billing test suite: node:test probes and Vitest assert exact mathematical precision across multi-tier dues apportionment and penalty calculations.",
+    ],
+    invariants: [
+      {
+        name: "Zero-arrears clearance",
+        statement:
+          "A move-out clearance certificate (NOC) is impossible to generate while any outstanding invoices or unconfirmed payments exist.",
+      },
+      {
+        name: "Audit immutability",
+        statement:
+          "Every financial adjustment, payment confirmation, and gate pass redemption generates an immutable log entry with actor attribution.",
+      },
+      {
+        name: "Strict role isolation",
+        statement:
+          "Gate desk tokens cannot query society financials, and resident tokens cannot mutate unit allocations or access logs outside their flat.",
+      },
+    ],
+    metrics: [
+      { label: "Portals", value: "3 unified" },
+      { label: "Managed homes", value: "20 flats" },
+      { label: "Core stack", value: "Node 22 / MySQL" },
+    ],
+    stack: [
+      { label: "Node.js 22", domain: "backend" },
+      { label: "Express 5", domain: "backend" },
+      { label: "MySQL", domain: "data" },
+      { label: "React 18", domain: "frontend" },
+      { label: "Tailwind CSS", domain: "frontend" },
+      { label: "JWT & RBAC", domain: "backend" },
+      { label: "Docker", domain: "infra" },
+    ],
+    links: [
+      {
+        kind: "demo",
+        label: "Live demo",
+        href: "https://logapart-portal.vercel.app/",
+      },
+      {
+        kind: "github",
+        label: "Source",
+        href: "https://github.com/Akki-333/LogApart",
       },
     ],
   },

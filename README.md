@@ -5,8 +5,9 @@ deployed as a static single-page application.
 
 Live case studies for **ArchiveMind-AI** (GraphRAG document intelligence),
 **PaperMint** (multi-format citation extraction), **Stay & Dine** (full-stack
-reservation platform) and two data science builds, each opening into its
-architecture, pipeline stages, key decisions and engineering invariants.
+reservation platform), **LogApart** (multi-portal residential operations ERP),
+and two data science builds, each opening into its architecture, pipeline stages,
+key decisions and engineering invariants.
 
 ---
 
