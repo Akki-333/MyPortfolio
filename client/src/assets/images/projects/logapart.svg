@@ -1,249 +1,475 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Residential society building matrix with 20 flats across 4 floors, tri-portal command consoles, and double-entry dues ledger">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Modern 4-storey residential apartment building with balconies, security gate desk with boom barrier, entrance lobby, and vehicle parking bays">
   <defs>
-    <linearGradient id="la-bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#f0fdf4"/><stop offset="50%" stop-color="#ffffff"/><stop offset="100%" stop-color="#e0f2fe"/>
+    <!-- Sky & ambient gradients -->
+    <linearGradient id="sky-gradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e0f2fe"/>
+      <stop offset="65%" stop-color="#f0f9ff"/>
+      <stop offset="100%" stop-color="#ffffff"/>
     </linearGradient>
-    <linearGradient id="la-primary" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#0ea5e9"/>
+
+    <!-- Building facade gradient -->
+    <linearGradient id="facade-gradient" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="70%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f1f5f9"/>
     </linearGradient>
-    <linearGradient id="la-accent" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#10b981"/>
+
+    <!-- Glass reflections -->
+    <linearGradient id="glass-tint" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.35"/>
+      <stop offset="40%" stop-color="#bae6fd" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#0284c7" stop-opacity="0.4"/>
+    </linearGradient>
+
+    <linearGradient id="glass-warm" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fef08a" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#fde047" stop-opacity="0.2"/>
+    </linearGradient>
+
+    <linearGradient id="balcony-glass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#bae6fd" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#e0f2fe" stop-opacity="0.45"/>
+    </linearGradient>
+
+    <!-- Solar panel shimmer -->
+    <linearGradient id="solar-gradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0369a1"/>
+      <stop offset="50%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#075985"/>
     </linearGradient>
   </defs>
 
-  <!-- Background canvas -->
-  <rect width="800" height="450" fill="url(#la-bg)"/>
+  <!-- Sky Canvas -->
+  <rect width="800" height="450" fill="url(#sky-gradient)"/>
 
-  <!-- Subtle dot matrix grid -->
-  <g fill="#94a3b8" opacity="0.25">
-    <circle cx="40" cy="40" r="1.5"/><circle cx="120" cy="40" r="1.5"/><circle cx="200" cy="40" r="1.5"/>
-    <circle cx="600" cy="40" r="1.5"/><circle cx="680" cy="40" r="1.5"/><circle cx="760" cy="40" r="1.5"/>
-    <circle cx="40" cy="410" r="1.5"/><circle cx="120" cy="410" r="1.5"/><circle cx="760" cy="410" r="1.5"/>
+  <!-- Soft architectural cloud shapes & sun -->
+  <g opacity="0.45">
+    <circle cx="680" cy="80" r="32" fill="#bae6fd" opacity="0.4"/>
+    <path d="M120 70 q20 -14 44 0 q24 -12 42 4 q16 -6 32 6 h-118 z" fill="#ffffff"/>
+    <path d="M520 95 q16 -10 34 0 q18 -8 32 3 q12 -5 24 5 h-90 z" fill="#ffffff"/>
   </g>
 
-  <!-- Left: Residential Building Matrix (4 Floors x 5 Units = 20 Homes Heatmap) -->
-  <g id="building-matrix">
-    <rect x="44" y="44" width="370" height="362" rx="16" fill="#ffffff" stroke="#bae6fd" stroke-width="2"/>
+  <!-- Ground Plane, Driveway, Curb & Sidewalk -->
+  <!-- Landscaping background strip -->
+  <rect x="0" y="380" width="800" height="70" fill="#e2e8f0"/>
+  <rect x="0" y="380" width="800" height="8" fill="#10b981"/>
+  <!-- Paved roadway / driveway -->
+  <rect x="0" y="394" width="800" height="56" fill="#1e293b"/>
+  <!-- Roadway center dashed line -->
+  <path d="M0 422 h800" stroke="#f8fafc" stroke-width="2.5" stroke-dasharray="24 20" opacity="0.6"/>
 
-    <!-- Building header bar -->
-    <rect x="64" y="64" width="140" height="12" rx="6" fill="#0f172a"/>
-    <rect x="64" y="84" width="90" height="8" rx="4" fill="#94a3b8"/>
-    
-    <!-- Legend pills -->
-    <rect x="234" y="66" width="46" height="16" rx="8" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="1"/>
-    <circle cx="242" cy="74" r="3" fill="#10b981"/>
-    <rect x="250" y="71" width="22" height="6" rx="3" fill="#065f46"/>
-
-    <rect x="286" y="66" width="54" height="16" rx="8" fill="#fff1f2" stroke="#fecdd3" stroke-width="1"/>
-    <circle cx="294" cy="74" r="3" fill="#f43f5e"/>
-    <rect x="302" y="71" width="30" height="6" rx="3" fill="#9f1239"/>
-
-    <rect x="346" y="66" width="48" height="16" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
-    <circle cx="354" cy="74" r="3" fill="#94a3b8"/>
-    <rect x="362" y="71" width="24" height="6" rx="3" fill="#475569"/>
-
-    <!-- 4 Floor Dividers & 20 Unit cells -->
-    <!-- Floor 4 -->
-    <g transform="translate(64, 110)">
-      <rect x="0" y="0" width="24" height="16" rx="4" fill="#e0f2fe"/>
-      <rect x="5" y="5" width="14" height="6" rx="3" fill="#0369a1"/>
-      <!-- Units 401-405 -->
-      <rect x="38" y="-8" width="54" height="46" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
-      <rect x="46" y="2" width="20" height="6" rx="3" fill="#065f46"/><circle cx="80" cy="5" r="3" fill="#10b981"/>
-      <rect x="46" y="16" width="38" height="14" rx="4" fill="#d1fae5"/>
-
-      <rect x="100" y="-8" width="54" height="46" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
-      <rect x="108" y="2" width="20" height="6" rx="3" fill="#065f46"/><circle cx="142" cy="5" r="3" fill="#10b981"/>
-      <rect x="108" y="16" width="38" height="14" rx="4" fill="#d1fae5"/>
-
-      <rect x="162" y="-8" width="54" height="46" rx="8" fill="#fff1f2" stroke="#f43f5e" stroke-width="1.5"/>
-      <rect x="170" y="2" width="20" height="6" rx="3" fill="#9f1239"/><circle cx="204" cy="5" r="3" fill="#f43f5e"/>
-      <rect x="170" y="16" width="38" height="14" rx="4" fill="#ffe4e6"/>
-
-      <rect x="224" y="-8" width="54" height="46" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
-      <rect x="232" y="2" width="20" height="6" rx="3" fill="#065f46"/><circle cx="266" cy="5" r="3" fill="#10b981"/>
-      <rect x="232" y="16" width="38" height="14" rx="4" fill="#d1fae5"/>
-
-      <rect x="286" y="-8" width="54" height="46" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
-      <rect x="294" y="2" width="20" height="6" rx="3" fill="#065f46"/><circle cx="328" cy="5" r="3" fill="#10b981"/>
-      <rect x="294" y="16" width="38" height="14" rx="4" fill="#d1fae5"/>
-    </g>
-
-    <!-- Floor 3 -->
-    <g transform="translate(64, 175)">
-      <rect x="0" y="0" width="24" height="16" rx="4" fill="#e0f2fe"/>
-      <rect x="5" y="5" width="14" height="6" rx="3" fill="#0369a1"/>
-      <!-- Units 301-305 -->
-      <rect x="38" y="-8" width="54" height="46" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
-      <rect x="46" y="2" width="20" height="6" rx="3" fill="#065f46"/><circle cx="80" cy="5" r="3" fill="#10b981"/>
-      <rect x="46" y="16" width="38" height="14" rx="4" fill="#d1fae5"/>
-
-      <rect x="100" y="-8" width="54" height="46" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
-      <rect x="108" y="2" width="20" height="6" rx="3" fill="#065f46"/><circle cx="142" cy="5" r="3" fill="#10b981"/>
-      <rect x="108" y="16" width="38" height="14" rx="4" fill="#d1fae5"/>
-
-      <rect x="162" y="-8" width="54" height="46" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
-      <rect x="170" y="2" width="20" height="6" rx="3" fill="#065f46"/><circle cx="204" cy="5" r="3" fill="#10b981"/>
-      <rect x="170" y="16" width="38" height="14" rx="4" fill="#d1fae5"/>
-
-      <rect x="224" y="-8" width="54" height="46" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
-      <rect x="232" y="2" width="20" height="6" rx="3" fill="#64748b"/><circle cx="266" cy="5" r="3" fill="#94a3b8"/>
-      <rect x="232" y="16" width="38" height="14" rx="4" fill="#f1f5f9"/>
-
-      <rect x="286" y="-8" width="54" height="46" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
-      <rect x="294" y="2" width="20" height="6" rx="3" fill="#065f46"/><circle cx="328" cy="5" r="3" fill="#10b981"/>
-      <rect x="294" y="16" width="38" height="14" rx="4" fill="#d1fae5"/>
-    </g>
-
-    <!-- Floor 2 -->
-    <g transform="translate(64, 240)">
-      <rect x="0" y="0" width="24" height="16" rx="4" fill="#e0f2fe"/>
-      <rect x="5" y="5" width="14" height="6" rx="3" fill="#0369a1"/>
-      <!-- Units 201-205 -->
-      <rect x="38" y="-8" width="54" height="46" rx="8" fill="#fff1f2" stroke="#f43f5e" stroke-width="1.5"/>
-      <rect x="46" y="2" width="20" height="6" rx="3" fill="#9f1239"/><circle cx="80" cy="5" r="3" fill="#f43f5e"/>
-      <rect x="46" y="16" width="38" height="14" rx="4" fill="#ffe4e6"/>
-
-      <rect x="100" y="-8" width="54" height="46" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
-      <rect x="108" y="2" width="20" height="6" rx="3" fill="#065f46"/><circle cx="142" cy="5" r="3" fill="#10b981"/>
-      <rect x="108" y="16" width="38" height="14" rx="4" fill="#d1fae5"/>
-
-      <rect x="162" y="-8" width="54" height="46" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
-      <rect x="170" y="2" width="20" height="6" rx="3" fill="#065f46"/><circle cx="204" cy="5" r="3" fill="#10b981"/>
-      <rect x="170" y="16" width="38" height="14" rx="4" fill="#d1fae5"/>
-
-      <rect x="224" y="-8" width="54" height="46" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
-      <rect x="232" y="2" width="20" height="6" rx="3" fill="#065f46"/><circle cx="266" cy="5" r="3" fill="#10b981"/>
-      <rect x="232" y="16" width="38" height="14" rx="4" fill="#d1fae5"/>
-
-      <rect x="286" y="-8" width="54" height="46" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
-      <rect x="294" y="2" width="20" height="6" rx="3" fill="#065f46"/><circle cx="328" cy="5" r="3" fill="#10b981"/>
-      <rect x="294" y="16" width="38" height="14" rx="4" fill="#d1fae5"/>
-    </g>
-
-    <!-- Floor 1 -->
-    <g transform="translate(64, 305)">
-      <rect x="0" y="0" width="24" height="16" rx="4" fill="#e0f2fe"/>
-      <rect x="5" y="5" width="14" height="6" rx="3" fill="#0369a1"/>
-      <!-- Units 101-105 -->
-      <rect x="38" y="-8" width="54" height="46" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
-      <rect x="46" y="2" width="20" height="6" rx="3" fill="#065f46"/><circle cx="80" cy="5" r="3" fill="#10b981"/>
-      <rect x="46" y="16" width="38" height="14" rx="4" fill="#d1fae5"/>
-
-      <rect x="100" y="-8" width="54" height="46" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
-      <rect x="108" y="2" width="20" height="6" rx="3" fill="#065f46"/><circle cx="142" cy="5" r="3" fill="#10b981"/>
-      <rect x="108" y="16" width="38" height="14" rx="4" fill="#d1fae5"/>
-
-      <rect x="162" y="-8" width="54" height="46" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
-      <rect x="170" y="2" width="20" height="6" rx="3" fill="#065f46"/><circle cx="204" cy="5" r="3" fill="#10b981"/>
-      <rect x="170" y="16" width="38" height="14" rx="4" fill="#d1fae5"/>
-
-      <rect x="224" y="-8" width="54" height="46" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
-      <rect x="232" y="2" width="20" height="6" rx="3" fill="#065f46"/><circle cx="266" cy="5" r="3" fill="#10b981"/>
-      <rect x="232" y="16" width="38" height="14" rx="4" fill="#d1fae5"/>
-
-      <rect x="286" y="-8" width="54" height="46" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
-      <rect x="294" y="2" width="20" height="6" rx="3" fill="#065f46"/><circle cx="328" cy="5" r="3" fill="#10b981"/>
-      <rect x="294" y="16" width="38" height="14" rx="4" fill="#d1fae5"/>
-    </g>
-
-    <!-- Bottom summary status -->
-    <rect x="64" y="366" width="330" height="24" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
-    <circle cx="76" cy="378" r="4" fill="#0284c7"/>
-    <rect x="86" y="374" width="110" height="8" rx="4" fill="#334155"/>
-    <rect x="320" y="373" width="60" height="10" rx="5" fill="#0284c7"/>
+  <!-- Pedestrian crosswalk at entrance gate -->
+  <g fill="#ffffff" opacity="0.85">
+    <rect x="175" y="398" width="10" height="48" rx="2"/>
+    <rect x="195" y="398" width="10" height="48" rx="2"/>
+    <rect x="215" y="398" width="10" height="48" rx="2"/>
+    <rect x="235" y="398" width="10" height="48" rx="2"/>
+    <rect x="255" y="398" width="10" height="48" rx="2"/>
   </g>
 
-  <!-- Connectors from matrix to consoles -->
-  <g stroke="#38bdf8" stroke-width="2" fill="none" stroke-dasharray="4 4">
-    <path d="M414 130 L458 114"/>
-    <path d="M414 225 L458 225"/>
-    <path d="M414 330 L458 338"/>
+  <!-- ================================================================= -->
+  <!-- MAIN APARTMENT BUILDING (4 STOREYS + GROUND LOBBY & PARKING)       -->
+  <!-- ================================================================= -->
+
+  <!-- Building Shadow -->
+  <rect x="235" y="380" width="510" height="6" fill="#0f172a" opacity="0.2"/>
+
+  <!-- Main Concrete Building Shell -->
+  <rect x="240" y="60" width="495" height="324" rx="6" fill="url(#facade-gradient)" stroke="#cbd5e1" stroke-width="2"/>
+
+  <!-- Left Accent Architectural Tower Spine (Elevator & Stairwell Column) -->
+  <rect x="240" y="52" width="65" height="332" rx="4" fill="#0f172a"/>
+  <!-- Vertical glass ribbon in elevator tower -->
+  <g fill="#38bdf8" opacity="0.75">
+    <rect x="264" y="70" width="16" height="42" rx="3"/>
+    <rect x="264" y="128" width="16" height="42" rx="3"/>
+    <rect x="264" y="186" width="16" height="42" rx="3"/>
+    <rect x="264" y="244" width="16" height="42" rx="3"/>
+    <rect x="264" y="302" width="16" height="42" rx="3"/>
+  </g>
+  <!-- Floor level markers on elevator shaft -->
+  <text x="250" y="96" fill="#94a3b8" font-family="monospace" font-size="9" font-weight="bold">F4</text>
+  <text x="250" y="154" fill="#94a3b8" font-family="monospace" font-size="9" font-weight="bold">F3</text>
+  <text x="250" y="212" fill="#94a3b8" font-family="monospace" font-size="9" font-weight="bold">F2</text>
+  <text x="250" y="270" fill="#94a3b8" font-family="monospace" font-size="9" font-weight="bold">F1</text>
+  <text x="250" y="328" fill="#38bdf8" font-family="monospace" font-size="9" font-weight="bold">G</text>
+
+  <!-- ================= ROOFTOP STRUCTURES ================= -->
+  <!-- Rooftop Lift Motor Room -->
+  <rect x="240" y="30" width="75" height="24" rx="3" fill="#1e293b" stroke="#0f172a" stroke-width="1.5"/>
+  <g stroke="#475569" stroke-width="1.5">
+    <line x1="250" y1="36" x2="268" y2="36"/>
+    <line x1="250" y1="42" x2="268" y2="42"/>
+    <line x1="250" y1="48" x2="268" y2="48"/>
+  </g>
+  <!-- Antenna on lift room -->
+  <line x1="275" y1="30" x2="275" y2="12" stroke="#64748b" stroke-width="2"/>
+  <circle cx="275" cy="11" r="3" fill="#ef4444"/>
+
+  <!-- Overhead Water Tank Pair (Dual Supply: Municipal & Treated) -->
+  <rect x="345" y="34" width="34" height="26" rx="4" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1.5"/>
+  <line x1="345" y1="47" x2="379" y2="47" stroke="#94a3b8" stroke-width="1"/>
+  <rect x="388" y="34" width="34" height="26" rx="4" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1.5"/>
+  <line x1="388" y1="47" x2="422" y2="47" stroke="#94a3b8" stroke-width="1"/>
+
+  <!-- Rooftop Solar Photovoltaic Panels -->
+  <g transform="translate(440, 36)">
+    <polygon points="0,18 20,4 58,4 38,18" fill="url(#solar-gradient)" stroke="#0284c7" stroke-width="1"/>
+    <polygon points="46,18 66,4 104,4 84,18" fill="url(#solar-gradient)" stroke="#0284c7" stroke-width="1"/>
+    <polygon points="92,18 112,4 150,4 130,18" fill="url(#solar-gradient)" stroke="#0284c7" stroke-width="1"/>
+    <polygon points="138,18 158,4 196,4 176,18" fill="url(#solar-gradient)" stroke="#0284c7" stroke-width="1"/>
   </g>
 
-  <!-- Right: 3 Unified Portals Stack -->
-  <!-- 1. Admin Command Console (Top) -->
-  <g id="admin-portal" transform="translate(460, 44)">
-    <rect width="296" height="108" rx="14" fill="#ffffff" stroke="#bae6fd" stroke-width="2"/>
-    <rect x="18" y="16" width="8" height="8" rx="4" fill="#0284c7"/>
-    <rect x="32" y="15" width="110" height="10" rx="5" fill="#0f172a"/>
-    <rect x="210" y="13" width="70" height="16" rx="8" fill="#e0f2fe"/>
-    <rect x="220" y="18" width="50" height="6" rx="3" fill="#0369a1"/>
+  <!-- Rooftop Perimeter Steel Safety Railing -->
+  <line x1="315" y1="52" x2="735" y2="52" stroke="#94a3b8" stroke-width="2"/>
+  <g stroke="#cbd5e1" stroke-width="1.5">
+    <line x1="340" y1="52" x2="340" y2="60"/>
+    <line x1="390" y1="52" x2="390" y2="60"/>
+    <line x1="440" y1="52" x2="440" y2="60"/>
+    <line x1="490" y1="52" x2="490" y2="60"/>
+    <line x1="540" y1="52" x2="540" y2="60"/>
+    <line x1="590" y1="52" x2="590" y2="60"/>
+    <line x1="640" y1="52" x2="640" y2="60"/>
+    <line x1="690" y1="52" x2="690" y2="60"/>
+  </g>
 
-    <g transform="translate(18, 38)">
-      <!-- KPI stats row -->
-      <rect x="0" y="0" width="80" height="54" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
-      <rect x="10" y="10" width="40" height="6" rx="3" fill="#64748b"/>
-      <rect x="10" y="24" width="56" height="12" rx="4" fill="#0284c7"/>
-      <rect x="10" y="42" width="30" height="4" rx="2" fill="#10b981"/>
+  <!-- ================= 4 RESIDENTIAL FLOORS ================= -->
+  <!-- Horizontal floor band dividers (giving deep architectural shadow) -->
+  <rect x="305" y="124" width="430" height="6" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="0.5"/>
+  <rect x="305" y="190" width="430" height="6" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="0.5"/>
+  <rect x="305" y="256" width="430" height="6" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="0.5"/>
+  <rect x="305" y="322" width="430" height="8" fill="#0f172a"/>
 
-      <rect x="88" y="0" width="80" height="54" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
-      <rect x="98" y="10" width="44" height="6" rx="3" fill="#64748b"/>
-      <rect x="98" y="24" width="50" height="12" rx="4" fill="#059669"/>
-      <rect x="98" y="42" width="38" height="4" rx="2" fill="#0ea5e9"/>
+  <!-- Macro function for drawing an apartment unit: Window/Balcony set -->
+  <!-- FLOOR 4 (Units 401, 402, 403, 404) -->
+  <g id="floor-4" transform="translate(315, 68)">
+    <!-- Unit 401 -->
+    <g transform="translate(0, 0)">
+      <rect x="0" y="0" width="90" height="50" rx="3" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+      <rect x="8" y="6" width="34" height="40" rx="2" fill="url(#glass-tint)" stroke="#0f172a" stroke-width="1.5"/>
+      <rect x="46" y="6" width="36" height="40" rx="2" fill="url(#glass-warm)" stroke="#0f172a" stroke-width="1.5"/>
+      <!-- Balcony protrusion -->
+      <rect x="4" y="28" width="82" height="24" rx="3" fill="url(#balcony-glass)" stroke="#0284c7" stroke-width="1.5"/>
+      <line x1="4" y1="28" x2="86" y2="28" stroke="#0284c7" stroke-width="2"/>
+      <!-- Planter box -->
+      <rect x="62" y="36" width="18" height="8" rx="2" fill="#10b981"/>
+      <circle cx="67" cy="34" r="3" fill="#059669"/><circle cx="75" cy="33" r="4" fill="#34d399"/>
+    </g>
 
-      <!-- NOC Clearance Seal Status -->
-      <rect x="176" y="0" width="84" height="54" rx="8" fill="#f0fdf4" stroke="#a7f3d0" stroke-width="1.5"/>
-      <circle cx="218" cy="18" r="10" fill="#10b981"/>
-      <path d="M214 18 l3 3 l6 -7" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-      <rect x="186" y="36" width="64" height="8" rx="4" fill="#065f46"/>
+    <!-- Unit 402 -->
+    <g transform="translate(104, 0)">
+      <rect x="0" y="0" width="90" height="50" rx="3" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+      <rect x="8" y="6" width="34" height="40" rx="2" fill="url(#glass-tint)" stroke="#0f172a" stroke-width="1.5"/>
+      <rect x="46" y="6" width="36" height="40" rx="2" fill="url(#glass-tint)" stroke="#0f172a" stroke-width="1.5"/>
+      <rect x="4" y="28" width="82" height="24" rx="3" fill="url(#balcony-glass)" stroke="#0284c7" stroke-width="1.5"/>
+      <line x1="4" y1="28" x2="86" y2="28" stroke="#0284c7" stroke-width="2"/>
+      <rect x="12" y="36" width="18" height="8" rx="2" fill="#10b981"/>
+      <circle cx="17" cy="34" r="3" fill="#34d399"/><circle cx="25" cy="33" r="4" fill="#059669"/>
+    </g>
+
+    <!-- Unit 403 -->
+    <g transform="translate(208, 0)">
+      <rect x="0" y="0" width="90" height="50" rx="3" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+      <rect x="8" y="6" width="34" height="40" rx="2" fill="url(#glass-warm)" stroke="#0f172a" stroke-width="1.5"/>
+      <rect x="46" y="6" width="36" height="40" rx="2" fill="url(#glass-tint)" stroke="#0f172a" stroke-width="1.5"/>
+      <rect x="4" y="28" width="82" height="24" rx="3" fill="url(#balcony-glass)" stroke="#0284c7" stroke-width="1.5"/>
+      <line x1="4" y1="28" x2="86" y2="28" stroke="#0284c7" stroke-width="2"/>
+    </g>
+
+    <!-- Unit 404 -->
+    <g transform="translate(312, 0)">
+      <rect x="0" y="0" width="90" height="50" rx="3" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+      <rect x="8" y="6" width="34" height="40" rx="2" fill="url(#glass-tint)" stroke="#0f172a" stroke-width="1.5"/>
+      <rect x="46" y="6" width="36" height="40" rx="2" fill="url(#glass-warm)" stroke="#0f172a" stroke-width="1.5"/>
+      <rect x="4" y="28" width="82" height="24" rx="3" fill="url(#balcony-glass)" stroke="#0284c7" stroke-width="1.5"/>
+      <line x1="4" y1="28" x2="86" y2="28" stroke="#0284c7" stroke-width="2"/>
+      <rect x="62" y="36" width="18" height="8" rx="2" fill="#10b981"/>
+      <circle cx="71" cy="33" r="4" fill="#10b981"/>
     </g>
   </g>
 
-  <!-- 2. Security Gate Desk (Middle - Tablet Layout) -->
-  <g id="gate-portal" transform="translate(460, 170)">
-    <rect width="296" height="110" rx="14" fill="#0f172a" stroke="#334155" stroke-width="2"/>
-    <rect x="18" y="16" width="8" height="8" rx="4" fill="#10b981"/>
-    <rect x="32" y="15" width="130" height="10" rx="5" fill="#f8fafc"/>
-    <rect x="220" y="13" width="60" height="16" rx="8" fill="#1e293b"/>
-    <rect x="232" y="18" width="36" height="6" rx="3" fill="#38bdf8"/>
+  <!-- FLOOR 3 (Units 301, 302, 303, 304) -->
+  <g id="floor-3" transform="translate(315, 134)">
+    <!-- Unit 301 -->
+    <g transform="translate(0, 0)">
+      <rect x="0" y="0" width="90" height="50" rx="3" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+      <rect x="8" y="6" width="34" height="40" rx="2" fill="url(#glass-tint)" stroke="#0f172a" stroke-width="1.5"/>
+      <rect x="46" y="6" width="36" height="40" rx="2" fill="url(#glass-tint)" stroke="#0f172a" stroke-width="1.5"/>
+      <rect x="4" y="28" width="82" height="24" rx="3" fill="url(#balcony-glass)" stroke="#0284c7" stroke-width="1.5"/>
+      <line x1="4" y1="28" x2="86" y2="28" stroke="#0284c7" stroke-width="2"/>
+    </g>
 
-    <!-- High-contrast fast check-in row -->
-    <g transform="translate(18, 38)">
-      <!-- Active 6-char pass box -->
-      <rect x="0" y="0" width="124" height="56" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-      <rect x="10" y="10" width="68" height="6" rx="3" fill="#94a3b8"/>
-      <!-- 6-character pass representation -->
-      <g transform="translate(10, 24)">
-        <rect x="0" y="0" width="14" height="18" rx="3" fill="#0284c7"/>
-        <rect x="18" y="0" width="14" height="18" rx="3" fill="#0284c7"/>
-        <rect x="36" y="0" width="14" height="18" rx="3" fill="#0284c7"/>
-        <rect x="54" y="0" width="14" height="18" rx="3" fill="#0284c7"/>
-        <rect x="72" y="0" width="14" height="18" rx="3" fill="#0284c7"/>
-        <rect x="90" y="0" width="14" height="18" rx="3" fill="#0284c7"/>
-      </g>
-      <rect x="10" y="47" width="50" height="4" rx="2" fill="#38bdf8"/>
+    <!-- Unit 302 -->
+    <g transform="translate(104, 0)">
+      <rect x="0" y="0" width="90" height="50" rx="3" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+      <rect x="8" y="6" width="34" height="40" rx="2" fill="url(#glass-warm)" stroke="#0f172a" stroke-width="1.5"/>
+      <rect x="46" y="6" width="36" height="40" rx="2" fill="url(#glass-warm)" stroke="#0f172a" stroke-width="1.5"/>
+      <rect x="4" y="28" width="82" height="24" rx="3" fill="url(#balcony-glass)" stroke="#0284c7" stroke-width="1.5"/>
+      <line x1="4" y1="28" x2="86" y2="28" stroke="#0284c7" stroke-width="2"/>
+      <rect x="12" y="36" width="18" height="8" rx="2" fill="#10b981"/>
+      <circle cx="17" cy="34" r="3" fill="#34d399"/><circle cx="25" cy="33" r="4" fill="#059669"/>
+    </g>
 
-      <!-- One-tap check out affordance -->
-      <rect x="134" y="0" width="126" height="56" rx="8" fill="#10b981"/>
-      <circle cx="152" cy="28" r="10" fill="#ffffff" opacity="0.25"/>
-      <path d="M148 28 l3 3 l6 -6" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round"/>
-      <rect x="168" y="20" width="76" height="8" rx="4" fill="#ffffff"/>
-      <rect x="168" y="32" width="54" height="6" rx="3" fill="#d1fae5"/>
+    <!-- Unit 303 -->
+    <g transform="translate(208, 0)">
+      <rect x="0" y="0" width="90" height="50" rx="3" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+      <rect x="8" y="6" width="34" height="40" rx="2" fill="url(#glass-tint)" stroke="#0f172a" stroke-width="1.5"/>
+      <rect x="46" y="6" width="36" height="40" rx="2" fill="url(#glass-tint)" stroke="#0f172a" stroke-width="1.5"/>
+      <rect x="4" y="28" width="82" height="24" rx="3" fill="url(#balcony-glass)" stroke="#0284c7" stroke-width="1.5"/>
+      <line x1="4" y1="28" x2="86" y2="28" stroke="#0284c7" stroke-width="2"/>
+      <rect x="62" y="36" width="18" height="8" rx="2" fill="#10b981"/>
+      <circle cx="71" cy="33" r="4" fill="#10b981"/>
+    </g>
+
+    <!-- Unit 304 -->
+    <g transform="translate(312, 0)">
+      <rect x="0" y="0" width="90" height="50" rx="3" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+      <rect x="8" y="6" width="34" height="40" rx="2" fill="url(#glass-tint)" stroke="#0f172a" stroke-width="1.5"/>
+      <rect x="46" y="6" width="36" height="40" rx="2" fill="url(#glass-tint)" stroke="#0f172a" stroke-width="1.5"/>
+      <rect x="4" y="28" width="82" height="24" rx="3" fill="url(#balcony-glass)" stroke="#0284c7" stroke-width="1.5"/>
+      <line x1="4" y1="28" x2="86" y2="28" stroke="#0284c7" stroke-width="2"/>
     </g>
   </g>
 
-  <!-- 3. Resident Portal (Bottom) -->
-  <g id="resident-portal" transform="translate(460, 298)">
-    <rect width="296" height="108" rx="14" fill="#ffffff" stroke="#bae6fd" stroke-width="2"/>
-    <rect x="18" y="16" width="8" height="8" rx="4" fill="#059669"/>
-    <rect x="32" y="15" width="116" height="10" rx="5" fill="#0f172a"/>
-    <rect x="206" y="13" width="74" height="16" rx="8" fill="#ecfdf5"/>
-    <rect x="216" y="18" width="54" height="6" rx="3" fill="#059669"/>
-
-    <g transform="translate(18, 38)">
-      <!-- Dues breakdown card -->
-      <rect x="0" y="0" width="168" height="54" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
-      <rect x="10" y="10" width="78" height="6" rx="3" fill="#64748b"/>
-      <rect x="10" y="22" width="110" height="6" rx="3" fill="#94a3b8"/>
-      <rect x="10" y="36" width="60" height="8" rx="4" fill="#0f172a"/>
-
-      <!-- Receipt & declare payment buttons -->
-      <rect x="178" y="0" width="82" height="24" rx="6" fill="#e0f2fe" stroke="#7dd3fc" stroke-width="1"/>
-      <rect x="188" y="9" width="62" height="6" rx="3" fill="#0369a1"/>
-
-      <rect x="178" y="30" width="82" height="24" rx="6" fill="#0284c7"/>
-      <rect x="188" y="39" width="62" height="6" rx="3" fill="#ffffff"/>
+  <!-- FLOOR 2 (Units 201, 202, 203, 204) -->
+  <g id="floor-2" transform="translate(315, 200)">
+    <!-- Unit 201 -->
+    <g transform="translate(0, 0)">
+      <rect x="0" y="0" width="90" height="50" rx="3" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+      <rect x="8" y="6" width="34" height="40" rx="2" fill="url(#glass-warm)" stroke="#0f172a" stroke-width="1.5"/>
+      <rect x="46" y="6" width="36" height="40" rx="2" fill="url(#glass-warm)" stroke="#0f172a" stroke-width="1.5"/>
+      <rect x="4" y="28" width="82" height="24" rx="3" fill="url(#balcony-glass)" stroke="#0284c7" stroke-width="1.5"/>
+      <line x1="4" y1="28" x2="86" y2="28" stroke="#0284c7" stroke-width="2"/>
+      <rect x="62" y="36" width="18" height="8" rx="2" fill="#10b981"/>
+      <circle cx="71" cy="33" r="4" fill="#10b981"/>
     </g>
+
+    <!-- Unit 202 -->
+    <g transform="translate(104, 0)">
+      <rect x="0" y="0" width="90" height="50" rx="3" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+      <rect x="8" y="6" width="34" height="40" rx="2" fill="url(#glass-tint)" stroke="#0f172a" stroke-width="1.5"/>
+      <rect x="46" y="6" width="36" height="40" rx="2" fill="url(#glass-tint)" stroke="#0f172a" stroke-width="1.5"/>
+      <rect x="4" y="28" width="82" height="24" rx="3" fill="url(#balcony-glass)" stroke="#0284c7" stroke-width="1.5"/>
+      <line x1="4" y1="28" x2="86" y2="28" stroke="#0284c7" stroke-width="2"/>
+    </g>
+
+    <!-- Unit 203 -->
+    <g transform="translate(208, 0)">
+      <rect x="0" y="0" width="90" height="50" rx="3" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+      <rect x="8" y="6" width="34" height="40" rx="2" fill="url(#glass-tint)" stroke="#0f172a" stroke-width="1.5"/>
+      <rect x="46" y="6" width="36" height="40" rx="2" fill="url(#glass-warm)" stroke="#0f172a" stroke-width="1.5"/>
+      <rect x="4" y="28" width="82" height="24" rx="3" fill="url(#balcony-glass)" stroke="#0284c7" stroke-width="1.5"/>
+      <line x1="4" y1="28" x2="86" y2="28" stroke="#0284c7" stroke-width="2"/>
+      <rect x="12" y="36" width="18" height="8" rx="2" fill="#10b981"/>
+      <circle cx="17" cy="34" r="3" fill="#34d399"/><circle cx="25" cy="33" r="4" fill="#059669"/>
+    </g>
+
+    <!-- Unit 204 -->
+    <g transform="translate(312, 0)">
+      <rect x="0" y="0" width="90" height="50" rx="3" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+      <rect x="8" y="6" width="34" height="40" rx="2" fill="url(#glass-tint)" stroke="#0f172a" stroke-width="1.5"/>
+      <rect x="46" y="6" width="36" height="40" rx="2" fill="url(#glass-tint)" stroke="#0f172a" stroke-width="1.5"/>
+      <rect x="4" y="28" width="82" height="24" rx="3" fill="url(#balcony-glass)" stroke="#0284c7" stroke-width="1.5"/>
+      <line x1="4" y1="28" x2="86" y2="28" stroke="#0284c7" stroke-width="2"/>
+    </g>
+  </g>
+
+  <!-- FLOOR 1 (Units 101, 102, 103, 104) -->
+  <g id="floor-1" transform="translate(315, 266)">
+    <!-- Unit 101 -->
+    <g transform="translate(0, 0)">
+      <rect x="0" y="0" width="90" height="50" rx="3" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+      <rect x="8" y="6" width="34" height="40" rx="2" fill="url(#glass-tint)" stroke="#0f172a" stroke-width="1.5"/>
+      <rect x="46" y="6" width="36" height="40" rx="2" fill="url(#glass-tint)" stroke="#0f172a" stroke-width="1.5"/>
+      <rect x="4" y="28" width="82" height="24" rx="3" fill="url(#balcony-glass)" stroke="#0284c7" stroke-width="1.5"/>
+      <line x1="4" y1="28" x2="86" y2="28" stroke="#0284c7" stroke-width="2"/>
+      <rect x="12" y="36" width="18" height="8" rx="2" fill="#10b981"/>
+      <circle cx="17" cy="34" r="3" fill="#34d399"/>
+    </g>
+
+    <!-- Unit 102 -->
+    <g transform="translate(104, 0)">
+      <rect x="0" y="0" width="90" height="50" rx="3" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+      <rect x="8" y="6" width="34" height="40" rx="2" fill="url(#glass-warm)" stroke="#0f172a" stroke-width="1.5"/>
+      <rect x="46" y="6" width="36" height="40" rx="2" fill="url(#glass-tint)" stroke="#0f172a" stroke-width="1.5"/>
+      <rect x="4" y="28" width="82" height="24" rx="3" fill="url(#balcony-glass)" stroke="#0284c7" stroke-width="1.5"/>
+      <line x1="4" y1="28" x2="86" y2="28" stroke="#0284c7" stroke-width="2"/>
+    </g>
+
+    <!-- Unit 103 -->
+    <g transform="translate(208, 0)">
+      <rect x="0" y="0" width="90" height="50" rx="3" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+      <rect x="8" y="6" width="34" height="40" rx="2" fill="url(#glass-tint)" stroke="#0f172a" stroke-width="1.5"/>
+      <rect x="46" y="6" width="36" height="40" rx="2" fill="url(#glass-tint)" stroke="#0f172a" stroke-width="1.5"/>
+      <rect x="4" y="28" width="82" height="24" rx="3" fill="url(#balcony-glass)" stroke="#0284c7" stroke-width="1.5"/>
+      <line x1="4" y1="28" x2="86" y2="28" stroke="#0284c7" stroke-width="2"/>
+      <rect x="62" y="36" width="18" height="8" rx="2" fill="#10b981"/>
+      <circle cx="71" cy="33" r="4" fill="#10b981"/>
+    </g>
+
+    <!-- Unit 104 -->
+    <g transform="translate(312, 0)">
+      <rect x="0" y="0" width="90" height="50" rx="3" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+      <rect x="8" y="6" width="34" height="40" rx="2" fill="url(#glass-warm)" stroke="#0f172a" stroke-width="1.5"/>
+      <rect x="46" y="6" width="36" height="40" rx="2" fill="url(#glass-warm)" stroke="#0f172a" stroke-width="1.5"/>
+      <rect x="4" y="28" width="82" height="24" rx="3" fill="url(#balcony-glass)" stroke="#0284c7" stroke-width="1.5"/>
+      <line x1="4" y1="28" x2="86" y2="28" stroke="#0284c7" stroke-width="2"/>
+    </g>
+  </g>
+
+  <!-- ================= GROUND FLOOR LEVEL ================= -->
+  <!-- Grand Reception / Foyer Lobby in Center -->
+  <g id="ground-lobby" transform="translate(315, 330)">
+    <!-- Entrance Porch Canopy -->
+    <rect x="0" y="-8" width="200" height="10" rx="3" fill="#0f172a"/>
+    <!-- Lobby signage plaque: LOGAPART RESIDENCY -->
+    <rect x="45" y="-18" width="110" height="12" rx="3" fill="#0284c7"/>
+    <text x="100" y="-9" fill="#ffffff" font-family="sans-serif" font-size="7" font-weight="bold" text-anchor="middle" letter-spacing="1">LOGAPART RESIDENCY</text>
+
+    <!-- Double glass automatic sliding doors -->
+    <rect x="15" y="2" width="170" height="52" rx="4" fill="url(#glass-tint)" stroke="#0f172a" stroke-width="2"/>
+    <!-- Glass door mullions -->
+    <line x1="100" y1="2" x2="100" y2="54" stroke="#0f172a" stroke-width="2"/>
+    <line x1="60" y1="2" x2="60" y2="54" stroke="#38bdf8" stroke-width="1"/>
+    <line x1="140" y1="2" x2="140" y2="54" stroke="#38bdf8" stroke-width="1"/>
+
+    <!-- Reception counter visible inside with warm light -->
+    <rect x="80" y="32" width="40" height="20" rx="2" fill="#0f172a"/>
+    <rect x="88" y="22" width="24" height="8" rx="2" fill="#fef08a" opacity="0.8"/>
+  </g>
+
+  <!-- Covered Resident Parking Bays (Right Stilt Section) -->
+  <g id="ground-parking" transform="translate(530, 330)">
+    <rect x="0" y="0" width="195" height="54" fill="#0f172a" rx="3"/>
+    <!-- Concrete support pillars -->
+    <rect x="60" y="0" width="14" height="54" fill="#e2e8f0"/>
+    <rect x="130" y="0" width="14" height="54" fill="#e2e8f0"/>
+
+    <!-- Slot P-01 (Parked car silhouette) -->
+    <g transform="translate(8, 16)">
+      <!-- Number plaque -->
+      <rect x="12" y="2" width="24" height="8" rx="2" fill="#334155"/>
+      <text x="24" y="8" fill="#38bdf8" font-family="sans-serif" font-size="6" text-anchor="middle">P-01</text>
+      <!-- EV Charging Point -->
+      <rect x="42" y="6" width="6" height="14" rx="2" fill="#10b981"/>
+      <circle cx="45" cy="10" r="1.5" fill="#ffffff"/>
+      <!-- Modern vehicle profile -->
+      <path d="M4 34 q2 -10 10 -12 h20 q10 2 14 12 z" fill="#0284c7"/>
+      <circle cx="12" cy="35" r="5" fill="#0f172a"/><circle cx="12" cy="35" r="2" fill="#e2e8f0"/>
+      <circle cx="40" cy="35" r="5" fill="#0f172a"/><circle cx="40" cy="35" r="2" fill="#e2e8f0"/>
+    </g>
+
+    <!-- Slot P-02 (Available) -->
+    <g transform="translate(80, 16)">
+      <rect x="12" y="2" width="24" height="8" rx="2" fill="#334155"/>
+      <text x="24" y="8" fill="#94a3b8" font-family="sans-serif" font-size="6" text-anchor="middle">P-02</text>
+      <rect x="8" y="34" width="36" height="2" fill="#10b981"/>
+    </g>
+
+    <!-- Slot P-03 (Parked vehicle) -->
+    <g transform="translate(148, 16)">
+      <rect x="8" y="2" width="24" height="8" rx="2" fill="#334155"/>
+      <text x="20" y="8" fill="#38bdf8" font-family="sans-serif" font-size="6" text-anchor="middle">P-03</text>
+      <path d="M2 34 q2 -8 8 -10 h18 q8 2 12 10 z" fill="#059669"/>
+      <circle cx="8" cy="35" r="5" fill="#0f172a"/>
+      <circle cx="34" cy="35" r="5" fill="#0f172a"/>
+    </g>
+  </g>
+
+  <!-- ================================================================= -->
+  <!-- LEFT: SECURITY GATE DESK, BOOM BARRIER & ACCESS CONTROL SYSTEM     -->
+  <!-- ================================================================= -->
+
+  <!-- Security Guard Post Cabin -->
+  <g id="security-gate-house" transform="translate(50, 275)">
+    <!-- Overhanging canopy roof -->
+    <rect x="0" y="0" width="105" height="10" rx="3" fill="#0f172a"/>
+    <!-- Guard Cabin Glass & Steel Structure -->
+    <rect x="8" y="10" width="88" height="98" rx="4" fill="#ffffff" stroke="#0f172a" stroke-width="2"/>
+
+    <!-- Large wrap-around observation windows -->
+    <rect x="14" y="18" width="76" height="46" rx="3" fill="url(#glass-tint)" stroke="#0f172a" stroke-width="1.5"/>
+    <line x1="52" y1="18" x2="52" y2="64" stroke="#0f172a" stroke-width="1.5"/>
+
+    <!-- Security Monitor inside -->
+    <rect x="22" y="32" width="22" height="16" rx="2" fill="#0f172a"/>
+    <rect x="24" y="34" width="18" height="12" rx="1" fill="#10b981" opacity="0.8"/>
+    <!-- Guard silhouette at desk -->
+    <circle cx="68" cy="34" r="7" fill="#1e293b"/>
+    <path d="M58 48 q10 -6 20 0 z" fill="#1e293b"/>
+
+    <!-- Signboard: SECURITY / GATE DESK -->
+    <rect x="16" y="68" width="72" height="12" rx="3" fill="#0f172a"/>
+    <text x="52" y="77" fill="#38bdf8" font-family="sans-serif" font-size="6" font-weight="bold" text-anchor="middle" letter-spacing="0.5">GATE DESK</text>
+
+    <!-- Biometric & Pass Terminal on Exterior Wall -->
+    <rect x="86" y="44" width="8" height="14" rx="2" fill="#0f172a"/>
+    <circle cx="90" cy="49" r="2" fill="#10b981"/>
+
+    <!-- CCTV Dome Camera mounted on corner -->
+    <rect x="94" y="8" width="4" height="6" fill="#334155"/>
+    <circle cx="96" cy="16" r="5" fill="#0f172a"/>
+    <circle cx="96" cy="16" r="2" fill="#ef4444"/>
+  </g>
+
+  <!-- Automated Boom Barrier Mechanism & Stripe Arm -->
+  <g id="boom-barrier" transform="translate(145, 345)">
+    <!-- Sturdy barrier pedestal -->
+    <rect x="0" y="0" width="16" height="38" rx="3" fill="#0284c7" stroke="#0f172a" stroke-width="1.5"/>
+    <!-- LED indicator light on pedestal -->
+    <circle cx="8" cy="10" r="3.5" fill="#10b981"/>
+
+    <!-- Boom Barrier Arm (Horizontal closed position spanning access lane) -->
+    <!-- Pivot joint -->
+    <circle cx="8" cy="18" r="6" fill="#0f172a"/>
+    <circle cx="8" cy="18" r="2.5" fill="#ffffff"/>
+
+    <!-- Striped Barrier Arm -->
+    <rect x="14" y="14" width="88" height="8" rx="2" fill="#ef4444" stroke="#0f172a" stroke-width="1"/>
+    <!-- White reflective safety chevrons -->
+    <polygon points="26,14 34,14 26,22 18,22" fill="#ffffff"/>
+    <polygon points="46,14 54,14 46,22 38,22" fill="#ffffff"/>
+    <polygon points="66,14 74,14 66,22 58,22" fill="#ffffff"/>
+    <polygon points="86,14 94,14 86,22 78,22" fill="#ffffff"/>
+  </g>
+
+  <!-- Access Control Reader Totem / Intercom Pillar for incoming cars -->
+  <g transform="translate(236, 350)">
+    <rect x="0" y="0" width="10" height="34" rx="2" fill="#0f172a"/>
+    <rect x="1" y="4" width="8" height="10" rx="1" fill="#38bdf8"/>
+    <!-- Keypad representation -->
+    <circle cx="5" cy="20" r="1.5" fill="#10b981"/>
+  </g>
+
+  <!-- ================= LANDSCAPING & URBAN DETAILS ================= -->
+  <!-- Modern Geometric Cypress Trees on left boundary -->
+  <g id="landscaping-left">
+    <!-- Tree 1 -->
+    <rect x="22" y="358" width="6" height="26" fill="#78350f" rx="1"/>
+    <polygon points="25,280 12,360 38,360" fill="#059669"/>
+    <polygon points="25,296 15,350 35,350" fill="#10b981" opacity="0.6"/>
+
+    <!-- Tree 2 -->
+    <rect x="36" y="364" width="5" height="20" fill="#78350f" rx="1"/>
+    <polygon points="38.5,305 28,366 49,366" fill="#047857"/>
+  </g>
+
+  <!-- Landscaping on right perimeter -->
+  <g id="landscaping-right">
+    <rect x="754" y="354" width="6" height="30" fill="#78350f" rx="1"/>
+    <polygon points="757,285 744,358 770,358" fill="#059669"/>
+    <polygon points="757,300 747,352 767,352" fill="#34d399" opacity="0.5"/>
+
+    <rect x="772" y="360" width="5" height="24" fill="#78350f" rx="1"/>
+    <polygon points="774.5,310 765,364 784,364" fill="#047857"/>
+  </g>
+
+  <!-- Floating architectural badge overlay (clean & discreet in top-left) -->
+  <g transform="translate(48, 44)">
+    <rect width="144" height="28" rx="14" fill="#ffffff" fill-opacity="0.92" stroke="#bae6fd" stroke-width="1.5"/>
+    <circle cx="16" cy="14" r="5" fill="#10b981"/>
+    <text x="30" y="18" fill="#0f172a" font-family="sans-serif" font-size="10" font-weight="bold">LogApart</text>
+    <text x="82" y="18" fill="#64748b" font-family="sans-serif" font-size="9">· 4 Floors</text>
+    <text x="124" y="18" fill="#0284c7" font-family="sans-serif" font-size="9" font-weight="bold">20H</text>
   </g>
 </svg>

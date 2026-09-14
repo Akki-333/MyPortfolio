@@ -327,7 +327,7 @@ export const projects: readonly Project[] = [
     flagship: false,
     cover: logapartCover,
     coverAlt:
-      "Residential society building matrix with 20 flats across 4 floors, tri-portal command consoles, and double-entry dues ledger",
+      "Modern four-storey residential apartment building with balconies, security gate desk, automated boom barrier, and resident parking bays",
     summary:
       "A multi-tenant housing society management platform serving 20 homes across four floors, unifying an admin command center, a tablet-first security gate desk, and a resident self-service portal over an Express 5 and MySQL architecture.",
     overview: [
