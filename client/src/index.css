@@ -1,6 +1,7 @@
 @import "./styles/tokens.css";
 @import "./styles/keyframes.css";
 @import "./styles/glass.css";
+@import "./styles/intro.css";
 
 @tailwind base;
 @tailwind components;

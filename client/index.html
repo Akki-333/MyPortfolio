@@ -29,6 +29,19 @@
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
+    <!--
+      Startup intro. The gate runs before first paint and flags <html> when
+      the intro will play; this style then paints the intro's stage colour
+      (--intro-stage in styles/intro.css) on the first frame, so the page
+      never flashes white before the overlay mounts.
+    -->
+    <script src="/intro-gate.js"></script>
+    <style>
+      html[data-intro] {
+        background: #020617;
+      }
+    </style>
+
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Akshay S — Full-Stack &amp; Systems Engineer" />
     <meta

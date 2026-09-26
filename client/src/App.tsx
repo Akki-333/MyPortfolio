@@ -1,17 +1,22 @@
 import { Route, Switch } from "wouter";
+import { IntroSequence } from "@/components/intro/IntroSequence";
 import { Home } from "@/pages/Home";
 import { NotFound } from "@/pages/NotFound";
 
 /**
  * Root layout. The site is a single scrolling page; the catch-all route only
  * exists so a mistyped deep link renders something deliberate rather than a
- * blank document after the host rewrite.
+ * blank document after the host rewrite. The intro overlays the page on the
+ * first visit of a session and renders nothing otherwise.
  */
 export default function App() {
   return (
-    <Switch>
-      <Route path="/" component={Home} />
-      <Route component={NotFound} />
-    </Switch>
+    <>
+      <Switch>
+        <Route path="/" component={Home} />
+        <Route component={NotFound} />
+      </Switch>
+      <IntroSequence />
+    </>
   );
 }

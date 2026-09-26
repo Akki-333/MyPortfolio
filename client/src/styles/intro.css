@@ -1,0 +1,636 @@
+/**
+ * Startup intro. Markup and clock live in components/intro/IntroSequence.tsx.
+ *
+ * Timeline, in ms from mount (TIMELINE in the component matches these):
+ *      0  stage, dot grid and glow come up; the monogram draws itself
+ *    250  the horizon line starts filling as the load counter runs
+ *    900  the name rises in, letter by letter
+ *   1350  the role decodes beneath the line, then re-decodes at 2600
+ *   3650  load completes: the horizon flashes and the glow swells
+ *   3950  exit: the name sinks back into the horizon, which fades
+ *   4200  the stage splits open along the line; the page is released
+ *   5000  overlay unmounts
+ *
+ * As in keyframes.css, motion is transform and opacity only. The single
+ * exception is the monogram's stroke draw (stroke-dashoffset), a repaint of
+ * a 56px SVG for under a second.
+ */
+
+/*
+ * While the intro plays, the page underneath is scroll-locked and its
+ * entrance animations are held at their first frame, so the hero rises in as
+ * the stage opens instead of finishing unseen behind it. The component
+ * removes `data-intro` as the split begins to release both.
+ */
+html[data-intro] {
+  overflow: hidden;
+  /* Keeps the hidden scrollbar's space, so nothing shifts when it returns. */
+  scrollbar-gutter: stable;
+}
+
+html[data-intro] .animate-rise-in,
+html[data-intro] .reveal.is-visible {
+  animation-play-state: paused;
+}
+
+.intro {
+  --intro-stage: #020617;
+  /* The horizon, and the line the stage splits along. Just below centre, so
+     the title block above it sits on the optical centre. */
+  --intro-seam: 55%;
+  --intro-gutter: clamp(1rem, 3vw, 2.25rem);
+  --intro-edge: clamp(1.25rem, 3.5vh, 2rem);
+  --intro-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --intro-ease-in-out: cubic-bezier(0.76, 0, 0.24, 1);
+
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  overflow: hidden;
+  isolation: isolate;
+  color: #e2e8f0;
+  cursor: default;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* A tab opened in the background holds a still stage until it is viewed. */
+.intro-hold {
+  background: var(--intro-stage);
+}
+
+/* Once exiting, clicks fall through to the page as it is revealed. */
+.intro.is-exiting {
+  pointer-events: none;
+}
+
+/* ------------------------------------------------------------------------
+ * Stage: two full-size copies, clipped either side of the seam, that split
+ * apart on exit. Clipping rather than sizing the halves keeps the grid and
+ * glow in one coordinate space, so they line up exactly across the seam.
+ * --------------------------------------------------------------------- */
+
+.intro-panel {
+  position: absolute;
+  inset: 0;
+  background: var(--intro-stage);
+}
+
+.intro-panel-top {
+  clip-path: inset(0 0 calc(100% - var(--intro-seam)) 0);
+}
+
+.intro-panel-bottom {
+  clip-path: inset(var(--intro-seam) 0 0 0);
+}
+
+/* Dot matrix at the page canvas's 26px pitch, fading out towards the edges. */
+.intro-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    rgb(56 189 248 / 0.18) 1px,
+    transparent 0
+  );
+  background-size: 26px 26px;
+  -webkit-mask-image: radial-gradient(
+    ellipse 70% 60% at 50% var(--intro-seam),
+    #000 15%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    ellipse 70% 60% at 50% var(--intro-seam),
+    #000 15%,
+    transparent 100%
+  );
+  animation: fade-in 1.4s ease 100ms both;
+}
+
+/* Glow on the seam. A gradient, not a blur filter, so it costs nothing to scale. */
+.intro-panel::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  top: calc(var(--intro-seam) - min(45vmin, 25rem));
+  width: min(140vmin, 80rem);
+  height: min(90vmin, 50rem);
+  margin-inline: auto;
+  background: radial-gradient(
+    closest-side,
+    rgb(14 165 233 / 0.3),
+    rgb(3 105 161 / 0.12) 55%,
+    transparent
+  );
+  animation:
+    intro-glow-in 1.8s var(--intro-ease-out) 100ms both,
+    intro-glow-swell 1.2s ease-in-out 3650ms forwards;
+}
+
+/* Seam edge: a lit hairline and its halo, shown only once the halves part. */
+.intro-edge {
+  position: absolute;
+  z-index: 1;
+  inset-inline: 0;
+  top: var(--intro-seam);
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgb(125 211 252 / 0.85) 30%,
+    #e0f2fe 50%,
+    rgb(125 211 252 / 0.85) 70%,
+    transparent
+  );
+  opacity: 0;
+}
+
+.intro-panel-top .intro-edge {
+  margin-top: -1px;
+}
+
+/* Centred on the seam; each half's clip keeps only its own side of it. */
+.intro-edge::before {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  top: -32px;
+  height: 64px;
+  background: radial-gradient(
+    closest-side,
+    rgb(56 189 248 / 0.4),
+    transparent
+  );
+}
+
+.is-exiting .intro-panel-top {
+  animation: intro-split-up 800ms var(--intro-ease-in-out) 250ms forwards;
+}
+
+.is-exiting .intro-panel-bottom {
+  animation: intro-split-down 800ms var(--intro-ease-in-out) 250ms forwards;
+}
+
+.is-exiting .intro-edge {
+  animation: fade-in 250ms ease 150ms both;
+}
+
+/* ------------------------------------------------------------------------
+ * Content. Each piece lives in the half it sits in, so on exit it is carried
+ * off with the stage and clipped by it, rather than fading over the page.
+ * --------------------------------------------------------------------- */
+
+/* Above the grid and glow, which are the panel's own pseudo-elements. */
+.intro-panel > * {
+  z-index: 1;
+}
+
+.intro-upper {
+  position: absolute;
+  inset-inline: 0;
+  bottom: calc(100% - var(--intro-seam));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(1.25rem, 4.5vh, 2.5rem);
+  padding: 0 1rem clamp(0.4rem, 1.4vh, 0.9rem);
+}
+
+.intro-lower {
+  position: absolute;
+  inset-inline: 0;
+  top: var(--intro-seam);
+  display: flex;
+  justify-content: center;
+  padding: clamp(1rem, 3vh, 1.6rem) 1rem 0;
+}
+
+/* Monogram: the favicon mark, traced in outline and then filled. */
+.intro-mark {
+  position: relative;
+  width: clamp(2.75rem, 8vmin, 3.5rem);
+  aspect-ratio: 1;
+  animation: intro-mark-in 1s var(--intro-ease-out) 100ms both;
+}
+
+.intro-mark::before {
+  content: "";
+  position: absolute;
+  inset: -70%;
+  background: radial-gradient(
+    closest-side,
+    rgb(56 189 248 / 0.3),
+    transparent
+  );
+  animation: fade-in 900ms ease 1000ms both;
+}
+
+.intro-mark-ring {
+  position: absolute;
+  inset: 0;
+  border: 1px solid #38bdf8;
+  /* The tile's 8/32 corner radius. */
+  border-radius: 25%;
+  opacity: 0;
+  animation: pulse-ring 1.2s var(--ease-out) 1350ms forwards;
+}
+
+.intro-mark-svg {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.intro-mark-outline,
+.intro-mark-trace {
+  fill: none;
+  stroke: #7dd3fc;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+
+.intro-mark-outline {
+  stroke-width: 1;
+  animation:
+    intro-draw 850ms cubic-bezier(0.65, 0, 0.35, 1) 150ms both,
+    intro-fade-out 400ms ease 1000ms forwards;
+}
+
+.intro-mark-trace {
+  stroke-width: 0.6;
+  animation:
+    intro-draw 700ms cubic-bezier(0.65, 0, 0.35, 1) 400ms both,
+    intro-fade-out 400ms ease 1100ms forwards;
+}
+
+.intro-mark-tile {
+  animation: fade-in 450ms ease 950ms both;
+}
+
+.intro-mark-glyph {
+  fill: #ffffff;
+  animation: fade-in 450ms ease 1050ms both;
+}
+
+/* Name: each letter rises out of a shared mask. */
+.intro-name {
+  display: flex;
+  margin: 0;
+  padding: 0.04em 0.08em 0.16em;
+  overflow: hidden;
+  font-size: clamp(3rem, min(16vw, 17vh), 8rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+  white-space: pre;
+}
+
+/* Entrance on the outer span, exit on the inner, so a skip mid-rise never snaps. */
+.intro-char {
+  display: inline-block;
+  transform-origin: 0 100%;
+  animation: intro-char-rise 1.1s var(--intro-ease-out)
+    calc(900ms + var(--i) * 55ms) both;
+}
+
+.intro-char-glyph {
+  display: inline-block;
+  /*
+   * Pads the background box past the letter's overhang and descender, or
+   * background-clip: text shaves the tail off the "y". The negative margins
+   * hand the space back.
+   */
+  padding: 0.1em 0.12em 0.2em;
+  margin: -0.1em -0.12em -0.2em;
+  background-image: linear-gradient(
+    180deg,
+    #ffffff 25%,
+    #e0f2fe 55%,
+    #7dd3fc 110%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/*
+ * Exit sinks each letter back into the horizon. Downward, not up: a letter a
+ * skip catches before it has risen only goes further below the mask, where a
+ * lift would sweep it up through the visible window.
+ */
+.is-exiting .intro-char-glyph {
+  animation: intro-char-leave 520ms cubic-bezier(0.7, 0, 0.84, 0)
+    calc(var(--i) * 24ms) forwards;
+}
+
+/* Horizon: the load bar, and later the seam the stage splits along. */
+.intro-horizon {
+  position: absolute;
+  top: var(--intro-seam);
+  inset-inline: 0;
+  width: min(38rem, 82vw);
+  height: 1px;
+  margin: -0.5px auto 0;
+  background: rgb(125 211 252 / 0.14);
+  animation: intro-horizon-in 900ms var(--intro-ease-out) 100ms both;
+}
+
+/* The lit seam edges take over from the line. Listing the entrance again
+   keeps it running, so a skip mid-draw fades from where the line is. */
+.is-exiting .intro-horizon {
+  animation:
+    intro-horizon-in 900ms var(--intro-ease-out) 100ms both,
+    intro-fade-out 350ms ease 150ms forwards;
+}
+
+.intro-horizon-fill {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgb(56 189 248 / 0),
+    #38bdf8 22%,
+    #f0f9ff 50%,
+    #38bdf8 78%,
+    rgb(56 189 248 / 0)
+  );
+  transform: scaleX(0);
+  will-change: transform;
+}
+
+.intro-horizon-fill::after {
+  content: "";
+  position: absolute;
+  inset: -14px 6%;
+  background: radial-gradient(
+    closest-side,
+    rgb(56 189 248 / 0.4),
+    transparent
+  );
+}
+
+.intro-horizon-flash {
+  position: absolute;
+  inset: -1px -4%;
+  background: linear-gradient(90deg, transparent, #ffffff 50%, transparent);
+  opacity: 0;
+  animation: intro-flash 1s ease-out 3650ms forwards;
+}
+
+.intro-horizon-flash::after {
+  content: "";
+  position: absolute;
+  inset: -36px 12%;
+  background: radial-gradient(
+    closest-side,
+    rgb(56 189 248 / 0.45),
+    transparent
+  );
+}
+
+/* Role line, decoded glyph by glyph from the component's clock. */
+.intro-role {
+  font-family: var(--font-mono);
+  font-size: clamp(0.72rem, 1.5vw, 0.875rem);
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.34em;
+  /* Balances the trailing letter-space so the line sits optically centred. */
+  padding-left: 0.34em;
+  text-transform: uppercase;
+  white-space: pre;
+  color: #7dd3fc;
+}
+
+/* Corner furniture: meta line, skip hint, boot log and load counter. */
+.intro-meta {
+  position: absolute;
+  top: var(--intro-edge);
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  line-height: 1;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #64748b;
+  animation: fade-in 800ms ease 500ms both;
+}
+
+.intro-meta-start {
+  left: var(--intro-gutter);
+}
+
+.intro-meta-end {
+  right: var(--intro-gutter);
+  color: #94a3b8;
+}
+
+.intro-hint-touch {
+  display: none;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .intro-hint-fine {
+    display: none;
+  }
+
+  .intro-hint-touch {
+    display: inline;
+  }
+}
+
+.intro-log {
+  position: absolute;
+  left: var(--intro-gutter);
+  bottom: var(--intro-edge);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  line-height: 1.75;
+  color: #64748b;
+}
+
+.intro-log-line {
+  white-space: pre;
+  animation: intro-line-in 420ms var(--intro-ease-out) both;
+}
+
+.intro-log-line::before {
+  content: ">";
+  margin-right: 0.75em;
+  color: #0ea5e9;
+}
+
+.intro-log-verb {
+  display: inline-block;
+  min-width: 7ch;
+  color: #cbd5e1;
+}
+
+.intro-log-line.is-ready .intro-log-verb {
+  color: #6ee7b7;
+}
+
+.intro-log-line.is-ready::after {
+  content: "";
+  display: inline-block;
+  width: 0.55em;
+  height: 1em;
+  vertical-align: -0.15em;
+  background: #38bdf8;
+  animation: caret-blink 1.1s steps(1) infinite;
+}
+
+.intro-counter {
+  position: absolute;
+  right: var(--intro-gutter);
+  bottom: var(--intro-edge);
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin: 0;
+  font-family: var(--font-mono);
+  animation: fade-in 600ms ease 250ms both;
+}
+
+.intro-counter-label {
+  font-size: 0.6875rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #64748b;
+}
+
+.intro-counter-value {
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+  color: #f8fafc;
+}
+
+/* Narrow phones: the log and counter share one row; drop the label. */
+@media (max-width: 30rem) {
+  .intro-counter-label {
+    display: none;
+  }
+}
+
+/* ------------------------------------------------------------------------
+ * Keyframes. `fade-in`, `pulse-ring` and `caret-blink` come from
+ * keyframes.css.
+ * --------------------------------------------------------------------- */
+
+@keyframes intro-fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes intro-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes intro-glow-in {
+  from {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  to {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+}
+
+@keyframes intro-glow-swell {
+  0% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  35% {
+    opacity: 1;
+    transform: scale(1.12);
+  }
+  100% {
+    opacity: 0.9;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes intro-mark-in {
+  from {
+    opacity: 0;
+    transform: scale(0.88);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes intro-char-rise {
+  from {
+    transform: translate3d(0, 110%, 0) rotate(7deg);
+  }
+  to {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+}
+
+@keyframes intro-char-leave {
+  to {
+    transform: translate3d(0, 115%, 0);
+  }
+}
+
+@keyframes intro-horizon-in {
+  from {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes intro-flash {
+  0% {
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.4;
+  }
+}
+
+@keyframes intro-line-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 6px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes intro-split-up {
+  to {
+    transform: translate3d(0, calc(-1 * var(--intro-seam)), 0);
+  }
+}
+
+@keyframes intro-split-down {
+  to {
+    transform: translate3d(0, calc(100% - var(--intro-seam)), 0);
+  }
+}
