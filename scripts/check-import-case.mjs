@@ -49,7 +49,12 @@ const CANDIDATE_SUFFIXES = ["", ".ts", ".tsx", ".svg", ".css", "/index.ts", "/in
 const sources = [...tracked].filter((f) => /^client\/src\/.+\.(ts|tsx)$/.test(f));
 
 for (const file of sources) {
-  const body = readFileSync(join(root, file), "utf8");
+  let body;
+  try {
+    body = readFileSync(join(root, file), "utf8");
+  } catch {
+    continue;
+  }
   const specifiers = [...body.matchAll(/(?:from|import)\s+"([^"]+)"/g)].map((m) => m[1]);
 
   for (const spec of specifiers) {

@@ -4,7 +4,6 @@ import { Hero } from "@/components/sections/hero/Hero";
 import { About } from "@/components/sections/about/About";
 import { Skills } from "@/components/sections/skills/Skills";
 import { Projects } from "@/components/sections/projects/Projects";
-import { Experience } from "@/components/sections/experience/Experience";
 import { Certifications } from "@/components/sections/certifications/Certifications";
 import { Contact } from "@/components/sections/contact/Contact";
 
@@ -22,7 +21,6 @@ export function Home() {
         <About />
         <Skills />
         <Projects />
-        <Experience />
         <Certifications />
         <Contact />
       </main>

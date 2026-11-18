@@ -43,8 +43,8 @@ export function Contact() {
               Prefer the short version?
             </h3>
             <p className="mt-2 text-sm leading-relaxed text-slate-600">
-              The CV covers the same ground in two pages: production role,
-              flagship systems, and the stack behind each one.
+              The resume covers the key highlights on a single page:
+              education, featured systems, technical skillset, and credentials.
             </p>
           </div>
 

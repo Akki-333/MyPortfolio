@@ -12,7 +12,6 @@ export type SectionId =
   | "about"
   | "skills"
   | "projects"
-  | "experience"
   | "certifications"
   | "contact";
 
@@ -95,26 +94,6 @@ export interface Project {
   readonly metrics: readonly ProjectMetric[];
   readonly stack: readonly TechTag[];
   readonly links: readonly ProjectLink[];
-}
-
-/* -------------------------------------------------------------------------- */
-/*                                 Experience                                 */
-/* -------------------------------------------------------------------------- */
-
-export interface ExperienceHighlight {
-  readonly headline: string;
-  readonly detail: string;
-}
-
-export interface ExperienceRole {
-  readonly company: string;
-  readonly title: string;
-  readonly period: string;
-  readonly location: string;
-  readonly current: boolean;
-  readonly summary: string;
-  readonly highlights: readonly ExperienceHighlight[];
-  readonly stack: readonly string[];
 }
 
 /* -------------------------------------------------------------------------- */

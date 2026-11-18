@@ -22,7 +22,7 @@ client/src
 │   ├── common/      # Button, Pill, Modal, Tabs
 │   ├── layout/      # Footer, SectionWrapper
 │   ├── navigation/  # Navbar
-│   └── sections/    # hero, about, skills, projects, experience,
+│   └── sections/    # hero, about, skills, projects,
 │                    # certifications, contact
 ├── data/            # all page content lives here
 ├── hooks/
@@ -31,7 +31,7 @@ client/src
 └── types/
 ```
 
-Content is kept out of the components. To add or edit a project, skill or job,
+Content is kept out of the components. To add or edit a project, skill or credential,
 change the matching file in `client/src/data/` — the types in `types/index.ts`
 will flag anything missing.
 

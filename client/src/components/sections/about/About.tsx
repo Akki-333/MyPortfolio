@@ -5,7 +5,7 @@ import { useReveal } from "@/hooks/useReveal";
 
 /**
  * How I work, rather than what I know. The technical evidence lives in the
- * projects and experience sections; these three are the things a teammate
+ * projects section; these three are the things a teammate
  * would notice in the first fortnight.
  */
 const strengths = [
@@ -49,24 +49,11 @@ export function About() {
             that arrives broken.
           </p>
           <p className="text-base leading-relaxed text-slate-700">
-            At{" "}
-            <span className="font-semibold text-slate-900">
-              BDSR Solutions LLP
-            </span>{" "}
-            I started on remote Linux data-acquisition work and moved into
-            platform engineering. That has meant Flask services and React
-            dashboards for performance management, FastAPI and vector search on
-            a knowledge platform, a layered settlement API, and the asynchronous
-            crawler infrastructure feeding all of it. Alongside the features:
-            regression suites, security review and the production debugging that
-            comes with a live product.
-          </p>
-          <p className="text-base leading-relaxed text-slate-700">
-            Outside work I build retrieval and document systems.
-            ArchiveMind-AI combines lexical, vector and graph search into one
-            pipeline where every answer carries the source that supports it.
-            PaperMint turns messy document input into validated bibliographic
-            records behind four statically enforced layers.
+            I focus on architecting end-to-end full-stack systems and intelligent platforms.
+            ArchiveMind-AI combines lexical, vector and graph search into one pipeline where
+            every answer is grounded in verified sources. LogApart delivers scalable role-based
+            apartment operations with real-time auditability. PaperMint turns unstructured document
+            inputs into validated records behind statically enforced validation layers.
           </p>
           <p className="text-base leading-relaxed text-slate-700">
             The approach stays the same across all of it. Decide the data

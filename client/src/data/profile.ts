@@ -9,8 +9,8 @@ export const profile = {
   hook: "I build full-stack web applications, resilient data acquisition pipelines, and applied retrieval systems. Most of my work sits where clean architecture meets messy production reality, and has to stay correct when inputs, networks and third-party interfaces stop cooperating.",
   location: "India",
   availability: "Open to opportunities",
-  resumePath: "/Akshay_S_Software_Engineer.pdf",
-  resumeFileName: "Akshay-S-Software-Engineer.pdf",
+  resumePath: "/Akshay_FullStack_Resume.pdf",
+  resumeFileName: "Akshay-FullStack-Resume.pdf",
   email: "akkies445@gmail.com",
   phone: "+91 8248316571",
   github: "https://github.com/Akki-333",
@@ -23,7 +23,6 @@ export const navItems: readonly NavItem[] = [
   { id: "about", label: "About" },
   { id: "skills", label: "Skills" },
   { id: "projects", label: "Projects" },
-  { id: "experience", label: "Experience" },
   { id: "certifications", label: "Credentials" },
   { id: "contact", label: "Contact" },
 ];
@@ -66,7 +65,7 @@ export const contactChannels: readonly ContactChannel[] = [
  */
 export const aboutStats = [
   { label: "Role", value: "Software Developer" },
-  { label: "Company", value: "BDSR Solutions LLP" },
-  { label: "Education", value: "B.E. CSE" },
+  { label: "Focus", value: "Full-Stack & Systems" },
+  { label: "Education", value: "B.E. CSE (2025)" },
   { label: "Languages", value: "English, Tamil" },
 ] as const;

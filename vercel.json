@@ -5,7 +5,12 @@
   "redirects": [
     {
       "source": "/Akshay_DS_Updated.pdf",
-      "destination": "/Akshay_S_Software_Engineer.pdf",
+      "destination": "/Akshay_FullStack_Resume.pdf",
+      "permanent": true
+    },
+    {
+      "source": "/Akshay_S_Software_Engineer.pdf",
+      "destination": "/Akshay_FullStack_Resume.pdf",
       "permanent": true
     }
   ],

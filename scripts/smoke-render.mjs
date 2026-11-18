@@ -35,8 +35,6 @@ const CHECKS = [
   ["projects: captioning", /Multimodal Captioning Pipeline/],
   ["projects: filter group", /Filter projects by category/],
   ["projects: inspector cta", /Inspect architecture/],
-  ["experience: employer", /BDSR Solutions LLP/],
-  ["experience: crawler work", /Playwright/],
   ["about: soft-skill cards", /Steady when things break/],
   ["certifications: issuer", /(E&amp;ICT|E&ICT) Academy, IIT Kanpur/],
   ["education: institution", /Bannari Amman Institute of Technology/],
